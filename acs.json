@@ -1,0 +1,121 @@
+{
+  "name": "ACS",
+  "description": "Basic ACS keyword and markup highlighting",
+  "sampleText": "// ACS Syntax\nconst n = 100;\nlet s = \"string value\";\n\nif (n < 1000) {\n\nprint(\"s:hello\");\n}",
+  "author": "Grincess",
+  "scopeName": "text.zdoom.acs",
+  "rangeExtensionType": {
+    "default": "lookAround1000"
+  },
+  "fileExtensions": [
+    "acs",
+    "zacs"
+  ],
+  "patterns": [
+    {
+      "match": "(\\/\\*[\\S\\s]*?\\*\\/)",
+      "exclusive": true,
+      "comment": "Block comment",
+      "captures": {
+        "1": {
+          "scope": "code.comment"
+        }
+      }
+    },
+    {
+      "match": "(?:^|\\s)(\\/\\/.*)",
+      "exclusive": true,
+      "comment": "Inline comment",
+      "captures": {
+        "1": {
+          "scope": "code.comment"
+        }
+      }
+    },
+    {
+      "match": "(['\"])(?:(?!(?:\\\\|\\1)). |\\\\.) *\\1",
+      "exclusive": true,
+      "comment": "String literal",
+      "captures": {
+        "0": {
+          "scope": "code.literal"
+        }
+      }
+    },
+    {
+      "match": "([\\/])(?:(?!(?:\\\\|\\1)). |\\\\.)*\\1([gmi]*)",
+      "exclusive": true,
+      "comment": "Regex literal",
+      "captures": {
+        "0": {
+          "scope": "code.literal"
+        }
+      }
+    },
+    {
+      "match": "\\b(true|false)\\b",
+      "exclusive": true,
+      "comment": "Defined Constant",
+      "captures": {
+        "0": {
+          "scope": "code.literal"
+        }
+      }
+    },
+    {
+      "match": "\\b-?(?:0x[\\da-f]+|\\d*\\.? \\d+(?:e[+-]? \\d+)?) \\b",
+      "exclusive": true,
+      "comment": "Number",
+      "captures": {
+        "0": {
+          "scope": "code.literal"
+        }
+      }
+    },
+    {
+      "match": "([-+!=<>&|~^%?*\\\/\\\\])",
+      "exclusive": true,
+      "comment": "Operator",
+      "captures": {
+        "0": {
+          "scope": "code.operator"
+        }
+      }
+    },
+    {
+      "match": "([{}\\[\\];(),.:])",
+      "exclusive": true,
+      "comment": "Punctuation",
+      "captures": {
+        "0": {
+          "scope": "code.punctuation"
+        }
+      }
+    },
+    {
+      "match": "\\b(function|script|for|do|while|until|return|break|continue|if|else|default|case|function|bool|int|str|const|global|world|switch|void|this|self|char)\\b",
+      "exclusive": true,
+      "comment": "ACS keyword",
+      "captures": {
+ "0":{"scope":"code.keyword"}}
+    }
+  ],
+  "navigationPatterns": [
+    {
+      "match": "^function (. *) \\{",
+      "comment": "Function",
+      "rangeCapture": "0",
+      "labelCapture": "1",
+      "prefix": "function",
+      "level": 1
+    },
+    {
+      "match": "^script (. *) \\{",
+      "comment": "Script",
+      "rangeCapture": "0",
+      "labelCapture": "1",
+      "prefix": "script",
+      "level": 1
+    }
+  ]
+}

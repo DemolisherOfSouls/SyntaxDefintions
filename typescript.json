@@ -1,0 +1,130 @@
+{
+  "name": "TypeScript",
+  "description": "TypeScript definition",
+  "sampleText": "// TypeScript Syntax\ndeclare class GoogleDrive\n",
+  "author": "Grincess",
+  "scopeName": "text.typescript",
+  "rangeExtensionType": {
+    "default": "lookAround1000"
+  },
+  "listCompletionDefinitions": [{
+    "comment": "",
+    "enabled": true,
+    "match": "(^[ |\\t]+)(. *)",
+    "sequencePadding": "0",
+    "captures": {
+      "indent": "1",
+      "prefix": "2",
+      "line": "3",
+      "sequence": ""
+    },
+    "replacements": {}
+  }],
+  "fileExtensions": [
+    "json"
+  ],
+  "patterns": [{
+    "match": "(\\/\\*[\\S\\s]*? \\*\\/)",
+    "exclusive": true,
+    "comment": "Block comment",
+    "captures": {
+      "1": {
+        "scope": "code.comment"
+      }
+    }
+  }, {
+    "match": "(?:^|\\s)(\\/\\/. +?) $",
+    "exclusive": true,
+    "comment": "Inline comment",
+    "captures": {
+      "1": {
+        "scope": "code.comment"
+      }
+    }
+  }, {
+    "match": "(['\"])(?:(?!(?:\\\\|\\1)). |\\\\.) *\\1",
+    "exclusive": true,
+    "comment": "String literal",
+    "captures": {
+      "0": {
+        "scope": "code.literal"
+      }
+    }
+  }, {
+    "match": "\\b(true|false|undefined)\\b",
+    "exclusive": true,
+    "comment": "Defined Constant",
+    "captures": {
+      "0": {
+        "scope": "code.literal"
+      }
+    }
+  }, {
+    "match": "\\b-?(?:0x[\\da-f]+|\\d*\\.? \\d+(?:e[+-]? \\d+)?) \\b",
+    "exclusive": true,
+    "comment": "Number",
+    "captures": {
+      "0": {
+        "scope": "code.literal"
+      }
+    }
+  }, {
+    "match": "--? |\\+\\+? |! =? =? |<=? |>=? |==? =? |&&? |\\|\\|? |\\? |\\*|\\/|~|\\^|%",
+    "exclusive": true,
+    "comment": "Operator",
+    "captures": {
+      "0": {
+        "scope": "code.operator"
+      }
+    }
+  }, {
+    "match": "([{}\\[\\];(),.:])",
+    "exclusive": true,
+    "comment": "Punctuation",
+    "captures": {
+      "1": {
+        "scope": "code.punctuation"
+      }
+    }
+  }, {
+    "match": "(? <! \\w|\\$|\\%|\\@|>)(int|bool|float|double|string|char)(?! \\w|=\")",
+    "exclusive": true,
+    "comment": "Javascript class",
+    "captures": {
+      "1": {
+        "scope": "code.keyword"
+      }
+    }
+  }, {
+    "match": "\\b(readonly|static|declare|constructor)\\b",
+    "exclusive": true,
+    "comment": "Javascript keyword",
+    "captures": {
+      "1": {
+        "scope": "code.keyword"
+      }
+    }
+  }],
+  "navigationPatterns": [{
+    "match": "^\\/\\/ ? #region ?(. *)$",
+    "comment": "Region comments",
+    "rangeCapture": "0",
+    "labelCapture": "1",
+    "prefix": "#region",
+    "level": 0
+  }, {
+    "match": "^function (. *) \\{",
+    "comment": "Function",
+    "rangeCapture": "0",
+    "labelCapture": "1",
+    "prefix": "function",
+    "level": 1
+  }, {
+    "match": "^declare (. *) \\{",
+    "comment": "Declare",
+    "rangeCapture": "0",
+    "labelCapture": "1",
+    "prefix": "declare",
+    "level": 1
+  }]
+}

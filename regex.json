@@ -1,0 +1,62 @@
+{
+  "name": "RegEx",
+  "description": "Regular Expressions",
+  "sampleText": "(#comment)(\\w+)(?:\\.)(\\w+)(\\s+\\d+)?(?'name'\\t.*)",
+  "author": "Grincess",
+  "scopeName": "text.regex",
+  "rangeExtensionType": {
+    "default": "lookAround1000"
+  },
+  "listCompletionDefinitions": [],
+  "fileExtensions":["regex"],
+  "navigationPatterns": [],
+  "patterns":
+  [{
+      "match": "(.*)",
+      "exclusive": false,
+      "comment": "Code",
+      "captures": {
+ "0":{"scope":"text.monospace"}}
+    },{
+      "match": "(\\(\\#[\\s\\S]*?\\))",
+      "exclusive": true,
+      "comment": "Comment",
+      "captures": {
+ "0":{"scope":"code.comment"}}
+    },{
+      "match": "(\\\\[?.!<>,'_\\|~=+^^%#{}\\[\\]0-9:;\\/()])",
+      "exclusive": false,
+      "comment": "Escaped Character",
+      "captures": {
+ "0":{"scope":"code.class"}}
+    },{
+      "match": "\\[([^\\]]*?)\\]",
+      "exclusive": false,
+      "comment": "Character Match",
+      "captures": {
+ "0":{"scope":"code.property"}}
+    },{
+      "match": "(?:\\[((?:[^\\]]*?(\\S\\-\\S))+)\\])",
+      "exclusive": false,
+      "comment": "Range Types",
+      "captures": {
+ "0":{"scope":"code.literal"}}
+    },{
+      "match": "\\(\\?(['\"])(.*)\\2([\\s\\S]*[^\\\\])\\))",
+      "exclusive": false,
+      "comment": "Named Match",
+      "captures": {
+ "0":{"scope":"code.keyword"}}
+    },{
+      "match": "",
+      "exclusive": false,
+      "comment": "Operator",
+      "captures": {
+ "0":{"scope":"code.punctuation"}}
+    },{
+      "match": "",
+      "exclusive": false,
+      "comment": "Match RegExp",
+      "captures": {
+ "1":{"scope":"code.keyword"}}
+}]}

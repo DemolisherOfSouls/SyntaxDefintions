@@ -1,0 +1,183 @@
+{
+  "name": "Javascript+",
+  "description": "Complete JavaScript keyword and markup highlighting",
+  "sampleText": "//JavaScript Syntax\n\nconst n = 100;\nlet s = \"string value\";\n/* Block Comment */\nvar v = 0x7fffFFFf;\n\nif (n < 1000)\n{\n\tconsole.log(\"hello\");\n}\n\nclass newClass extends Object\n{\n\tconstructor()\n\t{\n\t\tthis.prop = 4;\n\t\tsuper();\n\t}\n\n\tpublicMethod()\n\t\t{\n\t\t\tvar x = prop.toString();\n\t}\n}",
+  "author": "Grincess",
+  "scopeName": "text.javascript.adv",
+  "rangeExtensionType": {
+    "default": "lookAround1000"
+  },
+  "listCompletionDefinitions": [{
+    "comment": "",
+    "enabled": false,
+    "match": "([\\t ])()(.*)",
+    "sequencePadding": "0",
+    "captures": {
+      "indent": "1",
+      "prefix": "2",
+      "line":   "3",
+      "sequence": ""
+    },
+    "replacements": {}
+  }],
+  "fileExtensions": [ "js" ],
+  "patterns": [{
+    "match": "(\\/\\*)([\\S\\s]*?)(\\*\\/)",
+    "exclusive": true,
+    "comment": "Block comment",
+    "captures": {
+      "0": {
+        "scope": "code.comment"
+      }
+    }
+  }, {
+    "match": "(\\/\\/)(.*)",
+    "exclusive": true,
+    "comment": "Inline comment",
+    "captures": {
+      "0": {
+        "scope": "code.comment"
+      }
+    }
+  }, {
+    "match": "([`])(?:(?!(?:\\\\|\\1)).|\\\\.|\\n)*\\1",
+    "exclusive": true,
+    "comment": "Template Strings",
+    "captures": {
+      "0": {
+        "scope": "code.literal"
+      }
+    }
+  }, {
+    "match": "\\b('use strict')\\b",
+    "exclusive": true,
+    "comment": "Strict Modifier",
+    "captures": {
+      "0": {
+        "scope": "code.keyword"
+      }
+    }
+  }, {
+    "match": "(['\"])(?:(?!(?:\\\\|\\1)).|\\\\.)*\\1",
+    "exclusive": false,
+    "comment": "String Literal",
+    "captures": {
+      "0": {
+        "scope": "code.literal"
+      }
+    }
+  }, {
+    "match": "([\\/])(?:(?!(?:\\\\|\\1)).|\\\\.)*\\1([gmi]*)",
+    "exclusive": true,
+    "comment": "RegEx Literal",
+    "captures": {
+      "0": {
+        "scope": "code.literal"
+      }
+    }
+  }, {
+    "match": "\\b(true|false|undefined|null|NaN)\\b",
+    "exclusive": true,
+    "comment": "Defined Literal",
+    "captures": {
+      "0": {
+        "scope": "code.class"
+      }
+    }
+  }, {
+    "match": "\\b(-?(?:0x[\\da-fA-F]+)|\\d*\\.?\\d+(?:e[+-]?\\d+)?)\\b",
+    "exclusive": true,
+    "comment": "Number Literal",
+    "captures": {
+      "0": {
+        "scope": "code.literal"
+      }
+    }
+  }, {
+    "match": "(--?|\\{2}+?|!=?=?|<=?|>=?|={1,3}|&&?|\\|\\|?|\\?|\\*|\\/|~|\\^|%|=>)",
+    "exclusive": false,
+    "comment": "Operator",
+    "captures": {
+      "0": {
+        "scope": "code.operator"
+      }
+    }
+  }, {
+    "match": "([{}\\[\\];(),.:])",
+    "exclusive": false,
+    "comment": "Punctuation and Brackets",
+    "captures": {
+      "0": {
+        "scope": "code.punctuation"
+      }
+    }
+  }, {
+    "match": "(?:\\n|\\t|\\b)(and|or|xor|for|do|while|each|as|return|exit|if|of|then|else|new|delete|try|throw|catch|finally|class|function|var|const|let|static|extends|switch|this|self|super|in|import|create|constructor|export|get|set|require)\\b",
+    "exclusive": true,
+    "comment": "JavaScript Keyword",
+    "captures": {
+      "0": {
+        "scope": "code.keyword"
+      }
+    }
+  }, {
+    "match": "\\b(Array|String|Object|Integer|Boolean|Symbol|Function|Map|Set|WeakMap|WeakSet|Math|Date|Promise|Number|NodeList|JSON|Generator|Error|RegExp|ReferenceError)\\b",
+    "exclusive": true,
+    "comment": "JavaScript Class",
+    "captures": {
+      "0": {
+        "scope": "code.class"
+      }
+    }
+  }, {
+    "match": "\\b(toString|eval|exec|replace|slice|join|split|concat|replace!|match|startsWith|endsWith|indexOf|substr|toLowerCase|toUpperCase|parseInt|parseFloat|charAt|forEach|from|destroy|push|shift|splice|some|sort|reduce|reverse|map|pop|includes|keys|flat|flatMap|copyWithin|at|every|fill|)\\b",
+    "exclusive": true,
+    "comment": "JavaScript Method",
+    "captures": {
+      "0": {
+        "scope": "code.method"
+      }
+    }
+  },
+  {
+    "match": "\\b(length)\\b",
+    "exclusive": true,
+    "comment": "JavaScript Property",
+    "captures": {
+      "0": {
+        "scope": "code.class"
+      }
+    }
+  }
+  ],
+  "navigationPatterns": [{
+    "match": "(\\/\\/)(?:s*)(#region)(.*)",
+    "comment": "Region Comments",
+    "rangeCapture": "0",
+    "labelCapture": "1",
+    "prefix": "#region",
+    "level": 0
+  }, {
+    "match": "\\b(function)\\b",
+    "comment": "Function",
+    "rangeCapture": "0",
+    "labelCapture": "1",
+    "prefix": "function",
+    "level": 1
+  }, {
+    "match": "\\b(class)\\b",
+    "comment": "Class Definition",
+    "rangeCapture": "0",
+    "labelCapture": "1",
+    "prefix": "class",
+    "level": 1
+  }, {
+    "match": "\\b(get|set)\\b",
+    "comment": "Property Definition",
+    "rangeCapture": "0",
+    "labelCapture": "1",
+    "prefix": "get",
+    "level": 2
+  }
+  ]
+}
