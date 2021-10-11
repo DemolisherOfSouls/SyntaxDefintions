@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="NotepadPlus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="UserLang" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Settings" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Global" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:attribute name="caseIgnored" type="xs:string" use="required" />
+                        <xs:attribute name="allowFoldOfComments" type="xs:string" use="required" />
+                        <xs:attribute name="foldCompact" type="xs:string" use="required" />
+                        <xs:attribute name="forcePureLC" type="xs:unsignedByte" use="required" />
+                        <xs:attribute name="decimalSeparator" type="xs:unsignedByte" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Prefix" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:attribute name="Keywords1" type="xs:string" use="required" />
+                        <xs:attribute name="Keywords2" type="xs:string" use="required" />
+                        <xs:attribute name="Keywords3" type="xs:string" use="required" />
+                        <xs:attribute name="Keywords4" type="xs:string" use="required" />
+                        <xs:attribute name="Keywords5" type="xs:string" use="required" />
+                        <xs:attribute name="Keywords6" type="xs:string" use="required" />
+                        <xs:attribute name="Keywords7" type="xs:string" use="required" />
+                        <xs:attribute name="Keywords8" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="KeywordLists" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="28" name="Keywords">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute name="name" type="xs:string" use="required" />
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Styles" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="24" name="WordsStyle">
+                      <xs:complexType>
+                        <xs:attribute name="name" type="xs:string" use="required" />
+                        <xs:attribute name="fgColor" type="xs:string" use="required" />
+                        <xs:attribute name="bgColor" type="xs:string" use="required" />
+                        <xs:attribute name="fontName" type="xs:string" use="required" />
+                        <xs:attribute name="fontStyle" type="xs:unsignedByte" use="required" />
+                        <xs:attribute name="fontSize" type="xs:unsignedByte" use="optional" />
+                        <xs:attribute name="nesting" type="xs:unsignedInt" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="name" type="xs:string" use="required" />
+            <xs:attribute name="ext" type="xs:string" use="required" />
+            <xs:attribute name="udlVersion" type="xs:decimal" use="required" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="functionList" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="parser">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="classRange">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="className">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="nameExpr">
+                                  <xs:complexType>
+                                    <xs:attribute name="expr" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="function">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="functionName">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element maxOccurs="unbounded" name="funcNameExpr">
+                                        <xs:complexType>
+                                          <xs:attribute name="expr" type="xs:string" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="mainExpr" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="mainExpr" type="xs:string" use="required" />
+                        <xs:attribute name="openSymbole" type="xs:string" use="required" />
+                        <xs:attribute name="closeSymbole" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="function">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="functionName">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="nameExpr">
+                                  <xs:complexType>
+                                    <xs:attribute name="expr" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="className">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="nameExpr">
+                                  <xs:complexType>
+                                    <xs:attribute name="expr" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="mainExpr" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="displayName" type="xs:string" use="required" />
+                  <xs:attribute name="id" type="xs:string" use="required" />
+                  <xs:attribute name="commentExpr" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="FindHistory" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="Path">
+                <xs:complexType>
+                  <xs:attribute name="name" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Filter">
+                <xs:complexType>
+                  <xs:attribute name="name" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element maxOccurs="unbounded" name="Find">
+                <xs:complexType>
+                  <xs:attribute name="name" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element maxOccurs="unbounded" name="Replace">
+                <xs:complexType>
+                  <xs:attribute name="name" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="nbMaxFindHistoryPath" type="xs:unsignedByte" use="required" />
+            <xs:attribute name="nbMaxFindHistoryFilter" type="xs:unsignedByte" use="required" />
+            <xs:attribute name="nbMaxFindHistoryFind" type="xs:unsignedByte" use="required" />
+            <xs:attribute name="nbMaxFindHistoryReplace" type="xs:unsignedByte" use="required" />
+            <xs:attribute name="matchWord" type="xs:string" use="required" />
+            <xs:attribute name="matchCase" type="xs:string" use="required" />
+            <xs:attribute name="wrap" type="xs:string" use="required" />
+            <xs:attribute name="directionDown" type="xs:string" use="required" />
+            <xs:attribute name="fifRecuisive" type="xs:string" use="required" />
+            <xs:attribute name="fifInHiddenFolder" type="xs:string" use="required" />
+            <xs:attribute name="dlgAlwaysVisible" type="xs:string" use="required" />
+            <xs:attribute name="fifFilterFollowsDoc" type="xs:string" use="required" />
+            <xs:attribute name="fifFolderFollowsDoc" type="xs:string" use="required" />
+            <xs:attribute name="searchMode" type="xs:unsignedByte" use="required" />
+            <xs:attribute name="transparencyMode" type="xs:unsignedByte" use="required" />
+            <xs:attribute name="transparency" type="xs:unsignedByte" use="required" />
+            <xs:attribute name="dotMatchesNewline" type="xs:string" use="required" />
+            <xs:attribute name="isSearch2ButtonsMode" type="xs:string" use="required" />
+            <xs:attribute name="regexBackward4PowerUser" type="xs:string" use="required" />
+            <xs:attribute name="fifProjectPanel1" type="xs:string" use="required" />
+            <xs:attribute name="fifProjectPanel2" type="xs:string" use="required" />
+            <xs:attribute name="fifProjectPanel3" type="xs:string" use="required" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="History" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="File">
+                <xs:complexType>
+                  <xs:attribute name="filename" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="nbMaxFile" type="xs:unsignedByte" use="required" />
+            <xs:attribute name="inSubMenu" type="xs:string" use="required" />
+            <xs:attribute name="customLength" type="xs:unsignedByte" use="required" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ProjectPanels" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="ProjectPanel">
+                <xs:complexType>
+                  <xs:attribute name="id" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="workSpaceFile" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="FileBrowser" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="root">
+                <xs:complexType>
+                  <xs:attribute name="foldername" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="latestSelectedItem" type="xs:string" use="required" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="GUIConfigs" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="GUIConfig">
+                <xs:complexType mixed="true">
+                  <xs:sequence minOccurs="0">
+                    <xs:element maxOccurs="unbounded" name="FloatingWindow">
+                      <xs:complexType>
+                        <xs:attribute name="cont" type="xs:unsignedByte" use="required" />
+                        <xs:attribute name="x" type="xs:unsignedShort" use="required" />
+                        <xs:attribute name="y" type="xs:unsignedShort" use="required" />
+                        <xs:attribute name="width" type="xs:unsignedShort" use="required" />
+                        <xs:attribute name="height" type="xs:unsignedShort" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element maxOccurs="unbounded" name="PluginDlg">
+                      <xs:complexType>
+                        <xs:attribute name="pluginName" type="xs:string" use="required" />
+                        <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                        <xs:attribute name="curr" type="xs:unsignedByte" use="required" />
+                        <xs:attribute name="prev" type="xs:byte" use="required" />
+                        <xs:attribute name="isVisible" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element maxOccurs="unbounded" name="ActiveTabs">
+                      <xs:complexType>
+                        <xs:attribute name="cont" type="xs:unsignedByte" use="required" />
+                        <xs:attribute name="activeTab" type="xs:byte" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="name" type="xs:string" use="required" />
+                  <xs:attribute name="visible" type="xs:string" use="optional" />
+                  <xs:attribute name="dragAndDrop" type="xs:string" use="optional" />
+                  <xs:attribute name="drawTopBar" type="xs:string" use="optional" />
+                  <xs:attribute name="drawInactiveTab" type="xs:string" use="optional" />
+                  <xs:attribute name="reduce" type="xs:string" use="optional" />
+                  <xs:attribute name="closeButton" type="xs:string" use="optional" />
+                  <xs:attribute name="doubleClick2Close" type="xs:string" use="optional" />
+                  <xs:attribute name="vertical" type="xs:string" use="optional" />
+                  <xs:attribute name="multiLine" type="xs:string" use="optional" />
+                  <xs:attribute name="hide" type="xs:string" use="optional" />
+                  <xs:attribute name="quitOnEmpty" type="xs:string" use="optional" />
+                  <xs:attribute name="iconSetNumber" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="position" type="xs:string" use="optional" />
+                  <xs:attribute name="replaceBySpace" type="xs:string" use="optional" />
+                  <xs:attribute name="size" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="x" type="xs:byte" use="optional" />
+                  <xs:attribute name="y" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="width" type="xs:unsignedShort" use="optional" />
+                  <xs:attribute name="height" type="xs:unsignedShort" use="optional" />
+                  <xs:attribute name="isMaximized" type="xs:string" use="optional" />
+                  <xs:attribute name="left" type="xs:unsignedShort" use="optional" />
+                  <xs:attribute name="top" type="xs:unsignedShort" use="optional" />
+                  <xs:attribute name="right" type="xs:unsignedShort" use="optional" />
+                  <xs:attribute name="bottom" type="xs:unsignedShort" use="optional" />
+                  <xs:attribute name="wrappedLines" type="xs:string" use="optional" />
+                  <xs:attribute name="purgeBeforeEverySearch" type="xs:string" use="optional" />
+                  <xs:attribute name="intervalDays" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="nextUpdateDate" type="xs:unsignedInt" use="optional" />
+                  <xs:attribute name="TagAttrHighLight" type="xs:string" use="optional" />
+                  <xs:attribute name="HighLightNonHtmlZone" type="xs:string" use="optional" />
+                  <xs:attribute name="format" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="encoding" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="lang" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="codepage" type="xs:byte" use="optional" />
+                  <xs:attribute name="openAnsiAsUTF8" type="xs:string" use="optional" />
+                  <xs:attribute name="gr0" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="gr1" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="gr2" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="gr3" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="gr4" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="gr5" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="gr6" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="gr7" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="gr8" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="gr9" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="gr10" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="gr11" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="gr12" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="langMenuCompact" type="xs:string" use="optional" />
+                  <xs:attribute name="lineNumber" type="xs:string" use="optional" />
+                  <xs:attribute name="printOption" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="headerLeft" type="xs:string" use="optional" />
+                  <xs:attribute name="headerMiddle" type="xs:string" use="optional" />
+                  <xs:attribute name="headerRight" type="xs:string" use="optional" />
+                  <xs:attribute name="footerLeft" type="xs:string" use="optional" />
+                  <xs:attribute name="footerMiddle" type="xs:string" use="optional" />
+                  <xs:attribute name="footerRight" type="xs:string" use="optional" />
+                  <xs:attribute name="headerFontName" type="xs:string" use="optional" />
+                  <xs:attribute name="headerFontStyle" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="headerFontSize" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="footerFontName" type="xs:string" use="optional" />
+                  <xs:attribute name="footerFontStyle" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="footerFontSize" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="margeLeft" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="margeRight" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="margeTop" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="margeBottom" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="action" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="useCustumDir" type="xs:string" use="optional" />
+                  <xs:attribute name="dir" type="xs:string" use="optional" />
+                  <xs:attribute name="isSnapshotMode" type="xs:string" use="optional" />
+                  <xs:attribute name="snapshotBackupTiming" type="xs:unsignedShort" use="optional" />
+                  <xs:attribute name="fg" type="xs:string" use="optional" />
+                  <xs:attribute name="bg" type="xs:string" use="optional" />
+                  <xs:attribute name="font" type="xs:string" use="optional" />
+                  <xs:attribute name="fontSize" type="xs:string" use="optional" />
+                  <xs:attribute name="bold" type="xs:string" use="optional" />
+                  <xs:attribute name="italic" type="xs:string" use="optional" />
+                  <xs:attribute name="underline" type="xs:string" use="optional" />
+                  <xs:attribute name="autoCAction" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="triggerFromNbChar" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="autoCIgnoreNumbers" type="xs:string" use="optional" />
+                  <xs:attribute name="funcParams" type="xs:string" use="optional" />
+                  <xs:attribute name="parentheses" type="xs:string" use="optional" />
+                  <xs:attribute name="brackets" type="xs:string" use="optional" />
+                  <xs:attribute name="curlyBrackets" type="xs:string" use="optional" />
+                  <xs:attribute name="quotes" type="xs:string" use="optional" />
+                  <xs:attribute name="doubleQuotes" type="xs:string" use="optional" />
+                  <xs:attribute name="htmlXmlTag" type="xs:string" use="optional" />
+                  <xs:attribute name="blinkRate" type="xs:unsignedShort" use="optional" />
+                  <xs:attribute name="enableMultiSelection" type="xs:string" use="optional" />
+                  <xs:attribute name="value" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="defaultDirPath" type="xs:string" use="optional" />
+                  <xs:attribute name="short" type="xs:string" use="optional" />
+                  <xs:attribute name="path" type="xs:string" use="optional" />
+                  <xs:attribute name="useDefault" type="xs:string" use="optional" />
+                  <xs:attribute name="charsAdded" type="xs:string" use="optional" />
+                  <xs:attribute name="leftmostDelimiter" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="rightmostDelimiter" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="delimiterSelectionOnEntireDocument" type="xs:string" use="optional" />
+                  <xs:attribute name="setting" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="fileSwitcherWithoutExtColumn" type="xs:string" use="optional" />
+                  <xs:attribute name="backSlashIsEscapeCharacterForSql" type="xs:string" use="optional" />
+                  <xs:attribute name="writeTechnologyEngine" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="isFolderDroppedOpenFiles" type="xs:string" use="optional" />
+                  <xs:attribute name="docPeekOnTab" type="xs:string" use="optional" />
+                  <xs:attribute name="docPeekOnMap" type="xs:string" use="optional" />
+                  <xs:attribute name="saveDlgExtFilterToAllTypes" type="xs:string" use="optional" />
+                  <xs:attribute name="muteSounds" type="xs:string" use="optional" />
+                  <xs:attribute name="monospacedFontFindDlg" type="xs:string" use="optional" />
+                  <xs:attribute name="stopFillingFindField" type="xs:string" use="optional" />
+                  <xs:attribute name="findDlgAlwaysVisible" type="xs:string" use="optional" />
+                  <xs:attribute name="confirmReplaceInAllOpenDocs" type="xs:string" use="optional" />
+                  <xs:attribute name="replaceStopsWithoutFindingNext" type="xs:string" use="optional" />
+                  <xs:attribute name="searchEngineChoice" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="searchEngineCustom" type="xs:string" use="optional" />
+                  <xs:attribute name="matchCase" type="xs:string" use="optional" />
+                  <xs:attribute name="wholeWordOnly" type="xs:string" use="optional" />
+                  <xs:attribute name="useFindSettings" type="xs:string" use="optional" />
+                  <xs:attribute name="onAnotherView" type="xs:string" use="optional" />
+                  <xs:attribute name="enable" type="xs:string" use="optional" />
+                  <xs:attribute name="colorTone" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="customColorTop" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="customColorMenuHotTrack" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="customColorActive" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="customColorMain" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="customColorError" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="customColorText" type="xs:unsignedInt" use="optional" />
+                  <xs:attribute name="customColorDarkText" type="xs:unsignedInt" use="optional" />
+                  <xs:attribute name="customColorDisabledText" type="xs:unsignedInt" use="optional" />
+                  <xs:attribute name="customColorEdge" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="lineNumberMargin" type="xs:string" use="optional" />
+                  <xs:attribute name="lineNumberDynamicWidth" type="xs:string" use="optional" />
+                  <xs:attribute name="bookMarkMargin" type="xs:string" use="optional" />
+                  <xs:attribute name="indentGuideLine" type="xs:string" use="optional" />
+                  <xs:attribute name="folderMarkStyle" type="xs:string" use="optional" />
+                  <xs:attribute name="lineWrapMethod" type="xs:string" use="optional" />
+                  <xs:attribute name="currentLineHilitingShow" type="xs:string" use="optional" />
+                  <xs:attribute name="scrollBeyondLastLine" type="xs:string" use="optional" />
+                  <xs:attribute name="rightClickKeepsSelection" type="xs:string" use="optional" />
+                  <xs:attribute name="disableAdvancedScrolling" type="xs:string" use="optional" />
+                  <xs:attribute name="wrapSymbolShow" type="xs:string" use="optional" />
+                  <xs:attribute name="Wrap" type="xs:string" use="optional" />
+                  <xs:attribute name="borderEdge" type="xs:string" use="optional" />
+                  <xs:attribute name="isEdgeBgMode" type="xs:string" use="optional" />
+                  <xs:attribute name="edgeMultiColumnPos" type="xs:string" use="optional" />
+                  <xs:attribute name="zoom" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="zoom2" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="whiteSpaceShow" type="xs:string" use="optional" />
+                  <xs:attribute name="eolShow" type="xs:string" use="optional" />
+                  <xs:attribute name="borderWidth" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="smoothFont" type="xs:string" use="optional" />
+                  <xs:attribute name="paddingLeft" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="paddingRight" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="distractionFreeDivPart" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="leftWidth" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="rightWidth" type="xs:unsignedShort" use="optional" />
+                  <xs:attribute name="topHeight" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="bottomHeight" type="xs:unsignedShort" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
