@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "title": "Drafts Schema",
+
+  "type": "object",
+
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "This shows up in tooltips for the 'name' property."
+    },
+    "description": {
+      "type": "string",
+      "description": ""
+    },
+    "sampleText": {
+      "type": "string",
+      "description": ""
+    },
+    "author": {
+      "type": "string",
+      "description": ""
+    },
+    "fileExtensions": {
+      "type": "array",
+      "description": "",
+      "items": {
+        "type": "string"
+      }
+    },
+    "patterns": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "match": {"type": "string"},
+            "exclusive": {"type": "boolean" },
+            "comment": {"type": "string"},
+            "captures": {
+              "type": "object",
+              "properties": {
+                "0": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+            }
+        }
+      ]
+    }
+  }
+}

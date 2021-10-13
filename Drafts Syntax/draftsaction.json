@@ -4,10 +4,10 @@
   "sampleText": "//JavaScript Syntax\n\nconst n = 100;\nlet s = \"string value\";\n/* Block Comment */\nvar v = 0x7fffFFFf;\n\nif (n < 1000)\n{\n  console.log(\"hello\");\n}\n\nclass newClass extends oldClass\n{\n  constructor()\n  {\n    this.prop = 4;\n    super();\n  }\n\n    publicMethod()\n    {\n      var x = prop.toString();\n    }\n}",
   "author": "Grincess",
   "scopeName": "text.javascript.drafts",
-  "rangeExtensionType": {
-    "default": "lookAround1000"},
+  "rangeExtensionType": {"default": "lookAround1000"},
   "listCompletionDefinitions":[],
   "fileExtensions":["draftsaction"],
+
   "patterns": [{
     "match": "(\\/\\*[\\S\\s]*?\\*\\/)",
     "exclusive": true,
@@ -51,14 +51,12 @@
     "match": "([-+!=<>&|~^%?*\\\/\\\\])",
     "exclusive": false,
     "comment": "Operator",
-    "captures": {"0":{"scope":"code.operator"}
-    }
+    "captures": {"0":{"scope":"code.operator"}}
   },{
     "match": "([{}\\[\\];(),.:])",
     "exclusive": false,
     "comment": "Punctuation",
-    "captures":{"0":{"scope":"code.punctuation"}
-    }
+    "captures":{"0":{"scope":"code.punctuation"}}
   },{
     "match": "\\b(and|or|xor|for|do|while|each|as|return|exit|if|of|then|else|new|delete|try|throw|catch|finally|class|function|var|const|let|static|extends|switch|this|self|super|in|import|constructor|export|get|set|require)\\b",
     "exclusive": true,
@@ -73,9 +71,9 @@
     "match": "([\\w\"$]+)\\.(toString|eval|exec|replace|slice|join|split|concat|replace|match|startsWith|endsWith|indexOf|substr|toLowerCase|toUpperCase|parseInt|parseFloat|charAt|create|forEach|from|destroy|push|shift|splice|some|sort|reduce|reverse|map|pop|includes|keys|flat|flatMap|copyWithin|selectionStart|at|every|fill)\\b",
     "exclusive": false,
     "comment": "JavaScript Method",
-    "captures":{"1":{"scope":"code.global"}
-                "2":{"scope":"code.punctuation"}
-                "3":{"scope":"code.method"}
+    "captures":{"1":{"scope":"code.global"},
+                "2":{"scope":"code.punctuation"},
+                "3":{"scope":"code.method"}}
   },{
     "match": "\\b(length)\\b",
     "exclusive": true,

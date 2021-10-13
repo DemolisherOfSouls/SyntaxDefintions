@@ -1,0 +1,85 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31717.71
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SyntaxChecker", "SyntaxChecker\SyntaxChecker.csproj", "{FDAC5FEC-D7A6-47A6-BA5D-553FC01359B2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notepad++", "Notepad++", "{9A186093-7782-45CF-98F9-26C35E72FD55}"
+	ProjectSection(SolutionItems) = preProject
+		Notepad++ Syntax\batch.xml = Notepad++ Syntax\batch.xml
+		Notepad++ Syntax\excel-formula.xml = Notepad++ Syntax\excel-formula.xml
+		Notepad++ Syntax\excel-powerquerym.xml = Notepad++ Syntax\excel-powerquerym.xml
+		Notepad++ Syntax\git-ignore.xml = Notepad++ Syntax\git-ignore.xml
+		Notepad++ Syntax\gmail.xml = Notepad++ Syntax\gmail.xml
+		Notepad++ Syntax\javascript-draftsaction.xml = Notepad++ Syntax\javascript-draftsaction.xml
+		Notepad++ Syntax\json-draftssyntax.xml = Notepad++ Syntax\json-draftssyntax.xml
+		Notepad++ Syntax\json-draftstheme.xml = Notepad++ Syntax\json-draftstheme.xml
+		Notepad++ Syntax\json-generic.xml = Notepad++ Syntax\json-generic.xml
+		Notepad++ Syntax\json-gform.xml = Notepad++ Syntax\json-gform.xml
+		Notepad++ Syntax\prop-generic.xml = Notepad++ Syntax\prop-generic.xml
+		Notepad++ Syntax\prop-reg.xml = Notepad++ Syntax\prop-reg.xml
+		Notepad++ Syntax\regex.xml = Notepad++ Syntax\regex.xml
+		Notepad++ Syntax\vba-dotnet4.8.xml = Notepad++ Syntax\vba-dotnet4.8.xml
+		Notepad++ Syntax\vba-office.xml = Notepad++ Syntax\vba-office.xml
+		Notepad++ Syntax\vssln.xml = Notepad++ Syntax\vssln.xml
+		Notepad++ Syntax\xml-generic.xml = Notepad++ Syntax\xml-generic.xml
+		Notepad++ Syntax\xml-google.xml = Notepad++ Syntax\xml-google.xml
+		Notepad++ Syntax\xml-npp.xml = Notepad++ Syntax\xml-npp.xml
+		Notepad++ Syntax\xml-vsproj.xml = Notepad++ Syntax\xml-vsproj.xml
+		Notepad++ Syntax\zdoom-acs.xml = Notepad++ Syntax\zdoom-acs.xml
+		Notepad++ Syntax\zdoom-cvarinfo.xml = Notepad++ Syntax\zdoom-cvarinfo.xml
+		Notepad++ Syntax\zdoom-keyconf.xml = Notepad++ Syntax\zdoom-keyconf.xml
+		Notepad++ Syntax\zdoom-mapinfo.xml = Notepad++ Syntax\zdoom-mapinfo.xml
+		Notepad++ Syntax\zdoom-menudef.xml = Notepad++ Syntax\zdoom-menudef.xml
+		Notepad++ Syntax\zdoom-modeldef.xml = Notepad++ Syntax\zdoom-modeldef.xml
+		Notepad++ Syntax\zdoom-sbarinfo.xml = Notepad++ Syntax\zdoom-sbarinfo.xml
+		Notepad++ Syntax\zdoom-terrain.xml = Notepad++ Syntax\zdoom-terrain.xml
+		Notepad++ Syntax\zdoom-textures.xml = Notepad++ Syntax\zdoom-textures.xml
+		Notepad++ Syntax\zdoom-udmf.xml = Notepad++ Syntax\zdoom-udmf.xml
+		Notepad++ Syntax\zdoom-xlat.xml = Notepad++ Syntax\zdoom-xlat.xml
+		Notepad++ Syntax\zdoom-zscript.xml = Notepad++ Syntax\zdoom-zscript.xml
+		Notepad++ Syntax\zdoom-zsdf.xml = Notepad++ Syntax\zdoom-zsdf.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Schemas", "Schemas", "{BC56F825-E652-4781-9119-CD7FAA5942D5}"
+	ProjectSection(SolutionItems) = preProject
+		SyntaxChecker\Properties\json-schema1.json = SyntaxChecker\Properties\json-schema1.json
+		Notepad++ Syntax\notepadpp.xsd = Notepad++ Syntax\notepadpp.xsd
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Drafts", "Drafts", "{A0B84EFB-7469-49DF-AADB-4797515E5F42}"
+	ProjectSection(SolutionItems) = preProject
+		Drafts Syntax\acs.json = Drafts Syntax\acs.json
+		Drafts Syntax\draftsaction.json = Drafts Syntax\draftsaction.json
+		Drafts Syntax\draftssyntax.json = Drafts Syntax\draftssyntax.json
+		Drafts Syntax\javascript+.json = Drafts Syntax\javascript+.json
+		Drafts Syntax\javascript.json = Drafts Syntax\javascript.json
+		Drafts Syntax\json.json = Drafts Syntax\json.json
+		Drafts Syntax\regex.json = Drafts Syntax\regex.json
+		Drafts Syntax\typescript.json = Drafts Syntax\typescript.json
+		Drafts Syntax\vba.json = Drafts Syntax\vba.json
+		Drafts Syntax\zscript.json = Drafts Syntax\zscript.json
+	EndProjectSection
+	ProjectSection(FolderGlobals) = preProject
+		C_5_4Dev_4Projects_4SyntaxDefintions_4Drafts Syntax_4draftsaction_1json__JsonSchema = DraftsSchema.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FDAC5FEC-D7A6-47A6-BA5D-553FC01359B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDAC5FEC-D7A6-47A6-BA5D-553FC01359B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDAC5FEC-D7A6-47A6-BA5D-553FC01359B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDAC5FEC-D7A6-47A6-BA5D-553FC01359B2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FAE2EA53-6533-490F-9AEF-8D5B4B2A495D}
+	EndGlobalSection
+EndGlobal
