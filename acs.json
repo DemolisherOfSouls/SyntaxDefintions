@@ -4,118 +4,92 @@
   "sampleText": "// ACS Syntax\nconst n = 100;\nlet s = \"string value\";\n\nif (n < 1000) {\n\nprint(\"s:hello\");\n}",
   "author": "Grincess",
   "scopeName": "text.zdoom.acs",
-  "rangeExtensionType": {
-    "default": "lookAround1000"
-  },
-  "fileExtensions": [
-    "acs",
-    "zacs"
-  ],
-  "patterns": [
-    {
-      "match": "(\\/\\*[\\S\\s]*?\\*\\/)",
+  "rangeExtensionType": {"default": "lookAround1000"},
+  "fileExtensions": ["acs","zacs"],
+  "patterns":
+  [{
+      "match": "(\\/\\*[\\S\\s]*?\\*\\/)|(\\/\\/.*)",
       "exclusive": true,
-      "comment": "Block comment",
+      "comment": "Comment",
       "captures": {
-        "1": {
-          "scope": "code.comment"
-        }
-      }
-    },
-    {
-      "match": "(?:^|\\s)(\\/\\/.*)",
+        "0": {
+          "scope": "code.comment"}}
+    },{
+      "match": "#((import|include)|(library)|((?:lib)?define))\\s+(?(2)\"([\\w.-]+)\"|(?(3)\"([\\w.-]+)\"|(?(4)([-.\\'\"\\w]+))))",
       "exclusive": true,
-      "comment": "Inline comment",
+      "comment": "PreProc",
       "captures": {
-        "1": {
-          "scope": "code.comment"
-        }
-      }
-    },
-    {
-      "match": "(['\"])(?:(?!(?:\\\\|\\1)). |\\\\.) *\\1",
+        "0": {"scope": "code.class"}}
+    },{
+      "match": "\\b[abcdfiklnsx])\\s*\\:\\s*(\"(?:(?!\\\\\").|\\\\.)*\")",
+      "exclusive": true,
+      "comment": "print/log string literal",
+      "captures": {
+        "0": {"scope": "code.literal"}}
+    },{
+      "match": "(\"(?:(?!\\\\\").|\\\\.)*\")",
       "exclusive": true,
       "comment": "String literal",
       "captures": {
-        "0": {
-          "scope": "code.literal"
-        }
-      }
-    },
-    {
-      "match": "([\\/])(?:(?!(?:\\\\|\\1)). |\\\\.)*\\1([gmi]*)",
-      "exclusive": true,
-      "comment": "Regex literal",
-      "captures": {
-        "0": {
-          "scope": "code.literal"
-        }
-      }
-    },
-    {
-      "match": "\\b(true|false)\\b",
+        "0": {"scope": "code.literal"}}
+    },{
+      "match": "\\b(TRUE|FALSE|ON|OFF|YES|NO|T_(?:None|Demon)|APROP_(?:(?:Spawn)?Health|Scale[XY]|(?:Active|Attack|Death|Pain|See)Sound|Height|Mass|Stamina|Score|Speed|Species)|PROP_((Totally)?Frozen)|CR_(Untranslated|(Dark)?Red|Brick|Blue|Black|White|(Dark)?Green)\\b",
       "exclusive": true,
       "comment": "Defined Constant",
       "captures": {
-        "0": {
-          "scope": "code.literal"
-        }
-      }
-    },
-    {
-      "match": "\\b-?(?:0x[\\da-f]+|\\d*\\.? \\d+(?:e[+-]? \\d+)?) \\b",
+        "0": {"scope": "code.property"}}
+    },{
+      "match": "\\b(-?(?:0x[\\dA-Fa-f]+|\\d*\\.?\\d+))\\b",
       "exclusive": true,
       "comment": "Number",
       "captures": {
-        "0": {
-          "scope": "code.literal"
-        }
-      }
-    },
-    {
+        "0": {"scope": "code.literal"}}
+    },{
       "match": "([-+!=<>&|~^%?*\\\/\\\\])",
       "exclusive": true,
       "comment": "Operator",
       "captures": {
-        "0": {
-          "scope": "code.operator"
-        }
-      }
-    },
-    {
+        "0": {"scope": "code.operator"}}
+    },{
       "match": "([{}\\[\\];(),.:])",
       "exclusive": true,
       "comment": "Punctuation",
       "captures": {
-        "0": {
-          "scope": "code.punctuation"
-        }
-      }
-    },
-    {
-      "match": "\\b(function|script|for|do|while|until|return|break|continue|if|else|default|case|function|bool|int|str|const|global|world|switch|void|this|self|char)\\b",
-      "exclusive": true,
+        "0": {"scope": "code.punctuation"}}
+    },{
+      "match": "\\b((?:function|script)|(?:for|do|while|until|if|else)|(?:switch|default|case)|(?:break|continue)|(?:restart|suspend|terminate)|(?:bool|int|str|char|void)|(?:global|world))|script\\s+[\"'\\w]+\\s+(Open|Enter|Lightning|Kill|Reopen|Disconnect|Unloading|Death|Respawn|Return|Net)\\b",
+      "exclusive": false,
       "comment": "ACS keyword",
       "captures": {
- "0":{"scope":"code.keyword"}}
-    }
-  ],
-  "navigationPatterns": [
-    {
+        "1":{"scope":"code.keyword"},
+        "2":{"scope":"code.keyword"}}
+    },{
+      "match": "\\b(Vector(?:Angle|Length)|sin|cos|Ceil|Floor|Round|Warp|QuakeEx|Fade(?:To|Range)|Check(?:Flag|Font|Sight|Class|PlayerCamera|Actor(?:Class|Property|State|(?:Ceiling|Floor)Texture))|Timer|Delay|Print(?:Bold)?|Log|Get(?:Actor(?:(?:Vel)?[XY]|(?:Floor|Ceiling|Vel)?Z|Property|Pitch|Roll|Angle|Class|LightLevel|Floor(?:Terrain|Texture)|PowerupTics|ViewHeight)|AirSupply|AmmoCapacity|ArmorType|Char|CVar(?:String)?|(Armor|Player|Level)Info|Line(?:Activation|RowOffset|UDMF(?:Fixed|Int|Sqrt))|PlayerInput|PolyObj[XY])|ACS_Named(?:LockedExecute(?:Door)?|Suspend|Terminate|Execute(?:Always|WithResult)?)|HudMessage(?:Bold)?)\\b",
+      "exclusive": true,
+      "comment": "ACS Function",
+      "captures": {
+        "0":{"scope":"code.method"}}
+    },{
+      "match": "\\b(?:Door_(?:(Locked|Wait)?Raise|(CloseWait)?Open|(Wait)?Close|Animated(Close)?)|ExtraFloor_LightOnly|Floor_(CrushStop|Donut|Lower(By(Texture|Value(Times8)?))|Instant|To(Highest(EE)?|Lowest(TxTy|Ceiling)|Nearest))|Thing_(Stop|Raise|Set((Convers|Transl)ation|Special)|Damage|(Re)?[Mm]ove|(De)?[Aa]ctivate|Destroy|Projectile(Gravity|Intercept|Aimed)?|Spawn(Facing|NoFog)?|Hate|ChangeTID)|Exit_(Secret|Normal)|(Heal|Damage)Thing|ThrustThingZ?|Autosave|GlassBreak)\\b",
+      "exclusive": true,
+      "comment": "Action Function",
+      "captures": {
+        "0":{"scope":"code.class"}}
+    }],
+  "navigationPatterns":
+  [{
       "match": "^function (. *) \\{",
       "comment": "Function",
       "rangeCapture": "0",
       "labelCapture": "1",
       "prefix": "function",
       "level": 1
-    },
-    {
+    },{
       "match": "^script (. *) \\{",
       "comment": "Script",
       "rangeCapture": "0",
       "labelCapture": "1",
       "prefix": "script",
       "level": 1
-    }
-  ]
+  }]
 }
