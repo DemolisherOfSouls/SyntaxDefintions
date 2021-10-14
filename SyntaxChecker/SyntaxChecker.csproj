@@ -12,6 +12,9 @@
     <PackageLicenseFile>C:\Dev\Projects\SyntaxDefintions\LICENSE.txt</PackageLicenseFile>
     <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
     <AnalysisLevel>preview</AnalysisLevel>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/DemolisherOfSouls/SyntaxDefintions</RepositoryUrl>
+    <NeutralLanguage>en-US</NeutralLanguage>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -28,6 +31,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="..\.editorconfig" Link=".editorconfig" />
     <None Include="..\README.md">
       <Pack>True</Pack>
       <PackagePath></PackagePath>

@@ -18,6 +18,8 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyProductAttribute("SyntaxChecker")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SyntaxChecker")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyMetadataAttribute("RepositoryUrl", "https://github.com/DemolisherOfSouls/SyntaxDefintions")]
+[assembly: System.Resources.NeutralResourcesLanguageAttribute("en-US")]
 [assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows7.0")]
 [assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("Windows7.0")]
 
