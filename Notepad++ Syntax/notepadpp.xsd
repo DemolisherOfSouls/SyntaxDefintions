@@ -6,7 +6,7 @@
         <xs:element name="UserLang" minOccurs="0">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Settings" maxOccurs="1">
+              <xs:element name="Settings" minOccurs="1" maxOccurs="1">
                 <xs:complexType>
                   <xs:sequence>
                     <xs:element name="Global" maxOccurs="1">
@@ -18,7 +18,7 @@
                         <xs:attribute name="decimalSeparator" type="xs:unsignedByte" use="required" />
                       </xs:complexType>
                     </xs:element>
-                    <xs:element name="Prefix" maxOccurs="1">
+                    <xs:element name="Prefix" maxOccurs="1" minOccurs="1">
                       <xs:complexType>
                         <xs:attribute name="Keywords1" type="xs:string" use="required" />
                         <xs:attribute name="Keywords2" type="xs:string" use="required" />
@@ -56,7 +56,7 @@
                         <xs:attribute name="name" type="xs:string" use="required" />
                         <xs:attribute name="fgColor" type="xs:string" use="required" />
                         <xs:attribute name="bgColor" type="xs:string" use="required" />
-                        <xs:attribute name="fontName" type="xs:string" use="required" />
+                        <xs:attribute name="fontName" type="xs:string" use="optional" />
                         <xs:attribute name="fontStyle" type="xs:unsignedByte" use="required" />
                         <xs:attribute name="fontSize" type="xs:unsignedByte" use="optional" />
                         <xs:attribute name="nesting" type="xs:unsignedInt" use="required" />

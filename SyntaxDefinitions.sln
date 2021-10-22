@@ -44,7 +44,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notepad++", "Notepad++", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Schemas", "Schemas", "{BC56F825-E652-4781-9119-CD7FAA5942D5}"
 	ProjectSection(SolutionItems) = preProject
-		SyntaxChecker\Properties\json-schema1.json = SyntaxChecker\Properties\json-schema1.json
+		Drafts Syntax\DraftsSchema.json = Drafts Syntax\DraftsSchema.json
 		Notepad++ Syntax\notepadpp.xsd = Notepad++ Syntax\notepadpp.xsd
 	EndProjectSection
 EndProject

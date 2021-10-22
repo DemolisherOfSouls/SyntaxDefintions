@@ -30,25 +30,23 @@
     },
     "patterns": {
       "type": "array",
-      "items": [
-        {
-          "type": "object",
-          "properties": {
-            "match": {"type": "string"},
-            "exclusive": {"type": "boolean" },
-            "comment": {"type": "string"},
-            "captures": {
-              "type": "object",
-              "properties": {
-                "0": {
-                  "type": "object",
-                  "properties": {}
-                }
+      "items": {
+        "type": "object",
+        "properties": {
+          "match": {"type": "string"},
+          "exclusive": {"type": "boolean" },
+          "comment": {"type": "string"},
+          "captures": {
+            "type": "object",
+            "properties": {
+              "0": {
+                "type": "object",
+                "properties": {}
               }
             }
           }
         }
-      ]
+      }
     }
   }
 }

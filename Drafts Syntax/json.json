@@ -23,7 +23,7 @@
       "comment": "Literal",
       "captures": {"0":{"scope":"code.method"}}
     },{
-      "match": "(lookAround1000|lookAround500)",
+      "match": "(lookAround(?:10|20|5)00)",
       "exclusive": false,
       "comment": "Range Types",
       "captures": {"0":{"scope":"code.property"}}
