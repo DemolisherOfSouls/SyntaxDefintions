@@ -27,6 +27,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notepad++", "Notepad++", "{
 		Notepad++ Syntax\xml-google.xml = Notepad++ Syntax\xml-google.xml
 		Notepad++ Syntax\xml-npp.xml = Notepad++ Syntax\xml-npp.xml
 		Notepad++ Syntax\xml-vsproj.xml = Notepad++ Syntax\xml-vsproj.xml
+		Notepad++ Syntax\zdoom-acs.func.xml = Notepad++ Syntax\zdoom-acs.func.xml
 		Notepad++ Syntax\zdoom-acs.xml = Notepad++ Syntax\zdoom-acs.xml
 		Notepad++ Syntax\zdoom-cvarinfo.xml = Notepad++ Syntax\zdoom-cvarinfo.xml
 		Notepad++ Syntax\zdoom-keyconf.xml = Notepad++ Syntax\zdoom-keyconf.xml
@@ -68,6 +69,11 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BF9BC2B1-3B02-4693-ADCE-4A90CE6EFD29}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Complete Language Definitions", "Complete Language Definitions", "{E9D175DB-6160-4821-BD30-69F8E19E45DC}"
+	ProjectSection(SolutionItems) = preProject
+		CompleteDefinition\zdoom-textures.regex = CompleteDefinition\zdoom-textures.regex
 	EndProjectSection
 EndProject
 Global

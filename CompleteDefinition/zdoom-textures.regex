@@ -1,0 +1,27 @@
+(?imsx) #Case Insensitive, Multiline, singleline, extended
+(?(DEFINE)
+  (?'w8'[\w\)\(\^\-]{1,8})
+  (?'cm'\s*\,\s*)
+  (?'lb'\s*\}\s*)
+  (?'d'\-?\d+(?:\.\d+)?)
+  (?'rb'\s*\{\s*)
+  (?'str'[\w]+)
+  (?'style'Add|Copy|CopyAlpha|CopyNewAlpha|Modulate|Overlay|ReverseSubtract|Subtract|Translucent)
+)
+
+(?'tex_block'texture) \s+ (?'texture'(?&w8)) (?&cm) (?'width'(?&d)) (?&cm) (?'height'(?&d)) \s+
+(?'inside_tex'(?&rb)
+
+  (?: (?'tex_prop'xscale|yscale) \s+ (?'tex_value'(?&d)) \s+ ) {0,2}|
+  
+  (?'patch_whole'
+  (?'patch_block'patch) \s+ (?'patch'(?&w8)) (?&cm) (?'xpos'(?&d)) (?&cm) (?'ypos'(?&d)) \s+
+  (?'inside_patch'(?&rb)
+  
+    (?:(?'pat_prop1'rotate|alpha) \s+ (?'pat_value'(?&d)) \s+){0,2}|
+    (?:(?'pat_prop2'style) \s+ (?&style) \s+){0,1}|
+    (?:(?'pat_prop3'flip[xy]|) \s+ (?&style) \s+){0,1}|
+    
+  (?&lb))? )+
+
+(?&lb))
