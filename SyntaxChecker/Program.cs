@@ -1,46 +1,47 @@
-﻿//namespace SyntaxDefinitions;
-
+﻿
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
 
-using RO = System.Text.RegularExpressions.RegexOptions
+namespace SyntaxChecker;
 
-string root = Directory.GetCurrentDirectory();
-StreamReader stream;
+internal class Program {
+  [STAThread]
+  private static int Main (string[] args) {
+    foreach ( string s in Directory.GetFiles(V.Root) ) {
 
-RO RXOpt = RO.Multiline | RO.ExplicitCapture | RO.IgnorePatternWhitespace | RO.Singleline;
+      bool IsXML = s.EndsWith("xml");
+      bool IsJSON = s.EndsWith("json");
 
-Regex RegExDraftsJSONIntact = new ("\\A\\s*(\\{|\\[|\"\\w+\"\\s*\\:\\s*)", RXOpt);
-Regex RegExNppKeywords = new ("(<Keywords name=\"(?'group'Keywords\\d)\">)(\\s?(?'keyword'\\S+)*?)(<\\/Keywords>)", RXOpt);
-string CommonSubroutines = "";
-Regex ACSFunction = new ("(?x)[\\s](function)\\s+ (?'type'int|void|str|bool)\\s+ (?'func'\\w+)\\s* \\( \\s* ( (&type) \\s+ (\\w+) \\s* (, \\s* (&type) \\s+ (\\w+ ) \\s*)* | void) \\s* \\) \\s* \\{{ [^\\{{\\}}]*? ");
-//&"(?mx)^[\t\x20]*(?'item_type'function)\s+ (?'return_type'(?'type'int|str|bool)|void) \s+ (?'func_name'\w+)\s* \( \s* (?'param_def' (?&type) \s+ (?'param_name1'\w+) \s* (?:, \s* (?&type) \s+ (?'param_name2'\w+ ) \s*)* | void) \s* \) \s* \{ \s*(?'func_body'([^\{\}]|(\{[^\{\}]*+\}))*)\s*+\}"
+      if ( IsXML || IsJSON ) {
+        V.Streamer = File.OpenText(s);
+      }
+      else {
+        continue;
+      }
 
-foreach ( string s in Directory.GetFiles(root) ) {
+      string stringfile = V.Streamer.ReadToEnd();
 
-  bool IsXML = s.EndsWith("xml");
-  bool IsJSON = s.EndsWith("json");
+      if ( IsXML ) {
+        List<List<string>> KeywordList = new ();
+        MatchCollection keywords = V.RegExNppKeywords.Matches(stringfile);
+        //int gnum = V.RegExNppKeywords.GroupNumberFromName("group");
+        //int knum = V.RegExNppKeywords.GroupNumberFromName("keyword");
+        foreach ( Match match in keywords ) {
+          CaptureCollection captures = match.Captures;
+          List <string> caplist = new();
+          foreach ( Capture c in captures ) {
+            caplist.Add(c.Value);
+          }
+          KeywordList.Add(caplist);
+        }
 
-  if ( IsXML || IsJSON )
-    stream = File.OpenText(s);
-  else
-    continue;
-
-  string stringfile = stream.ReadToEnd();
-
-  if ( IsXML ) {
-    List<List<string>> KeywordList = new ();
-    MatchCollection keywords = RegExNppKeywords.Matches(stringfile);
-    int gnum = RegExNppKeywords.GroupNumberFromName("group");
-    int knum = RegExNppKeywords.GroupNumberFromName("keyword");
-    foreach ( Match match in keywords ) {
-      CaptureCollection captures = match.Captures;
-      foreach ( Capture c in captures ) {
-        c.Value
+        //Generate
+        string output = "";
       }
     }
+
+    return 0;
   }
 }
-
-System.Console.WriteLine("Hello, World!");

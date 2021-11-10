@@ -1,5 +1,5 @@
 <NotepadPlus>
-    <UserLang name="Visual Basic - .Net 4.8" ext="vb cls" udlVersion="2.1">
+    <UserLang name="Visual Basic - .Net 4.8" ext="vb" udlVersion="2.1">
         <Settings>
             <Global caseIgnored="yes" allowFoldOfComments="yes" foldCompact="no" forcePureLC="0" decimalSeparator="0" />
             <Prefix Keywords1="no" Keywords2="no" Keywords3="no" Keywords4="no" Keywords5="no" Keywords6="no" Keywords7="no" Keywords8="no" />
@@ -13,7 +13,7 @@
             <Keywords name="Numbers, suffix1">-</Keywords>
             <Keywords name="Numbers, suffix2"></Keywords>
             <Keywords name="Numbers, range">-</Keywords>
-            <Keywords name="Operators1">= , + - &amp; | &lt; &gt;   . = : / *</Keywords>
+            <Keywords name="Operators1">, + - &amp; | &lt; &gt; . = : / *</Keywords>
             <Keywords name="Operators2">_</Keywords>
             <Keywords name="Folders in code1, open">#Region #If</Keywords>
             <Keywords name="Folders in code1, middle"></Keywords>
@@ -24,41 +24,41 @@
             <Keywords name="Folders in comment, open"></Keywords>
             <Keywords name="Folders in comment, middle"></Keywords>
             <Keywords name="Folders in comment, close"></Keywords>
-            <Keywords name="Keywords1">VB_DOTNET_STRUCTURE_KEYWORDS&#x000D;&#x000A;&quot;Exit Function&quot; &quot;Public Function&quot; &quot;Public Sub&quot; &quot;Private Const&quot; &quot;Public Class&quot; &quot;Private Sub&quot; Enum &quot;End Sub&quot; &quot;End Function&quot; &quot;Private Function&quot; Sub &quot;Public Enum&quot; &quot;End Enum&quot; &quot;Public Property Get&quot; &quot;End Property&quot; Function &quot;Exit Sub&quot; Imports &quot;End Class&quot; &quot;Partial Class&quot; &quot;Protected Overrides Sub&quot; Get Set &quot;End Get&quot; &quot;End Set&quot; &quot;End Module&quot; &quot;End Namespace&quot; Namespace &quot;Friend Property&quot; &quot;Public Overloads Function&quot; &quot;Friend ReadOnly Property&quot; &quot;Friend Module&quot; &quot;Partial Friend NotInheritable Class&quot; &quot;Public Shared ReadOnly Property&quot; &quot;Private Shared Sub&quot; &quot;Partial Friend Class&quot; &quot;Public Const&quot; Interface</Keywords>
+            <Keywords name="Keywords1">VB_DOTNET_STRUCTURE_KEYWORDS&#x000D;&#x000A;&quot;Exit Function&quot; &quot;Public Function&quot; &quot;Public Sub&quot; Module &quot;Private Const&quot; &quot;Public Class&quot; &quot;Private Sub&quot; Enum &quot;End Sub&quot; &quot;End Function&quot; &quot;Private Function&quot; Sub &quot;Public Enum&quot; &quot;End Enum&quot; &quot;Public Property Get&quot; &quot;End Property&quot; Function &quot;Exit Sub&quot; Imports &quot;End Class&quot; &quot;Partial Class&quot; &quot;Protected Overrides Sub&quot; Get Set &quot;End Get&quot; &quot;End Set&quot; &quot;End Module&quot; &quot;End Namespace&quot; Namespace &quot;Friend Property&quot; &quot;Public Overloads Function&quot; &quot;Friend ReadOnly Property&quot; &quot;Friend Module&quot; &quot;Partial Friend NotInheritable Class&quot; &quot;Public Shared ReadOnly Property&quot; &quot;Private Shared Sub&quot; &quot;Partial Friend Class&quot; &quot;Public Const&quot; Interface</Keywords>
             <Keywords name="Keywords2">VB_DOTNET_DEFINITIONS_AND_MODIFIERS&#x000D;&#x000A;Explicit Compare Text Base Strict Option Inherits Assembly Implements&#x000D;&#x000A;&#x000D;&#x000A;CLASS_METHODS&#x000D;&#x000A;RefreshAll Show Hide Quit Close Execute Replace Test Insert Merge Open MoveNext SetFocus Clear MoveFirst Dispose Add SetText Read ToString Update Substring ExecuteReader Round ToUpper FromStream Contains ExecuteNonQuery NewRow Remove UpdateTable PerformLayout ResumeLayout EndInit SizeF FromArgb Activate ShowDialog SuspendLayout InsertIntoTable Abs Ceiling Floor ReferenceEquals Synchronized ToShortTimeString ToShortDateString</Keywords>
             <Keywords name="Keywords3">VB_DOTNET_KEYWORDS&#x000D;&#x000A;To Is Then Delete Then New Public Optional ByVal As Or And If Else ElseIf With &quot;For Each&quot; In For Next &quot;End If&quot; &quot;End With&quot; Select Case &quot;End Select&quot; Set Const Dim End Like Static Call GoTo Unload IsNot While Wend On Mod Return Try Catch Private Handles Finally AndAlso Friend WithEvents &quot;Exit For&quot; Not Shared Using&#x000D;&#x000A; &#x000D;&#x000A;FORM_KEYWORDS&#x000D;&#x000A;CLASS Begin BEGIN END VERSION Region</Keywords>
-            <Keywords name="Keywords4">VB_DOTNET_CLASS_PROPERTIES&#x000D;&#x000A;DisplayAlerts Count OnTime Value ListObjects StatusBar AutoFilter Rows Name CurrentRegion IgnoreCase Global MultiLine Pattern Item Length EntireRow MultiUse ConnectionString Visible Width DisplayMember Parameters UserName Cells Fields Columns ActiveConnection BOF DefaultCellStyle SQLTableName EOF Connection SelectedIndex Checked Enabled Tables Tables DSTableName Constraints AutoSize Font ForeColor Location Size TabIndex BackColor Alignment SelectionBackColor SelectionForeColor AllowUserToAddRows RowHeadersVisible AllowUserToResizeRows AutoScaleMode AutoScaleDimensions ClientSize Controls WrapMode ImageAlign SelectedValue UseVisualStyleBackColor TopMost IntegralHeight TabStop BackgroundImage InitialImage SizeMode FormattingEnabled FormBorderStyle SizeGripStyle ColumnHeadersDefaultCellStyle ColumnHeadersHeightSizeMode&#x000D;&#x000A;&#x000D;&#x000A;FORM_PROPS&#x000D;&#x000A;Caption ClientHeight ClientLeft ClientTop ClientWidth OleObjectBlob StartUpPosition</Keywords>
-            <Keywords name="Keywords5">VB_DOTNET_FUNCTIONS&#x000D;&#x000A;IsNull IsEmpty IsDate IsNumeric Trim Len CInt Int InStr Left Right CStr Intersect Error ChrIsError Format IsDate Left$ Right$ MsgBox IsError CDbl CVErr CreateObject</Keywords>
-            <Keywords name="Keywords6">VB_DOTNET_PARAMETER_NAMES&#x000D;&#x000A;EarliestTime Procedure Schedule Field&#x000D;&#x000A;&#x000D;&#x000A;LIBRARY_MODULES&#x000D;&#x000A;System Data SqlClient Drawing IO Windows Forms MsgBoxStyle Color SystemColors FontStyle Diagnostics ComponentModel Microsoft VisualBasic CompilerServices DesignerGenerated OleDb ContentAlignment InteropServices Globalization DataGridViewColumnHeadersHeightSizeMode DataGridViewContentAlignment Excel Resources WorksheetFunction Math Reflection Runtime EditorBrowsableState Configuration ShutdownMode ApplicationServices AuthenticationMode&#x000D;&#x000A;</Keywords>
-            <Keywords name="Keywords7">VB_DOTNET_CLASSES&#x000D;&#x000A;Application Integer String Boolean Attribute Variant Date Time False True Nothing Null Empty Style Object RegExp SubMatches MatchCollection Now Me ADODB Styles Sheets Recordset Point SqlCommand Exception DataTable Double SqlDataAdapter SqlConnection Byte Image DataRow List SqlDataReader MemoryStream SqlException EventArgs Button Label DataGridView IContainer Form WindowText TextBox RichTextBox DataSet ResourceManager CultureInfo AddressOf DateTime ApplicationSettingsBase</Keywords>
-            <Keywords name="Keywords8">VB_DOTNET_ENUMS&#x000D;&#x000A;VB_Name VB_GlobalNameSpace VB_Creatable VB_Exposed VB_PredeclaredId VB_Description&#x000D;&#x000A;&#x000D;&#x000A;vbCritical vbNo&#x000D;&#x000A;vbNewLine&#x000D;&#x000A;vbTextCompare&#x000D;&#x000A;xlErrNum&#x000D;&#x000A;&#x000D;&#x000A;AssemblyTitle AssemblyDescription AssemblyCompany AssemblyProduct AssemblyCopyright AssemblyTrademark ComVisible Guid AssemblyFileVersion AssemblyVersion&#x000D;&#x000A;&#x000D;&#x000A;Regular&#x000D;&#x000A;Black DodgerBlue Red Gold Yellow Green&#x000D;&#x000A;Highlight HighlightText&#x000D;&#x000A;MiddleLeft MiddleRight &#x000D;&#x000A;Information Critical&#x000D;&#x000A;AfterMainFormCloses</Keywords>
+            <Keywords name="Keywords4">VB_DOTNET_CLASS_PROPERTIES&#x000D;&#x000A;DisplayAlerts Count OnTime Value ListObjects StatusBar AutoFilter Rows Name CurrentRegion IgnoreCase Global MultiLine Pattern Item Length EntireRow MultiUse ConnectionString Visible Width DisplayMember Parameters UserName Cells Fields Columns ActiveConnection BOF DefaultCellStyle SQLTableName EOF Connection SelectedIndex Checked Enabled Tables Tables DSTableName Constraints AutoSize Font ForeColor Location Size TabIndex BackColor Alignment SelectionBackColor SelectionForeColor AllowUserToAddRows RowHeadersVisible AllowUserToResizeRows AutoScaleMode AutoScaleDimensions ClientSize Controls WrapMode ImageAlign SelectedValue UseVisualStyleBackColor TopMost IntegralHeight TabStop BackgroundImage InitialImage SizeMode FormattingEnabled FormBorderStyle SizeGripStyle ColumnHeadersDefaultCellStyle ColumnHeadersHeightSizeMode&#x000D;&#x000A;SelectionMode ReadOnly&#x000D;&#x000A;AllowUserToResizeColumns&#x000D;&#x000A;&#x000D;&#x000A;FORM_PROPS&#x000D;&#x000A;Caption ClientHeight ClientLeft ClientTop ClientWidth OleObjectBlob StartUpPosition</Keywords>
+            <Keywords name="Keywords5">VB_DOTNET_FUNCTIONS&#x000D;&#x000A;IsNull IsEmpty IsDate IsNumeric Trim Len CInt Int InStr Left Right CStr Intersect Error ChrIsError Format IsDate Left$ Right$ MsgBox IsError CDbl CVErr CreateObject Chr GetType</Keywords>
+            <Keywords name="Keywords6">VB_DOTNET_PARAMETER_NAMES&#x000D;&#x000A;EarliestTime Procedure Schedule Field&#x000D;&#x000A;&#x000D;&#x000A;LIBRARY_MODULES&#x000D;&#x000A;System Data SqlClient Drawing IO Windows Forms MsgBoxStyle Color SystemColors FontStyle Diagnostics ComponentModel Microsoft VisualBasic CompilerServices DesignerGenerated OleDb ContentAlignment InteropServices Globalization DataGridViewColumnHeadersHeightSizeMode DataGridViewContentAlignment Excel Resources WorksheetFunction Math Reflection Runtime EditorBrowsableState Configuration ShutdownMode ApplicationServices AuthenticationMode Strings StringAlignment &#x000D;&#x000A;</Keywords>
+            <Keywords name="Keywords7">VB_DOTNET_CLASSES&#x000D;&#x000A;Application Integer String Boolean Attribute Variant Date Time False True Nothing Null Empty Style Object RegExp SubMatches MatchCollection Now Me ADODB Styles Sheets Recordset Point SqlCommand Exception DataTable Double SqlDataAdapter SqlConnection Byte Image DataRow List SqlDataReader MemoryStream SqlException EventArgs Button Label DataGridView IContainer Form WindowText TextBox RichTextBox DataSet ResourceManager CultureInfo AddressOf DateTime Graphics ApplicationSettingsBase ComboBox Control DataGridViewRow DataGridViewSelectionMode SolidBrush Pen Int32 StringFormat Margin</Keywords>
+            <Keywords name="Keywords8">VB_DOTNET_ENUMS&#x000D;&#x000A;VB_Name VB_GlobalNameSpace VB_Creatable VB_Exposed VB_PredeclaredId VB_Description&#x000D;&#x000A;&#x000D;&#x000A;vbCritical vbNo&#x000D;&#x000A;vbNewLine&#x000D;&#x000A;vbTextCompare&#x000D;&#x000A;xlErrNum&#x000D;&#x000A;&#x000D;&#x000A;AssemblyTitle AssemblyDescription AssemblyCompany AssemblyProduct AssemblyCopyright AssemblyTrademark ComVisible Guid AssemblyFileVersion AssemblyVersion&#x000D;&#x000A;&#x000D;&#x000A;Regular Bold Center Far&#x000D;&#x000A;Black DodgerBlue Red Gold Yellow Green White LimeGreen OrangeRed&#x000D;&#x000A;Highlight HighlightText&#x000D;&#x000A;MiddleLeft MiddleRight &#x000D;&#x000A;Information Critical&#x000D;&#x000A;AfterMainFormCloses</Keywords>
             <Keywords name="Delimiters">00 01 02 03 04 05 06 07 08 09&lt; 10 11&gt; 12[ 13 14] 15&quot; 16\ 17&quot; 18{ 19 20} 21( 22 23)</Keywords>
         </KeywordLists>
         <Styles>
-            <WordsStyle name="DEFAULT" fgColor="FFFFFF" bgColor="000000" fontName="" fontStyle="1" nesting="0" />
-            <WordsStyle name="COMMENTS" fgColor="FFFFFF" bgColor="000000" fontName="" fontStyle="0" nesting="0" />
-            <WordsStyle name="LINE COMMENTS" fgColor="808000" bgColor="000000" fontName="" fontStyle="1" nesting="16908544" />
-            <WordsStyle name="NUMBERS" fgColor="FFFF00" bgColor="000000" fontName="" fontStyle="1" nesting="0" />
-            <WordsStyle name="KEYWORDS1" fgColor="00FF40" bgColor="000000" fontName="" fontStyle="1" nesting="0" />
-            <WordsStyle name="KEYWORDS2" fgColor="80FF80" bgColor="000000" fontName="" fontStyle="1" nesting="0" />
-            <WordsStyle name="KEYWORDS3" fgColor="3E3EFF" bgColor="000000" fontName="" fontStyle="1" nesting="0" />
-            <WordsStyle name="KEYWORDS4" fgColor="FF8000" bgColor="000000" fontName="" fontStyle="1" nesting="0" />
-            <WordsStyle name="KEYWORDS5" fgColor="FF0080" bgColor="000000" fontName="" fontStyle="1" nesting="0" />
-            <WordsStyle name="KEYWORDS6" fgColor="8080FF" bgColor="000000" fontName="" fontStyle="1" nesting="0" />
-            <WordsStyle name="KEYWORDS7" fgColor="FF80C0" bgColor="000000" fontName="" fontStyle="1" nesting="0" />
-            <WordsStyle name="KEYWORDS8" fgColor="00FFFF" bgColor="000000" fontName="" fontStyle="1" nesting="0" />
-            <WordsStyle name="OPERATORS" fgColor="C0C0C0" bgColor="000000" fontName="" fontStyle="1" nesting="0" />
-            <WordsStyle name="FOLDER IN CODE1" fgColor="0080FF" bgColor="000000" fontName="" fontStyle="0" nesting="0" />
-            <WordsStyle name="FOLDER IN CODE2" fgColor="64B8EA" bgColor="000000" fontName="" fontStyle="0" nesting="0" />
-            <WordsStyle name="FOLDER IN COMMENT" fgColor="FFFFFF" bgColor="000000" fontName="" fontStyle="0" nesting="0" />
-            <WordsStyle name="DELIMITERS1" fgColor="0000FF" bgColor="000000" fontName="" fontStyle="0" nesting="84144889" />
-            <WordsStyle name="DELIMITERS2" fgColor="00FF80" bgColor="000000" fontName="" fontStyle="1" nesting="84054689" />
-            <WordsStyle name="DELIMITERS3" fgColor="0000FF" bgColor="000000" fontName="" fontStyle="0" nesting="83888640" />
-            <WordsStyle name="DELIMITERS4" fgColor="FF8040" bgColor="000000" fontName="" fontStyle="3" nesting="50497696" />
-            <WordsStyle name="DELIMITERS5" fgColor="FF8080" bgColor="000000" fontName="" fontStyle="1" fontSize="10" nesting="117699296" />
-            <WordsStyle name="DELIMITERS6" fgColor="FFFF80" bgColor="000000" fontName="" fontStyle="2" nesting="0" />
-            <WordsStyle name="DELIMITERS7" fgColor="FFFF80" bgColor="000000" fontName="" fontStyle="1" nesting="32768" />
-            <WordsStyle name="DELIMITERS8" fgColor="808080" bgColor="000000" fontName="" fontStyle="1" nesting="84146864" />
+            <WordsStyle name="DEFAULT" fgColor="FFFFFF" bgColor="202020" fontStyle="1" nesting="0" />
+            <WordsStyle name="COMMENTS" fgColor="FFFFFF" bgColor="202020" fontStyle="0" nesting="0" />
+            <WordsStyle name="LINE COMMENTS" fgColor="808000" bgColor="202020" fontStyle="1" nesting="131328" />
+            <WordsStyle name="NUMBERS" fgColor="FFFF00" bgColor="202020" fontStyle="1" nesting="0" />
+            <WordsStyle name="KEYWORDS1" fgColor="00FF40" bgColor="202020" fontStyle="1" nesting="0" />
+            <WordsStyle name="KEYWORDS2" fgColor="80FF80" bgColor="202020" fontStyle="1" nesting="0" />
+            <WordsStyle name="KEYWORDS3" fgColor="3E3EFF" bgColor="202020" fontStyle="1" nesting="0" />
+            <WordsStyle name="KEYWORDS4" fgColor="FF8000" bgColor="202020" fontStyle="1" nesting="0" />
+            <WordsStyle name="KEYWORDS5" fgColor="FF0080" bgColor="202020" fontStyle="1" nesting="0" />
+            <WordsStyle name="KEYWORDS6" fgColor="8080FF" bgColor="202020" fontStyle="1" nesting="0" />
+            <WordsStyle name="KEYWORDS7" fgColor="FF80C0" bgColor="202020" fontStyle="1" nesting="0" />
+            <WordsStyle name="KEYWORDS8" fgColor="00FFFF" bgColor="202020" fontStyle="1" nesting="0" />
+            <WordsStyle name="OPERATORS" fgColor="C0C0C0" bgColor="202020" fontStyle="1" nesting="0" />
+            <WordsStyle name="FOLDER IN CODE1" fgColor="0080FF" bgColor="202020" fontStyle="0" nesting="0" />
+            <WordsStyle name="FOLDER IN CODE2" fgColor="64B8EA" bgColor="202020" fontStyle="0" nesting="0" />
+            <WordsStyle name="FOLDER IN COMMENT" fgColor="FFFFFF" bgColor="202020" fontStyle="0" nesting="0" />
+            <WordsStyle name="DELIMITERS1" fgColor="0000FF" bgColor="202020" fontStyle="0" nesting="84144889" />
+            <WordsStyle name="DELIMITERS2" fgColor="00FF80" bgColor="202020" fontStyle="1" nesting="84054689" />
+            <WordsStyle name="DELIMITERS3" fgColor="0000FF" bgColor="202020" fontStyle="0" nesting="83888640" />
+            <WordsStyle name="DELIMITERS4" fgColor="FF8040" bgColor="202020" fontStyle="3" nesting="117694112" />
+            <WordsStyle name="DELIMITERS5" fgColor="FF8080" bgColor="202020" fontStyle="1" fontSize="10" nesting="117699296" />
+            <WordsStyle name="DELIMITERS6" fgColor="FFFF80" bgColor="202020" fontStyle="2" nesting="0" />
+            <WordsStyle name="DELIMITERS7" fgColor="FFFF80" bgColor="202020" fontStyle="1" nesting="32768" />
+            <WordsStyle name="DELIMITERS8" fgColor="808080" bgColor="202020" fontStyle="1" nesting="84146864" />
         </Styles>
     </UserLang>
 </NotepadPlus>
