@@ -2,11 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace SyntaxChecker;
 
-internal class Program {
+internal class Program
+{
   [STAThread]
   private static int Main (string[] args) {
     foreach ( string s in Directory.GetFiles(V.Root) ) {
@@ -30,8 +32,9 @@ internal class Program {
         //int knum = V.RegExNppKeywords.GroupNumberFromName("keyword");
         foreach ( Match match in keywords ) {
           CaptureCollection captures = match.Captures;
-          List <string> caplist = new();
+          List <string> caplist = captures.ToList();
           foreach ( Capture c in captures ) {
+
             caplist.Add(c.Value);
           }
           KeywordList.Add(caplist);
