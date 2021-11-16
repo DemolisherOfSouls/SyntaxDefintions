@@ -24,12 +24,9 @@
     },{
       "match": "",
       "exclusive": true,
-      "comment": "Inline comment",
+      "comment": "",
       "captures": {
-        "1": {
-          "scope": "code.comment"
-        }
-      }
+        "1": {"scope": "code.comment"}}
     },{
       "match": "(['\"])(?:(?!(?:\\\\|\\1)). |\\\\.) *\\1",
       "exclusive": true,
@@ -44,9 +41,7 @@
       "exclusive": true,
       "comment": "Regex literal",
       "captures": {
-        "0": {
-          "scope": "code.literal"
-      }}
+        "0": {"scope": "code.literal"}}
     },{
       "match": "\\b(true|false)\\b",
       "exclusive": true,
@@ -83,7 +78,7 @@
         }
       }
     },{
-      "match": "\\b(class)\\b",
+      "match": "\\b(class|actor|)\\b",
       "exclusive": true,
       "comment": "ZScript keyword",
       "captures": {

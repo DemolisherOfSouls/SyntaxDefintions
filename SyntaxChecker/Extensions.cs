@@ -4,6 +4,9 @@ using System.Text.RegularExpressions;
 
 namespace SyntaxChecker;
 
+/// <summary>
+/// Container class to store extensions
+/// </summary>
 public static class Extensions
 {
 
@@ -41,6 +44,11 @@ public static class Extensions
     return s;
   }
 
+  /// <summary>
+  /// Checks if the string is null or empty.
+  /// </summary>
+  /// <param name="s">This string</param>
+  /// <returns><see langword="true"/> if the string is null or empty, <see langword="false"/> otherwise.</returns>
   public static bool IsNullOrEmpty (this string s) {
     return String.IsNullOrEmpty(s);
   }
@@ -68,6 +76,9 @@ public static class Extensions
       s = s.Replace(old[i], replacement[i]);
 
     }
+
+
+    return s;
   }
 
   public enum EscapeOptions
@@ -81,6 +92,12 @@ public static class Extensions
     return @"\" + match.Value;
   }
 
+  /// <summary>
+  /// Escapes the string with the style specified
+  /// </summary>
+  /// <param name="current">This string</param>
+  /// <param name="opt">Options flags</param>
+  /// <returns>The escaped string</returns>
   public static string Escape (this string current, EscapeOptions opt) {
     if ( current.IsNullOrEmpty() ) {
       return current;
