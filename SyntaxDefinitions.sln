@@ -48,6 +48,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Schemas", "Schemas", "{BC56
 		Drafts Syntax\DraftsSchema.json = Drafts Syntax\DraftsSchema.json
 		Notepad++ Syntax\notepadpp.xsd = Notepad++ Syntax\notepadpp.xsd
 	EndProjectSection
+	ProjectSection(FolderGlobals) = preProject
+		C_5_4Dev_4Projects_4SyntaxDefintions_4Drafts Syntax_4DraftsSchema_1json__JsonSchema = https://typedoc.org/schema.json
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Drafts", "Drafts", "{A0B84EFB-7469-49DF-AADB-4797515E5F42}"
 	ProjectSection(SolutionItems) = preProject
@@ -74,6 +77,17 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Complete Language Definitions", "Complete Language Definitions", "{E9D175DB-6160-4821-BD30-69F8E19E45DC}"
 	ProjectSection(SolutionItems) = preProject
 		CompleteDefinition\zdoom-textures.regex = CompleteDefinition\zdoom-textures.regex
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notepad++ Options", "Notepad++ Options", "{6AC928BD-E9DA-45D9-8792-9C3CF0D1F8A0}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Users\rtaylor\OneDrive\OneDrive - Ashworth Bros., Inc\Important\Notepad++\config.xml = ..\..\..\Users\rtaylor\OneDrive\OneDrive - Ashworth Bros., Inc\Important\Notepad++\config.xml
+		..\..\..\Users\rtaylor\OneDrive\OneDrive - Ashworth Bros., Inc\Important\Notepad++\contextMenu.xml = ..\..\..\Users\rtaylor\OneDrive\OneDrive - Ashworth Bros., Inc\Important\Notepad++\contextMenu.xml
+		..\..\..\Users\rtaylor\OneDrive\OneDrive - Ashworth Bros., Inc\Important\Notepad++\langs.xml = ..\..\..\Users\rtaylor\OneDrive\OneDrive - Ashworth Bros., Inc\Important\Notepad++\langs.xml
+		..\..\..\Users\rtaylor\OneDrive\OneDrive - Ashworth Bros., Inc\Important\Notepad++\nativeLang.xml = ..\..\..\Users\rtaylor\OneDrive\OneDrive - Ashworth Bros., Inc\Important\Notepad++\nativeLang.xml
+		..\..\..\Users\rtaylor\OneDrive\OneDrive - Ashworth Bros., Inc\Important\Notepad++\shortcuts.xml = ..\..\..\Users\rtaylor\OneDrive\OneDrive - Ashworth Bros., Inc\Important\Notepad++\shortcuts.xml
+		..\..\..\Users\rtaylor\OneDrive\OneDrive - Ashworth Bros., Inc\Important\Notepad++\stylers.xml = ..\..\..\Users\rtaylor\OneDrive\OneDrive - Ashworth Bros., Inc\Important\Notepad++\stylers.xml
+		..\..\..\Users\rtaylor\OneDrive\OneDrive - Ashworth Bros., Inc\Important\Notepad++\userDefineLang.xml = ..\..\..\Users\rtaylor\OneDrive\OneDrive - Ashworth Bros., Inc\Important\Notepad++\userDefineLang.xml
 	EndProjectSection
 EndProject
 Global
