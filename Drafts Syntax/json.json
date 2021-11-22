@@ -1,64 +1,84 @@
 {
   "name": "JSON",
   "description": "Generic JSON highlighting",
-  "sampleText": "\"prop\": \"value\"",
+  "sampleText": "{\n\"property\": \"value\",\n\"prop2\":\n{\n\t\"intin\":33\n}\n\"boolarr\":[ true, false ],\n}",
   "author": "Grincess",
   "scopeName": "text.json.generic",
-  "rangeExtensionType": {
-    "default": "lookAround1000"
-  },
+  "rangeExtensionType": {"default": "lookAround1000"},
   "listCompletionDefinitions": [],
-  "fileExtensions":["json"],
+  "fileExtensions": ["json"],
   "navigationPatterns": [],
-  "patterns":
-  [
-    {
-      "match": "(.*)",
-      "exclusive": false,
-      "comment": "Code",
-      "captures": {"0":{"scope":"text.monospace"}}
-    },{
-      "match": "\\b(true|false|undefined|null)\\b",
-      "exclusive": false,
-      "comment": "Literal",
-      "captures": {"0":{"scope":"code.method"}}
-    },{
-      "match": "(lookAround(?:10|20|5)00)",
-      "exclusive": false,
-      "comment": "Range Types",
-      "captures": {"0":{"scope":"code.property"}}
-    },{
-      "match": "\\b-?(?:0x[\\da-fA-F]+|\\d*\\.?\\d+(?:e[+-]?\\d+)?)\\b",
-      "exclusive": false,
-      "comment": "Number",
-      "captures": {"0":{"scope":"code.literal"}}
-    },{
-      "match": "([:,])|(\\\")|(\")|([{}])|([\\[\\]])", 
-      "exclusive": false,
-      "comment": "Operator",
-      "captures": {
- "1":{"scope":"code.punctuation"},
- "2":{"scope":"code.property"},
- "3":{"scope":"code.literal"},
- "4":{"scope":"code.method"},
- "5":{"scope":"code.global"}}
-    },{
-      "match": "\"(match)\"\\s*\\:\\s*\"(.*?)\"",
-      "exclusive": false,
-      "comment": "Match RegExp",
-      "captures": {
- "1":{"scope":"code.keyword"},
- "2":{"scope":"code.property"}}
-    },{
-      "match": "\\\\[^\\s]",
-      "exclusive": false,
-      "comment": "Match RegExp",
-      "captures": {"0":{"scope":"code.escape"}}
-    },{
-      "match": "(^.*)(,)[\\s\\n\\r]*[\\]\\}]",
-      "exclusive": false,
-      "comment": "JSON Error (Trailing Comma)",
-      "captures": {"0":{"scope":"code.error"}}
-    }
-  ]
+  "patterns": [{
+    "match": "((?:.*\\n){4})(^[\\s\\S]*$)",
+    "exclusive": false,
+    "comment": "Code",
+    "captures": {
+      "2": {"scope": "text.monospace"}}
+  },{
+    "match": "\\b(true|false|undefined|null)\\b",
+    "exclusive": false,
+    "comment": "Literal",
+    "captures": {
+      "0": {"scope": "code.keyword"}}
+  },{
+    "match": "\\b-?(0x[\\da-fA-F]{4,16}|\\d*\\.?\\d+(e[+-]?\\d+)?)\\b",
+    "exclusive": false,
+    "comment": "Number",
+    "captures": {
+      "0": {"scope": "code.literal"}}
+  },{
+    "match": "(\\#[\\da-fA-F]{6})",
+    "exclusive": false,
+    "comment": "Hex String",
+    "captures": {
+      "0": {"scope": "code.string"}}
+  },{
+    "match": "(\\:|\\,)|(\")|([{}])|([\\[\\]])",
+    "exclusive": false,
+    "comment": "Operator",
+    "captures": {
+      "1": {"scope": "code.punctuation"},
+      "2": {"scope": "code.string"},
+      "3": {"scope": "code.method"},
+      "4": {"scope": "code.property"}}
+  },{
+    "match": "\"(match)\"\\s*:\\s*\"(?:\\/(\\?([gims]+)\\-?([gims]*)\\)|\\(\\?\\:(.+?)\\)|(\\(.+?\\))|(\\[.+?\\])|\\{\\s*\\d+\\s*(?:,\\s*\\d*)\\}|(.*?))*\"(?<!\\\\)",
+    "exclusive": false,
+    "comment": "Match RegExp",
+    "captures": {
+      "1": {"scope": "code.method"},
+      "2": {"scope": "code.property"}}
+  },{
+    "match": "(?im)\\A(.+)\\s*^(.+)\\s*^(icloud|nosave|iphone|googledrive)\\s*(drafts|projects|imported|(\\w+))?\\s*((?:drafts)?(?:syntax|theme|action)|script|registryShell|json|acs|batch|javascript|template|todolist|(\\w+))\\s*(src|(\\w+))?\n?",
+    "exclusive": false,
+    "comment": "Header",
+    "captures": {
+      "1": {"scope": "code.method"},
+      "2": {"scope": "code.string"},
+      "3": {"scope": "code.property"},
+      "4": {"scope": "code.global"},
+      "6": {"scope": "code.method"},
+      "8": {"scope": "code.property"},
+      "5": {"scope": "code.error"},
+      "7": {"scope": "code.error"},
+      "9": {"scope": "code.error"}}
+  },{
+    "match": "(\\\\[\\\\\"]|\\\\[fbntr0])",
+    "exclusive": false,
+    "comment": "Escaped Char",
+    "captures": {
+      "0": {"scope": "code.method"}}
+  },{
+    "match": "^.*,\\s*[\\]\\}].*$|(?<![\\\\])(\\\\[^fnt0r\"\\\\])|^.*[\\{\\[]\\s*,.*$|^.*\".*?\"\\s*\".*?\".*?$",
+    "exclusive": false,
+    "comment": "JSON Error (All)",
+    "captures": {
+      "0": {"scope": "code.error"}}
+  },{
+    "match": "(?m-i)(?:\\\\\\\\)([aAbBdDEfFnQrsStwWXzZ0]|[\\[\\]{}()\\/?!$&.#^*+=><|',-]|[1-9][0-9]?|[NpP]\\{.*?\\}|c.|(?:\\\\\\\\))",
+    "'exclusive": false,
+    "comment": "Pseudo Escape",
+    "captures": {
+      "0": {"scope": "code.class"}}
+  }]
 }

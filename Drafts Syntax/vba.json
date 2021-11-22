@@ -19,56 +19,49 @@
   "fileExtensions": [
     "cls",
     "frm",
-    "bas",
-    "vb"],
+    "bas"],
   "patterns": [{
-    "match": "\\s(\\'.*)$",
-    "exclusive": true,
-    "comment": "Line comment",
-    "captures": {"1": {"scope": "code.comment"}}
-  },{
+      "match": "\\s(\\'.*)$",
+      "exclusive": true,
+      "comment": "Line comment",
+      "captures": {
+        "1": {"scope": "code.comment"}}
+    },{
       "match": "(\")(?:(?!(?:\\\\|\\1)).|\\\\.)*\\1",
       "exclusive": true,
       "comment": "String literal",
       "captures": {
-        "0": {
-          "scope": "code.literal"
-        }
-      }
-    },
-    {
+        "0": {"scope": "code.literal"}}
+    },{
       "match": "\\b(Empty|Null|True|False|Nothing)\\b",
       "exclusive": true,
       "comment": "Value type literal",
       "captures": {
-        "0": {
-          "scope": "code.literal"
-        }
-      }
+        "0": { "scope": "code.literal"}}
     },{
       "match": "\\b-?(?:0x[\\da-f]+|\\d*\\.?\\d+(?:e[+-]?\\d+)?)\\b",
       "exclusive": true,
       "comment": "Number",
       "captures": {
-        "0": {
-          "scope": "code.literal"}}
+        "0": { "scope": "code.literal"}}
     },{
       "match": "--?|\\+\\+?|!=?=?|<=?|>=?|==?=?|&&?|\\|\\|?|\\?|\\*|\\/|~|\\^|%",
       "exclusive": true,
       "comment": "Operator",
-      "captures": {"0": { "scope": "code.operator"}}
+      "captures": {
+        "0": { "scope": "code.operator"}}
     },{
       "match": "([{}\\[\\];(),.:])",
       "exclusive": true,
       "comment": "Punctuation",
       "captures": {
-        "0": {
-          "scope": "code.punctuation"}}
+        "0": { "scope": "code.punctuation"}}
     },{
       "match": "\\b(And|Or|Xor|Do|While|For|Each|As|Return|Dim|Exit|If|Then|Else|ElseIf|New|Delete|try|Throw|Catch|Finally|Class|Function|Const|Let|Static|Public|Private|Set|Extends)(?!\\w|=\")",
       "exclusive": true,
       "comment": "VB keyword",
-      "captures": {"0": {"scope": "code.keyword"}}}],
+      "captures": {
+        "0": {"scope": "code.keyword"}}}],
   "navigationPatterns": [{
     "match": "^function (.*) \\{",
     "comment": "Function",

@@ -5,41 +5,25 @@
   "author": "Grincess",
   "scopeName": "zdoom.zscript",
   "navigationPatterns": [],
-  "rangeExtensionType": {
-    "default": "lookAround1000"
-  },
-  "fileExtensions": [
-    "zs",
-    "decorate"
-  ],
+  "rangeExtensionType": { "default": "lookAround1000" },
+  "fileExtensions": [ "zs","decorate" ],
   "patterns": [
     {
       "match": "(\\/\\*[\\S\\s]*?\\*\\/)|(\\/\\/.*)",
       "exclusive": true,
-      "comment": "Block comment",
+      "comment": "Comment",
       "captures": {
-        "0": {
-          "scope": "code.comment"
-      }}
+        "0": {"scope": "code.comment"}}
     },{
-      "match": "",
+      "match": "\\b(int|bool|void|char|mixin|struct|class|enum|string|CVar)\\b",
       "exclusive": true,
-      "comment": "",
+      "comment": "Data Type",
       "captures": {
-        "1": {"scope": "code.comment"}}
+        "0": {"scope": "code.class"}}
     },{
-      "match": "(['\"])(?:(?!(?:\\\\|\\1)). |\\\\.) *\\1",
+      "match": "(['\"])(?:(?!(?:\\\\|\\1)).|\\\\.)*\\1",
       "exclusive": true,
       "comment": "String literal",
-      "captures": {
-        "0": {
-          "scope": "code.literal"
-        }
-      }
-    },{
-      "match": "([\\/])(?:(?!(?:\\\\|\\1)). |\\\\.)*\\1([gmi]*)",
-      "exclusive": true,
-      "comment": "Regex literal",
       "captures": {
         "0": {"scope": "code.literal"}}
     },{
@@ -47,41 +31,30 @@
       "exclusive": true,
       "comment": "Defined Constant",
       "captures": {
-        "0": {
-          "scope": "code.literal"
-      }}
+        "0": {"scope": "code.constant"}}
     },{
-      "match": "\\b-?(?:0x[\\da-f]+|\\d*\\.? \\d+(?:e[+-]? \\d+)?) \\b",
+      "match": "\\b-?(?:0x[\\da-f]+|\\d*\\.?\\d+(?:e[+-]?\\d+)?)\\b",
       "exclusive": true,
       "comment": "Number",
       "captures": {
-        "0": {
-          "scope": "code.literal"
-        }
-      }
+        "0": {"scope": "code.literal"}}
     },{
       "match": "([-+!=<>&|~^%?*\\\/\\\\])",
       "exclusive": true,
       "comment": "Operator",
       "captures": {
-        "0": {
-          "scope": "code.operator"
-        }
-      }
+        "0": { "scope": "code.operator"}}
     },{
       "match": "([{}\\[\\];(),.:])",
       "exclusive": true,
       "comment": "Punctuation",
       "captures": {
-        "0": {
-          "scope": "code.punctuation"
-        }
-      }
+        "0": {"scope": "code.punctuation"}}
     },{
-      "match": "\\b(class|actor|)\\b",
+      "match": "\\b(server|const|states|abstract|return|override|cross|actor|mixin|in(?:voker)?|is|let|out|dot|self)\\b",
       "exclusive": true,
       "comment": "ZScript keyword",
       "captures": {
- "0":{"scope":"code.keyword"}}
+        "0":{"scope":"code.keyword"}}
     }]
 }

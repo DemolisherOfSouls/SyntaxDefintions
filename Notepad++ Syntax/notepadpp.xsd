@@ -227,7 +227,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="FileBrowser" minOccurs="0">
+        <xs:element name="FileBrowser" minOccurs="0" maxOccurs="unbounded">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="root">
@@ -239,7 +239,7 @@
             <xs:attribute name="latestSelectedItem" type="xs:string" use="required" />
           </xs:complexType>
         </xs:element>
-          <xs:element name="GUIConfigs" minOccurs="0">
+        <xs:element name="GUIConfigs" minOccurs="0">
             <xs:complexType>
               <xs:sequence>
                 <xs:element maxOccurs="unbounded" name="GUIConfig">
@@ -435,10 +435,10 @@
               </xs:sequence>
             </xs:complexType>
           </xs:element>
-          <xs:element name="ScintillaContextMenu">
+        <xs:element name="ScintillaContextMenu">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Item">
+              <xs:element name="Item" maxOccurs="unbounded">
                 <xs:complexType>
                   <xs:attribute name="MenuEntryName" type="xs:string" use="optional" />
                   <xs:attribute name="MenuItemName" type="xs:string" use="optional" />
@@ -452,7 +452,1812 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Languages">
+        <xs:element name="Native-Langue" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Menu">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Main">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Entries">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="Item">
+                                  <xs:complexType>
+                                    <xs:attribute name="menuId" type="xs:string" use="optional" />
+                                    <xs:attribute name="name" type="xs:string" use="required" />
+                                    <xs:attribute name="idName" type="xs:string" use="optional" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="SubEntries">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="Item">
+                                  <xs:complexType>
+                                    <xs:attribute name="subMenuId" type="xs:string" use="required" />
+                                    <xs:attribute name="name" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Commands">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="Item">
+                                  <xs:complexType>
+                                    <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                                    <xs:attribute name="name" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Splitter" type="xs:string" />
+                    <xs:element name="TabBar">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="unbounded" name="Item">
+                            <xs:complexType>
+                              <xs:attribute name="CMID" type="xs:unsignedByte" use="required" />
+                              <xs:attribute name="name" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Dialog">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Find">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="unbounded" name="Item">
+                            <xs:complexType>
+                              <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                              <xs:attribute name="name" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="titleFind" type="xs:string" use="required" />
+                        <xs:attribute name="titleReplace" type="xs:string" use="required" />
+                        <xs:attribute name="titleFindInFiles" type="xs:string" use="required" />
+                        <xs:attribute name="titleFindInProjects" type="xs:string" use="required" />
+                        <xs:attribute name="titleMark" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="FindCharsInRange">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="unbounded" name="Item">
+                            <xs:complexType>
+                              <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                              <xs:attribute name="name" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="GoToLine">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="unbounded" name="Item">
+                            <xs:complexType>
+                              <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                              <xs:attribute name="name" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Run">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="unbounded" name="Item">
+                            <xs:complexType>
+                              <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                              <xs:attribute name="name" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="MD5FromFilesDlg">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="unbounded" name="Item">
+                            <xs:complexType>
+                              <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                              <xs:attribute name="name" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="MD5FromTextDlg">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="unbounded" name="Item">
+                            <xs:complexType>
+                              <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                              <xs:attribute name="name" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="SHA256FromFilesDlg">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="unbounded" name="Item">
+                            <xs:complexType>
+                              <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                              <xs:attribute name="name" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="SHA256FromTextDlg">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="unbounded" name="Item">
+                            <xs:complexType>
+                              <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                              <xs:attribute name="name" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="PluginsAdminDlg">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="ColumnPlugin">
+                            <xs:complexType>
+                              <xs:attribute name="name" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="ColumnVersion">
+                            <xs:complexType>
+                              <xs:attribute name="name" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element maxOccurs="unbounded" name="Item">
+                            <xs:complexType>
+                              <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                              <xs:attribute name="name" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="titleAvailable" type="xs:string" use="required" />
+                        <xs:attribute name="titleUpdates" type="xs:string" use="required" />
+                        <xs:attribute name="titleInstalled" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="StyleConfig">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="unbounded" name="Item">
+                            <xs:complexType>
+                              <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                              <xs:attribute name="name" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="SubDialog">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="Item">
+                                  <xs:complexType>
+                                    <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                                    <xs:attribute name="name" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ShortcutMapper">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="unbounded" name="Item">
+                            <xs:complexType>
+                              <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                              <xs:attribute name="name" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="ColumnName">
+                            <xs:complexType>
+                              <xs:attribute name="name" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="ColumnShortcut">
+                            <xs:complexType>
+                              <xs:attribute name="name" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="ColumnCategory">
+                            <xs:complexType>
+                              <xs:attribute name="name" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="ColumnPlugin">
+                            <xs:complexType>
+                              <xs:attribute name="name" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="MainMenuTab">
+                            <xs:complexType>
+                              <xs:attribute name="name" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="MacrosTab">
+                            <xs:complexType>
+                              <xs:attribute name="name" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="RunCommandsTab">
+                            <xs:complexType>
+                              <xs:attribute name="name" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="PluginCommandsTab">
+                            <xs:complexType>
+                              <xs:attribute name="name" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="ScintillaCommandsTab">
+                            <xs:complexType>
+                              <xs:attribute name="name" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="ConflictInfoOk">
+                            <xs:complexType>
+                              <xs:attribute name="name" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="ConflictInfoEditing">
+                            <xs:complexType>
+                              <xs:attribute name="name" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="MainCommandNames">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="Item">
+                                  <xs:complexType>
+                                    <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                                    <xs:attribute name="name" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ShortcutMapperSubDialg">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="unbounded" name="Item">
+                            <xs:complexType>
+                              <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                              <xs:attribute name="name" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="UserDefine">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="unbounded" name="Item">
+                            <xs:complexType>
+                              <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                              <xs:attribute name="name" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="StylerDialog">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="Item">
+                                  <xs:complexType>
+                                    <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                                    <xs:attribute name="name" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="title" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Folder">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="Item">
+                                  <xs:complexType>
+                                    <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                                    <xs:attribute name="name" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="title" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Keywords">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="Item">
+                                  <xs:complexType>
+                                    <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                                    <xs:attribute name="name" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="title" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Comment">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="Item">
+                                  <xs:complexType>
+                                    <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                                    <xs:attribute name="name" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="title" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Operator">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="Item">
+                                  <xs:complexType>
+                                    <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                                    <xs:attribute name="name" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="title" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Preference">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Item">
+                            <xs:complexType>
+                              <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                              <xs:attribute name="name" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Global">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="Item">
+                                  <xs:complexType>
+                                    <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                                    <xs:attribute name="name" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="title" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Scintillas">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="Item">
+                                  <xs:complexType>
+                                    <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                                    <xs:attribute name="name" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="title" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="MarginsBorderEdge">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="Item">
+                                  <xs:complexType>
+                                    <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                                    <xs:attribute name="name" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="title" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="NewDoc">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="Item">
+                                  <xs:complexType>
+                                    <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                                    <xs:attribute name="name" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="title" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="DefaultDir">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="Item">
+                                  <xs:complexType>
+                                    <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                                    <xs:attribute name="name" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="title" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="FileAssoc">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="Item">
+                                  <xs:complexType>
+                                    <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                                    <xs:attribute name="name" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="title" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Language">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="Item">
+                                  <xs:complexType>
+                                    <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                                    <xs:attribute name="name" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="title" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Highlighting">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="Item">
+                                  <xs:complexType>
+                                    <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                                    <xs:attribute name="name" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="title" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Print">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="Item">
+                                  <xs:complexType>
+                                    <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                                    <xs:attribute name="name" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="title" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Searching">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="Item">
+                                  <xs:complexType>
+                                    <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                                    <xs:attribute name="name" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="title" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="RecentFilesHistory">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="Item">
+                                  <xs:complexType>
+                                    <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                                    <xs:attribute name="name" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="title" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Backup">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="Item">
+                                  <xs:complexType>
+                                    <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                                    <xs:attribute name="name" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="title" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="AutoCompletion">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="Item">
+                                  <xs:complexType>
+                                    <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                                    <xs:attribute name="name" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="title" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="MultiInstance">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="Item">
+                                  <xs:complexType>
+                                    <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                                    <xs:attribute name="name" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="title" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Delimiter">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="Item">
+                                  <xs:complexType>
+                                    <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                                    <xs:attribute name="name" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="title" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Cloud">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="Item">
+                                  <xs:complexType>
+                                    <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                                    <xs:attribute name="name" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="title" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="SearchEngine">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="Item">
+                                  <xs:complexType>
+                                    <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                                    <xs:attribute name="name" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="title" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="MISC">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="ComboBox">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element maxOccurs="unbounded" name="Element">
+                                        <xs:complexType>
+                                          <xs:attribute name="name" type="xs:string" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element maxOccurs="unbounded" name="Item">
+                                  <xs:complexType>
+                                    <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                                    <xs:attribute name="name" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="title" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="MultiMacro">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="unbounded" name="Item">
+                            <xs:complexType>
+                              <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                              <xs:attribute name="name" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Window">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="unbounded" name="Item">
+                            <xs:complexType>
+                              <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                              <xs:attribute name="name" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ColumnEditor">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="unbounded" name="Item">
+                            <xs:complexType>
+                              <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                              <xs:attribute name="name" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="FindInFinder">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="unbounded" name="Item">
+                            <xs:complexType>
+                              <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                              <xs:attribute name="name" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="DoSaveOrNot">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="unbounded" name="Item">
+                            <xs:complexType>
+                              <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                              <xs:attribute name="name" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="MessageBox">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ContextMenuXmlEditWarning">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="SaveCurrentModifWarning">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="LoseUndoAbilityWarning">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="CannotMoveDoc">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="DocReloadWarning">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="FileLockedWarning">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="FileAlreadyOpenedInNpp">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="RenameTabTemporaryNameAlreadyInUse">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="DeleteFileFailed">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="NbFileToOpenImportantWarning">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="SettingsOnCloudError">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="FilePathNotFoundWarning">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="SessionFileInvalidError">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="DroppingFolderAsProjectModeWarning">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="SortingError">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ColumnModeTip">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="BufferInvalidWarning">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="DoCloseOrNot">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="DoDeleteOrNot">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="NoBackupDoSaveFile">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="DoReloadOrNot">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="DoReloadOrNotAndLooseChange">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="PrehistoricSystemDetected">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="XpUpdaterProblem">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="GUpProxyConfNeedAdminMode">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="DocTooDirtyToMonitor">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="DocNoExistToMonitor">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="FileTooBigToOpen">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="CreateNewFileOrNot">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="CreateNewFileError">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="OpenFileError">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="FileBackupFailed">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="LoadStylersFailed">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="LoadLangsFailed">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="LoadLangsFailedFinal">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="FolderAsWorspaceSubfolderExists">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ProjectPanelChanged">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ProjectPanelSaveError">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ProjectPanelOpenDoSaveDirtyWsOrNot">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ProjectPanelNewDoSaveDirtyWsOrNot">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ProjectPanelOpenFailed">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ProjectPanelRemoveFolderFromProject">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ProjectPanelRemoveFileFromProject">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ProjectPanelReloadError">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ProjectPanelReloadDirty">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="UDLNewNameError">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="UDLRemoveCurrentLang">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="SCMapperDoDeleteOrNot">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="FindCharRangeValueError">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="OpenInAdminMode">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="OpenInAdminModeWithoutCloseCurrent">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="OpenInAdminModeFailed">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ViewInBrowser">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ExitToUpdatePlugins">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="NeedToRestartToLoadPlugins">
+                      <xs:complexType>
+                        <xs:attribute name="title" type="xs:string" use="required" />
+                        <xs:attribute name="message" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="ClipboardHistory">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="PanelTitle">
+                      <xs:complexType>
+                        <xs:attribute name="name" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="DocSwitcher">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="PanelTitle">
+                      <xs:complexType>
+                        <xs:attribute name="name" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ColumnName">
+                      <xs:complexType>
+                        <xs:attribute name="name" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ColumnExt">
+                      <xs:complexType>
+                        <xs:attribute name="name" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="WindowsDlg">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ColumnName">
+                      <xs:complexType>
+                        <xs:attribute name="name" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ColumnPath">
+                      <xs:complexType>
+                        <xs:attribute name="name" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ColumnType">
+                      <xs:complexType>
+                        <xs:attribute name="name" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ColumnSize">
+                      <xs:complexType>
+                        <xs:attribute name="name" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="NbDocsTotal">
+                      <xs:complexType>
+                        <xs:attribute name="name" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="AsciiInsertion">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="PanelTitle">
+                      <xs:complexType>
+                        <xs:attribute name="name" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ColumnVal">
+                      <xs:complexType>
+                        <xs:attribute name="name" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ColumnHex">
+                      <xs:complexType>
+                        <xs:attribute name="name" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ColumnChar">
+                      <xs:complexType>
+                        <xs:attribute name="name" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ColumnHtmlNumber">
+                      <xs:complexType>
+                        <xs:attribute name="name" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ColumnHtmlName">
+                      <xs:complexType>
+                        <xs:attribute name="name" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="DocumentMap">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="PanelTitle">
+                      <xs:complexType>
+                        <xs:attribute name="name" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="FunctionList">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="PanelTitle">
+                      <xs:complexType>
+                        <xs:attribute name="name" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="SortTip">
+                      <xs:complexType>
+                        <xs:attribute name="name" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ReloadTip">
+                      <xs:complexType>
+                        <xs:attribute name="name" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="FolderAsWorkspace">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="PanelTitle">
+                      <xs:complexType>
+                        <xs:attribute name="name" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="SelectFolderFromBrowserString">
+                      <xs:complexType>
+                        <xs:attribute name="name" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ExpandAllFoldersTip">
+                      <xs:complexType>
+                        <xs:attribute name="name" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="CollapseAllFoldersTip">
+                      <xs:complexType>
+                        <xs:attribute name="name" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="LocateCurrentFileTip">
+                      <xs:complexType>
+                        <xs:attribute name="name" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Menus">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="unbounded" name="Item">
+                            <xs:complexType>
+                              <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                              <xs:attribute name="name" type="xs:string" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="ProjectManager">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="PanelTitle">
+                      <xs:complexType>
+                        <xs:attribute name="name" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="WorkspaceRootName">
+                      <xs:complexType>
+                        <xs:attribute name="name" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="NewProjectName">
+                      <xs:complexType>
+                        <xs:attribute name="name" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="NewFolderName">
+                      <xs:complexType>
+                        <xs:attribute name="name" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Menus">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Entries">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="Item">
+                                  <xs:complexType>
+                                    <xs:attribute name="id" type="xs:unsignedByte" use="required" />
+                                    <xs:attribute name="name" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="WorkspaceMenu">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="Item">
+                                  <xs:complexType>
+                                    <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                                    <xs:attribute name="name" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="ProjectMenu">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="Item">
+                                  <xs:complexType>
+                                    <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                                    <xs:attribute name="name" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="FolderMenu">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="Item">
+                                  <xs:complexType>
+                                    <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                                    <xs:attribute name="name" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="FileMenu">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="Item">
+                                  <xs:complexType>
+                                    <xs:attribute name="id" type="xs:unsignedShort" use="required" />
+                                    <xs:attribute name="name" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="MiscStrings">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="word-chars-list-tip">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="word-chars-list-warning-begin">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="word-chars-list-space-warning">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="word-chars-list-tab-warning">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="word-chars-list-warning-end">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="cloud-invalid-warning">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="cloud-restart-warning">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="cloud-select-folder">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="shift-change-direction-tip">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="two-find-buttons-tip">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="find-in-files-filter-tip">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="find-status-top-reached">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="find-status-end-reached">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="find-status-replaceinfiles-1-replaced">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="find-status-replaceinfiles-nb-replaced">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="find-status-replaceinfiles-re-malformed">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="find-status-replaceinopenedfiles-1-replaced">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="find-status-replaceinopenedfiles-nb-replaced">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="find-status-mark-re-malformed">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="find-status-invalid-re">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="find-status-mark-1-match">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="find-status-mark-nb-matches">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="find-status-count-re-malformed">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="find-status-count-1-match">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="find-status-count-nb-matches">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="find-status-replaceall-re-malformed">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="find-status-replaceall-1-replaced">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="find-status-replaceall-nb-replaced">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="find-status-replaceall-readonly">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="find-status-replace-end-reached">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="find-status-replace-top-reached">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="find-status-replaced-next-found">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="find-status-replaced-next-not-found">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="find-status-replace-not-found">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="find-status-replace-readonly">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="find-status-cannot-find">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="find-status-scope-selection">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="find-status-scope-all">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="find-status-scope-backward">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="find-status-scope-forward">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="finder-find-in-finder">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="finder-close-this">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="finder-collapse-all">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="finder-uncollapse-all">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="finder-copy">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="finder-copy-verbatim">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="finder-select-all">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="finder-clear-all">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="finder-open-all">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="finder-wrap-long-lines">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="common-ok">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="common-cancel">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="common-name">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="tabrename-title">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="tabrename-newname">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="splitter-rotate-left">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="splitter-rotate-right">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="recent-file-history-maxfile">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="language-tabsize">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="userdefined-title-new">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="userdefined-title-save">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="userdefined-title-rename">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="autocomplete-nb-char">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="edit-verticaledge-nb-col">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="summary">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="summary-filepath">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="summary-filecreatetime">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="summary-filemodifytime">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="summary-nbchar">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="summary-nbword">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="summary-nbline">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="summary-nbbyte">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="summary-nbsel1">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="summary-nbsel2">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="summary-nbrange">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="find-in-files-progress-title">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="replace-in-files-confirm-title">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="replace-in-files-confirm-directory">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="replace-in-files-confirm-filetype">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="replace-in-files-progress-title">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="replace-in-projects-confirm-title">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="replace-in-projects-confirm-message">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="replace-in-open-docs-confirm-title">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="replace-in-open-docs-confirm-message">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="find-result-caption">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="find-result-title">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="find-result-title-info">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="find-result-title-info-selections">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="find-result-title-info-extra">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="find-result-hits">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="find-result-line-prefix">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="find-regex-zero-length-match">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="session-save-folder-as-workspace">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="name" type="xs:string" use="required" />
+            <xs:attribute name="filename" type="xs:string" use="required" />
+            <xs:attribute name="version" type="xs:string" use="required" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Languages" minOccurs="0">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Item">
