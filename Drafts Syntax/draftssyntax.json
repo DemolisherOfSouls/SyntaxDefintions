@@ -1,7 +1,7 @@
 {
   "author":"Grincess",
   "scopeName":"text.json.draftssyntax",
-  "sampleText":"{\n\t\”name\”:\”Drafts Syntax\”,\n\t\”description\”:\”desc\”\n}",
+  "sampleText":"{\n\t\"name\":\"Drafts Syntax\",\n\t\"description\":\"desc\"\n}",
   "rangeExtensionType":{"default":"lookAround1000"},
   "listCompletionDefinitions":[],
   "fileExtensions":["draftssyntax"],
@@ -32,16 +32,12 @@
         "scope": "code.literal"}}
   },{
 
-    "match":"([\\s\\[{]+)(\")(name|author)(\")([ \\t]+?)(\\:)([ \\t]+?)(\")(.+?)(\")",
+    "match":"^\\s*\"(scopeName|author|sampleText|rangeExtensionType|listCompletionDefinitions|fileExtensions|description|patterns|exclusive|comment|match|name)\"\\s*:\\s*\"(\\N+)\"",
     "exclusive": true,
     "comment": "Global Property",
     "captures": {
-      "0": {"scope":"code.keyword"},
-      "2": {"scope":"color.blue"},
-      "4": {"scope":"color.blue"},
-      "6": {"scope":"color.red"},
-      "8": {"scope":"color.blue"},
-      "10":{"scope":"color.blue"}}
+      "1": {"scope":"code.property"},
+      "2": {"scope":"code.method"}}
   },{
 
     "match": "([{}\\[\\];(),.:])",
@@ -51,7 +47,7 @@
       "1":{"scope":"code.punctuation"}}
   },{
 
-    "match": "(\")(match|exclusive|comment|captures|rangeCapture|labelCapture|level|enabled|sequencePadding)(?!\\w|=\")",
+    "match": "\"(?:(?:lookAround(?:20|10|5)00)|default|scope)\"",
     "exclusive": false,
     "comment": "Pattern Property",
     "captures": {

@@ -1,33 +1,20 @@
 {
   "name": "VBA",
   "description": "VBA for Office Applications",
-  "sampleText": "'VBA Syntax\nConst n = 100\nLet s = Dim value\n\nif (n < 1000) {\n\tconsolełii.log(\"hello\");\n}",
+  "sampleText": "'VBA Syntax\nConst n = 100: s = Dim value\n\nif (n < 1000) {\n\tconsole.log(\"hello\");\n}",
   "author"   : "Grincess",
   "scopeName": "text.vba",
   "rangeExtensionType": {"default": "lookAround1000"},
-  "listCompletionDefinitions": [{
-    "comment": "",
-    "enabled": true,
-    "match": "(^[  |\\t]+)()(.*)",
-    "sequencePadding": "0",
-    "captures": {
-      "indent": "1",
-      "prefix": "2",
-      "line": "3",
-      "sequence": ""},
-    "replacements": {}}],
-  "fileExtensions": [
-    "cls",
-    "frm",
-    "bas"],
+  "listCompletionDefinitions": [],
+  "fileExtensions": [ "cls", "frm", "bas" ],
   "patterns": [{
-      "match": "\\s(\\'.*)$",
+      "match": "('\\N*$)",
       "exclusive": true,
       "comment": "Line comment",
       "captures": {
-        "1": {"scope": "code.comment"}}
+        "0": {"scope": "code.comment"}}
     },{
-      "match": "(\")(?:(?!(?:\\\\|\\1)).|\\\\.)*\\1",
+      "match": "\"(?:(?!(?:\\\\|\")).|\\\\.)*\"",
       "exclusive": true,
       "comment": "String literal",
       "captures": {
@@ -45,7 +32,7 @@
       "captures": {
         "0": { "scope": "code.literal"}}
     },{
-      "match": "--?|\\+\\+?|!=?=?|<=?|>=?|==?=?|&&?|\\|\\|?|\\?|\\*|\\/|~|\\^|%",
+      "match": "(?x) ( --? | !=?=? | <=? | >=? | ==?=? | &&? | \\|{1,2} | \\+{1,2} | [*?\\/~^%] )",
       "exclusive": true,
       "comment": "Operator",
       "captures": {
@@ -57,17 +44,18 @@
       "captures": {
         "0": { "scope": "code.punctuation"}}
     },{
-      "match": "\\b(And|Or|Xor|Do|While|For|Each|As|Return|Dim|Exit|If|Then|Else|ElseIf|New|Delete|try|Throw|Catch|Finally|Class|Function|Const|Let|Static|Public|Private|Set|Extends)(?!\\w|=\")",
+      "match": "\\b(And|Or|Xor|Do|While|For|Each|As|Return|Dim|Exit|If|Then|Else|ElseIf|New|Delete|try|Throw|Catch|Finally|Class|Function|Const|Let|Static|Public|Private|Set|Extends)(?![\\w\"])",
       "exclusive": true,
       "comment": "VB keyword",
       "captures": {
-        "0": {"scope": "code.keyword"}}}],
+        "0": {"scope": "code.keyword"}}
+    }],
   "navigationPatterns": [{
-    "match": "^function (.*) \\{",
+    "match": "(\\w)\\s+function (.*)",
     "comment": "Function",
     "rangeCapture": "0",
-    "labelCapture": "1",
+    "labelCapture": "2",
     "prefix": "function",
-    "level": 1
+    "level": 0
   }]
 }

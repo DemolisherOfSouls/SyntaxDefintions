@@ -58,7 +58,7 @@ internal class Program
         }
 
         //Generate
-        string output = "";
+        //string output = "";
       }
     }
 

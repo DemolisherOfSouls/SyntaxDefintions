@@ -27,20 +27,25 @@
     "captures": {
       "0": {"scope": "code.literal"}}
   },{
-    "match": "(\\#[\\da-fA-F]{6})",
+    "match": "(?i)(\\#[\\da-f]{6})",
     "exclusive": false,
     "comment": "Hex String",
     "captures": {
       "0": {"scope": "code.string"}}
   },{
-    "match": "(\\:|\\,)|(\")|([{}])|([\\[\\]])",
+    "match": "(\".*((?<!\\\\)|(?<=\\\\\\\\)))\")",
+    "exclusive": false,
+    "comment": "Quoted String",
+    "captures": {
+      "0": {"scope": "code.string"}}
+  },{
+    "match": "[:,]|([{}])|([[\\]])",
     "exclusive": false,
     "comment": "Operator",
     "captures": {
       "1": {"scope": "code.punctuation"},
-      "2": {"scope": "code.string"},
-      "3": {"scope": "code.method"},
-      "4": {"scope": "code.property"}}
+      "2": {"scope": "code.method"},
+      "3": {"scope": "code.property"}}
   },{
     "match": "\"(match)\"\\s*:\\s*\"(?:\\/(\\?([gims]+)\\-?([gims]*)\\)|\\(\\?\\:(.+?)\\)|(\\(.+?\\))|(\\[.+?\\])|\\{\\s*\\d+\\s*(?:,\\s*\\d*)\\}|(.*?))*\"(?<!\\\\)",
     "exclusive": false,
@@ -49,7 +54,7 @@
       "1": {"scope": "code.method"},
       "2": {"scope": "code.property"}}
   },{
-    "match": "(?im)\\A(.+)\\s*^(.+)\\s*^(icloud|nosave|iphone|googledrive)\\s*(drafts|projects|imported|(\\w+))?\\s*((?:drafts)?(?:syntax|theme|action)|script|registryShell|json|acs|batch|javascript|template|todolist|(\\w+))\\s*(src|(\\w+))?\n?",
+    "match": "(?i)\\A(.+)\\s*^(.+)\\s*^(icloud|nosave|iphone|googledrive)\\s*(drafts|projects|imported|(\\w+))?\\s*((?:drafts)?(?:syntax|theme|action)|script|registryShell|json|acs|batch|javascript|template|todolist|(\\w+))\\s*(src|(\\w+))?\n?",
     "exclusive": false,
     "comment": "Header",
     "captures": {
@@ -75,7 +80,7 @@
     "captures": {
       "0": {"scope": "code.error"}}
   },{
-    "match": "(?m-i)(?:\\\\\\\\)([aAbBdDEfFnQrsStwWXzZ0]|[\\[\\]{}()\\/?!$&.#^*+=><|',-]|[1-9][0-9]?|[NpP]\\{.*?\\}|c.|(?:\\\\\\\\))",
+    "match": "(?-i)(?:\\\\\\\\)([aAbBdDEfFnQrsStwWXzZ0]|[\\[\\]{}()\\/?!$&.#^*+=><|',-]|[1-9][0-9]?|[NpP]\\{.*?\\}|c.|(?:\\\\\\\\))",
     "'exclusive": false,
     "comment": "Pseudo Escape",
     "captures": {
