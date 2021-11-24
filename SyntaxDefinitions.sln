@@ -75,6 +75,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BF9BC2B1-3B02-4693-ADCE-4A90CE6EFD29}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+		SyntaxChecker\ClassDiagram.cd = SyntaxChecker\ClassDiagram.cd
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Complete Language Definitions", "Complete Language Definitions", "{E9D175DB-6160-4821-BD30-69F8E19E45DC}"
