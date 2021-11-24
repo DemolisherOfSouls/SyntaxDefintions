@@ -1,0 +1,27 @@
+(?xm-i)(?(DEFINE)
+  (?'float' (?i) [+-]?\d+\.\d*(e[+-]?\d+)?)
+  (?'integer' (?i) [+-]?\d+| 0x[\da-f]+)
+  (?'bool'(?i)true|false)
+  (?'quoted_string' \"([^"\\]*(\\.[^"\\]*)*)\")
+  (?'keyword' [^\s{}();"']+)
+  (?'value' (?&integer) | (?&float) | (?&quoted_string) | (?&keyword)| (?&specdata) | (?&bool) )
+  (?'identifier' (?i) [a-z_]+[a-z\d_]*)
+  
+  (?'block' \s*+   (?&blkkeyword)    \s*+   (?&comment)? \{   \s*+ (?&comment)?
+	(?&assignment_expr)*    (?&comment)?     \s*+   \})
+
+  (?'comment' (?>\/{2} [^\n]*+))
+  (?'assignment_expr' (?&identifier)\s* \= \s*(?&value)\s*\;?\s*+ (?&comment)?)
+  
+  (?'datatypes' (?i) int(eger)?|float|bool|string)
+  (?'specdata' \<(?&specdata)\>)
+  (?'blkkeyword' (?&vx)|(?&ld)|(?&sc)|(?&tg)|(?&sd)|(?&identifier))
+  (?i)
+  (?'vx'vertex)
+  (?'ld'linedef)
+  (?'sc'sectors?)
+  (?'tg'thing)
+  (?'sd'sidedef)
+  (?-i)
+)
+(?:(?&block)+)
