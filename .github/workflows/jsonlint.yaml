@@ -1,0 +1,4 @@
+- name: json-lint
+  # You may pin to the exact commit or the version.
+  # uses: ocular-d/json-linter@7d3716a34bcd6fcc5b3b38141a21b9e02da6531d
+  uses: ocular-d/json-linter@0.0.2
