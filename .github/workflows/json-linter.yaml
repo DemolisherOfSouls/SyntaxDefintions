@@ -9,6 +9,7 @@ jobs:
       - uses: actions/checkout@v1
       - name: Validate JSON
         uses: docker://orrosenblatt/validate-json-action:latest
+        if: github.event_name == 'push'
         env:
           INPUT_SCHEMA: /Drafts Syntax/DraftsSchema.json
           INPUT_JSONS: /Drafts Syntax/acs.json, /Drafts Syntax/json.json
