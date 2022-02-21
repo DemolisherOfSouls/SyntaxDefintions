@@ -1,7 +1,7 @@
 {
 	"name": "DraftsSyntax (JSON)",
 	"description": "Syntax Definition for Drafts code editor.",
-	"sampleText": "{\n\t\”name”:”Drafts Syntax\”,\n\t\”description\”:\”desc\”\n}",
+	"sampleText": "{\n\t\"name\":\"Drafts Syntax\",\n\t\"description\":\"desc\"\n}",
 	"author": "Grincess",
 	"scopeName": "text.json.draftssyntax",
   "rangeExtensionType": {"default": "lookAround1000"},
@@ -10,54 +10,54 @@
   "fileExtensions": ["draftssyntax"],
   "patterns": [
     {
-      "(\"(match)\"\s*[:])"
+      "match": "(\"(match)\"\\s*[:])",
       "exclusive": true,
       "comment": "match property",
       "captures": {
- "1":{"scope":"code.punctuation"},
- "2":{"scope":"code.method"}}
+        "1":{"scope":"code.punctuation"},
+        "2":{"scope":"code.method"}}
     },{
       "match": "\\b(null|true|false)\\b",
       "exclusive": true,
       "comment": "Defined Constant",
       "captures": {
- "0":{"scope":"code.literal"}}
+        "0":{"scope":"code.literal"}}
     },{
       "match": "\\b-?(?:0x[\\da-f]+|\\d*\\.?\\d+(?:e[+-]?\\d+)?)\\b",
       "exclusive": true,
       "comment": "Number",
-      "captures": {"0":{"scope":"code.literal"}}
+      "captures": {
+        "0":{"scope":"code.literal"}}
     },{
       "match": "\\s*(\\{)\\s*(\")(name|author|sampleText|description|scopeName)(\")\\s*(\\:)\\s*(\")([^])(\")",
       "exclusive": true,
       "comment": "Global Property",
       "captures": {
- "0":{"scope":"code.punctuation"},
- "2":{"scope":"code.literal"},
- "4":{"scope":"code.literal"},
- "3":{"scope":"code.property"},
- "6":{"scope":"color.red"},
- "8":{"scope":"color.blue"},
- "9":{"scope":"text.bold"},
-"10":{"scope":"color.blue"}}
+        "0":{"scope":"code.punctuation"},
+        "2":{"scope":"code.literal"},
+        "4":{"scope":"code.literal"},
+        "3":{"scope":"code.property"},
+        "6":{"scope":"color.red"},
+        "8":{"scope":"color.blue"},
+        "9":{"scope":"text.bold"},
+        "10":{"scope":"color.blue"}}
     },{
       "match": "([{}\\[\\];(),.:])",
       "exclusive": true,
       "comment": "Punctuation",
       "captures": {
- "0":{"scope":"code.punctuation"}}
+        "0":{"scope":"code.punctuation"}}
     },{
       "match": "\\b(match|exclusive|comment|captures|rangeCapture|labelCapture|level|enabled|sequencePadding)\\b",
       "exclusive": true,
       "comment": "Pattern Property",
       "captures":{
- "0":{"scope": "code.keyword"}}
+        "0":{"scope": "code.keyword"}}
     },{
       "match": "\\b(prefix|indent|line|sequence)\\b",
       "exclusive": true,
       "comment": "Capture Property",
       "captures": {
- "0":{"scope":"code.keyword"}}
-    }
-  ]
+        "0":{"scope":"code.keyword"}}
+    }]
 }

@@ -7,136 +7,116 @@
   "rangeExtensionType": {"default": "lookAround1000"},
   "listCompletionDefinitions":[],
   "fileExtensions":["draftsaction"],
-
+  "navigationPatterns": [],
   "patterns": [{
-    "match": "(\\/\\*[\\S\\s]*?\\*\\/)",
+    "match": "\\/\\*[\\S\\s]*?\\*\\/|\\/\\/.*+",
     "exclusive": true,
-    "comment": "Block comment",
-    "captures":{"0":{"scope":"code.comment"}}
-  },{
-    "match": "(\\/\\/)(.*)",
-    "exclusive": true,
-    "comment": "Inline comment",
-    "captures":{"0":{"scope":"code.comment"}}
+    "comment": "Comment",
+    "captures":{
+      "0":{"scope":"code.comment"}}
   },{
     "match": "(['\"])(?:(?!(?:\\\\|\\1)).|\\\\.)*\\1",
     "exclusive": false,
     "comment": "String Literal",
-    "captures":{"0":{"scope":"code.string"}}
+    "captures":{
+      "0":{"scope":"code.string"}}
   },{
     "match": "([\\/])(?:(?!(?:\\\\|\\1)).|\\\\.)*\\1([gim]*)",
     "exclusive": true,
     "comment": "RegEx Literal",
-    "captures":{"0":{"scope":"code.literal"}}
+    "captures":{
+      "0":{"scope":"code.literal"}}
   },{
     "match": "\\b(true|false|undefined|null|NaN)\\b",
     "exclusive": true,
     "comment": "Special Values",
-    "captures":{"0":{"scope":"code.class"}}
+    "captures":{
+      "0":{"scope":"code.class"}}
   },{
-    "match": "\\b(alert)\\b",
+    "match": "\\b(alert|log|require)\\b",
     "exclusive": true,
     "comment": "Global Functions",
-    "captures":
-      {"0":{"scope": "code.method"}}
+    "captures":{
+      "0":{"scope": "code.method"}}
   },{
     "match": "\\b(-?(?:(0x[\\da-fA-F]+)|(\\d*\\.?\\d+(?:e[+-]?\\d+)?)))\\b",
     "exclusive": true,
     "comment": "Number",
-    "captures":
-    {
-        "1": {"scope":"code.literal"},
-        "2": {"scope":"code.literal"}}
+    "captures":{
+      "1": {"scope":"code.literal"},
+      "2": {"scope":"code.literal"}}
   },{
     "match": "([-+!=<>&|~^%?*\\\/\\\\])",
     "exclusive": false,
     "comment": "Operator",
-    "captures": {"0":{"scope":"code.operator"}}
+    "captures": {
+      "0":{"scope":"code.operator"}}
   },{
     "match": "([{}\\[\\];(),.:])",
     "exclusive": false,
     "comment": "Punctuation",
-    "captures":{"0":{"scope":"code.punctuation"}}
+    "captures":{
+      "0":{"scope":"code.punctuation"}}
   },{
-    "match": "\\b(and|or|xor|for|do|while|each|as|return|exit|if|of|then|else|new|delete|try|throw|catch|finally|class|function|var|const|let|static|extends|switch|this|self|super|in|import|constructor|export|get|set|require)\\b",
+    "match": "\\b(and|x?or|for|do|while|each|as|return|exit|if|(?:type|instance)Of|of|then|else|new|delete|try|throw|catch|finally|class|function|var|const|static|extends|switch|this|self|super|in|import|constructor|export|[gls]et)\\b",
     "exclusive": true,
     "comment": "JavaScript Keyword",
-    "captures":{"0":{"scope":"code.keyword"}}
+    "captures":{
+      "0":{"scope":"code.keyword"}}
   },{
-    "match": "\\b(Array|String|Object|Integer|Boolean|Symbol|Function|Map|Set|WeakMap|WeakSet|Math|Date|Promise|Number|NodeList|JSON|Generator|Error|RegExp|ReferenceError|Draft|Editor|Workspace|GoogleDrive)\\b",
+    "match": "\\b(Array|String|Object|Integer|Boolean|Symbol|Function|Map|Set|WeakMap|WeakSet|Math|Date|Promise|Number|NodeList|JSON|Generator|Error|RegExp|ReferenceError)\\b",
     "exclusive": true,
     "comment": "JavaScript Class",
-    "captures":{"0":{"scope":"code.class"}}
+    "captures":{
+      "0":{"scope":"code.class"}}
   },{
-    "match": "([\\w\"$]+)\\.(toString|eval|exec|replace|slice|join|split|concat|replace|match|startsWith|endsWith|indexOf|substr|toLowerCase|toUpperCase|parseInt|parseFloat|charAt|create|forEach|from|destroy|push|shift|splice|some|sort|reduce|reverse|map|pop|includes|keys|flat|flatMap|copyWithin|selectionStart|at|every|fill)\\b",
+    "match": "([\\w\"'$_]+)\\.(toString|eval|exec|replace|slice|join|split|concat|replace|match|(?:starts|ends)With|indexOf|substr|to(?:Lower|Upper)Case|parse(?:Int|Float)|charAt|create|forEach|from|destroy|push|shift|splice|some|sort|reduce|reverse|map|pop|includes|keys|flat(?:Map)?|copyWithin|at|every|fill)\\b",
     "exclusive": false,
     "comment": "JavaScript Method",
-    "captures":{"1":{"scope":"code.global"},
-                "2":{"scope":"code.punctuation"},
-                "3":{"scope":"code.method"}}
+    "captures":{
+      "1":{"scope":"code.global"},
+      "2":{"scope":"code.punctuation"},
+      "3":{"scope":"code.method"}}
   },{
     "match": "\\b(length)\\b",
     "exclusive": true,
     "comment": "JavaScript Property",
     "captures":{"0":{"scope":"code.class"}}
   },{
-    "match": "\\b(?:(?:draft)\\.(content|body|title|lines)|lastError|tags|name|type|buttonPressed)\\b",
+    "match": "\\b(draft\\.(content|body|title|lines|tags))|lastError|name|type|buttonPressed|selectionStart)\\b",
     "exclusive": true,
     "comment": "Drafts Class Property",
-    "captures":{"0":{"scope":"code.property"}}
+    "captures":{
+      "0":{"scope":"code.property"}}
   },{
-    "match": "\\b(editor|context|device|app|action)\\b",
+    "match": "\\b(editor|context|device|app|action|script|draft)\\b",
     "exclusive": true,
     "comment": "Drafts Global Property",
-    "captures":{"0":{"scope":"code.global"}}
+    "captures":{
+      "0":{"scope":"code.global"}}
   },{
-    "match": "\\b(Draft|Editor|Prompt|Script|Action|ActionGroup|Box|Dropbox|App|Syntax|Context|Share|Theme|Base64|Workspace|Version|Twitter|Alarm|Event|FileManager|GoogleDrive|GoogleTask|Mail|selectionRange|syntaxType)\\b",
+    "match": "\\b(Draft|Editor|Prompt|Script|Action(?:Group)?|Box|Dropbox|App|Syntax|Context|Share|Theme|Base64|Workspace|Version|Twitter|Alarm|Event|FileManager|Google(?:Drive|Task)|Mail|selectionRange|syntaxTypeDraft)\\b",
     "exclusive": true,
     "comment": "Drafts Class",
-    "captures":{"0":{"scope":"code.class"}}
+    "captures":{
+      "0":{"scope":"code.class"}}
   },{
-    "match": "\\b(update|save|getText|load|activate|query|fail|cancel|read|write|addTag|hasTag|removeTag|shareAsFile|append|prepend|setClipboard)\\b",
+    "match": "\\b(update|save|getText|load|activate|query|fail|cancel|read|write|(?:add|has|remove)Tag|shareAs(?:File|URL|String)|(ap|pre)pend|setClipboard)\\b",
     "exclusive": true,
     "comment": "Drafts Class Method",
-    "captures":{"0":{"scope":"code.method"}}
+    "captures":{
+      "0":{"scope":"code.method"}}
   },{
-    "match": "\\b(draftx|selection|dialog|gdrive)\\b",
+    "match": "\\b(caller|gdrive)\\b",
     "exclusive": true,
-    "comment": "My Library Global Property",
-    "captures":{"0":{"scope":"code.global"}}
+    "comment": "G-Lib Globals",
+    "captures":{
+      "0":{"scope":"code.global"}}
   },{
-    "match": "\\b(File|)\\b",
+    "match": "\\b(File|Draft2|GDrive)\\b",
     "exclusive": true,
-    "comment": "My Library Class",
-    "captures":{"0":{"scope":"code.global"}}
-  }],
-  "navigationPatterns": [{
-    "match": "(\\/\\/)(?:s*)(#region)(.*)",
-    "comment": "Region Comments",
-    "rangeCapture": "0",
-    "labelCapture": "1",
-    "prefix": "#region",
-    "level": 0
-  },{
-    "match": "\\b(function)\\b",
-    "comment": "Function",
-    "rangeCapture": "0",
-    "labelCapture": "1",
-    "prefix": "function",
-    "level": 1
-  },{
-    "match": "\\b(class)\\b",
-    "comment": "Class Definition",
-    "rangeCapture": "0",
-    "labelCapture": "1",
-    "prefix": "class",
-    "level": 1
-  },{
-    "match": "\\b(get|set)\\b",
-    "comment": "Property Definition",
-    "rangeCapture": "0",
-    "labelCapture": "1",
-    "prefix": "get",
-    "level": 2
+    "comment": "G-Lib Class",
+    "captures":{
+      "0":{"scope":"code.class"}}
   }]
 }

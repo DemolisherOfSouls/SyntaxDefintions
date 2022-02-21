@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Dev\\Projects\\SyntaxDefintions\\SyntaxChecker\\SyntaxChecker.csproj": {}
+    "G:\\My Drive\\Projects\\Visual Studio\\SyntaxDefintions\\SyntaxChecker\\SyntaxChecker.csproj": {}
   },
   "projects": {
-    "C:\\Dev\\Projects\\SyntaxDefintions\\SyntaxChecker\\SyntaxChecker.csproj": {
+    "G:\\My Drive\\Projects\\Visual Studio\\SyntaxDefintions\\SyntaxChecker\\SyntaxChecker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Dev\\Projects\\SyntaxDefintions\\SyntaxChecker\\SyntaxChecker.csproj",
+        "projectUniqueName": "G:\\My Drive\\Projects\\Visual Studio\\SyntaxDefintions\\SyntaxChecker\\SyntaxChecker.csproj",
         "projectName": "SyntaxChecker",
-        "projectPath": "C:\\Dev\\Projects\\SyntaxDefintions\\SyntaxChecker\\SyntaxChecker.csproj",
-        "packagesPath": "C:\\Users\\rtaylor\\.nuget\\packages\\",
-        "outputPath": "C:\\Dev\\Projects\\SyntaxDefintions\\SyntaxChecker\\obj\\",
+        "projectPath": "G:\\My Drive\\Projects\\Visual Studio\\SyntaxDefintions\\SyntaxChecker\\SyntaxChecker.csproj",
+        "packagesPath": "C:\\Users\\taylo\\.nuget\\packages\\",
+        "outputPath": "G:\\My Drive\\Projects\\Visual Studio\\SyntaxDefintions\\SyntaxChecker\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\rtaylor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\taylo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -58,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-rc.2.21505.57\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -6,9 +6,10 @@
   "scopeName": "text.zdoom.acs",
   "rangeExtensionType": {"default": "lookAround1000"},
   "fileExtensions": ["acs","zacs"],
+  "navigationPatterns":[],
   "patterns":
   [{
-      "match": "(\\/\\*[\\S\\s]*?\\*\\/)|(\\/\\/.*)",
+      "match": "\\/\\*[\\S\\s]*?\\*\\/|\\/\\/.*",
       "exclusive": true,
       "comment": "Comment",
       "captures": {
@@ -70,26 +71,11 @@
       "captures": {
         "0":{"scope":"code.method"}}
     },{
-      "match": "\\b(?:Door_(?:(Locked|Wait)?Raise|(CloseWait)?Open|(Wait)?Close|Animated(Close)?)|ExtraFloor_LightOnly|Floor_(CrushStop|Donut|Lower(By(Texture|Value(Times8)?))|Instant|To(Highest(EE)?|Lowest(TxTy|Ceiling)|Nearest))|Thing_(Stop|Raise|Set((Convers|Transl)ation|Special)|Damage|(Re)?[Mm]ove|(De)?[Aa]ctivate|Destroy|Projectile(Gravity|Intercept|Aimed)?|Spawn(Facing|NoFog)?|Hate|ChangeTID)|Exit_(Secret|Normal)|(Heal|Damage)Thing|ThrustThingZ?|Autosave|GlassBreak)\\b",
+      "match": "\\b(?:Door_(?:(?:Locked|Wait)?Raise|(?:CloseWait)?Open|(Wait)?Close|Animated(Close)?)|ExtraFloor_LightOnly|Floor_(?:CrushStop|Donut|Lower(?:By(?:Texture|Value(Times8)?))|Instant|To(Highest(EE)?|Lowest(?:TxTy|Ceiling)|Nearest))|Thing_(Stop|Raise|Set((Convers|Transl)ation|Special)|Damage|(Re)?[Mm]ove|(De)?[Aa]ctivate|Destroy|Projectile(Gravity|Intercept|Aimed)?|Spawn(Facing|NoFog)?|Hate|ChangeTID)|Exit_(Secret|Normal)|(Heal|Damage)Thing|ThrustThingZ?|Autosave|GlassBreak)\\b",
       "exclusive": true,
       "comment": "Action Function",
       "captures": {
         "0":{"scope":"code.class"}}
-    }],
-  "navigationPatterns":
-  [{
-      "match": "^function (. *) \\{",
-      "comment": "Function",
-      "rangeCapture": "0",
-      "labelCapture": "1",
-      "prefix": "function",
-      "level": 1
-    },{
-      "match": "^script (. *) \\{",
-      "comment": "Script",
-      "rangeCapture": "0",
-      "labelCapture": "1",
-      "prefix": "script",
-      "level": 1
-  }]
+    }]
 }
+  

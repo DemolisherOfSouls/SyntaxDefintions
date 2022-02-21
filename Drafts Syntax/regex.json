@@ -11,12 +11,12 @@
   "fileExtensions":["regex"],
   "navigationPatterns": [],
   "patterns":
-  [{
-      "match": "(.*)",
-      "exclusive": false,
-      "comment": "Code",
-      "captures": {
- "0":{"scope":"text.monospace"}}
+  [ {
+    "match": "(.*)",
+    "exclusive": false,
+    "comment": "Code",
+    "captures": {
+      "0":{"scope":"text.monospace"}}
     },{
       "match": "(\\(\\#[\\s\\S]*?\\))",
       "exclusive": true,
@@ -28,9 +28,9 @@
       "exclusive": false,
       "comment": "Escaped Character",
       "captures": {
- "0":{"scope":"code.class"}}
+        "0":{"scope":"code.class"}}
     },{
-      "match": "\\[([^\\]]*?)\\]",
+      "match": "\\[((?:\\\\\\]|[^\\]])*?)\\]",
       "exclusive": false,
       "comment": "Character Match",
       "captures": {
@@ -59,4 +59,4 @@
       "comment": "Match RegExp",
       "captures": {
  "1":{"scope":"code.keyword"}}
-}]}
+} ] }

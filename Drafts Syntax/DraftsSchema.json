@@ -33,15 +33,27 @@
       "items": {
         "type": "object",
         "properties": {
-          "match": {"type": "string"},
-          "exclusive": {"type": "boolean" },
-          "comment": {"type": "string"},
+          "match": {
+            "type": "string",
+            "description": ""
+          },
+          "exclusive": {
+            "type": "boolean",
+            "description": ""
+          },
+          "comment": {
+            "type": "string"
+          },
           "captures": {
             "type": "object",
             "properties": {
               "0": {
                 "type": "object",
-                "properties": {}
+                "properties": {
+                  "scope": {
+                    "type": "string"
+                  }
+                }
               }
             }
           }

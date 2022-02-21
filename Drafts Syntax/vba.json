@@ -4,77 +4,56 @@
   "sampleText": "'VBA Syntax\nConst n = 100\nLet s = Dim value\n\nif (n < 1000) {\n\tconsolełii.log(\"hello\");\n}",
   "author"   : "Grincess",
   "scopeName": "text.vba",
-  "rangeExtensionType": {"default": "lookAround1000"},
-  "listCompletionDefinitions": [{
-    "comment": "",
-    "enabled": true,
-    "match": "(^[  |\\t]+)()(.*)",
-    "sequencePadding": "0",
-    "captures": {
-      "indent": "1",
-      "prefix": "2",
-      "line": "3",
-      "sequence": ""},
-    "replacements": {}}],
+  "rangeExtensionType":{
+    "default":"lookAround1000"},
+  "listCompletionDefinitions": [],
+  "navigationPatterns": [],
   "fileExtensions": [
     "cls",
     "frm",
     "bas",
     "vb"],
   "patterns": [{
-    "match": "\\s(\\'.*)$",
+    "match": "\\b\\'.*$",
     "exclusive": true,
     "comment": "Line comment",
-    "captures": {"1": {"scope": "code.comment"}}
+    "captures":{
+      "0": {"scope": "code.comment"}}
   },{
-      "match": "(\")(?:(?!(?:\\\\|\\1)).|\\\\.)*\\1",
-      "exclusive": true,
-      "comment": "String literal",
-      "captures": {
-        "0": {
-          "scope": "code.literal"
-        }
-      }
-    },
-    {
-      "match": "\\b(Empty|Null|True|False|Nothing)\\b",
-      "exclusive": true,
-      "comment": "Value type literal",
-      "captures": {
-        "0": {
-          "scope": "code.literal"
-        }
-      }
-    },{
-      "match": "\\b-?(?:0x[\\da-f]+|\\d*\\.?\\d+(?:e[+-]?\\d+)?)\\b",
-      "exclusive": true,
-      "comment": "Number",
-      "captures": {
-        "0": {
-          "scope": "code.literal"}}
-    },{
-      "match": "--?|\\+\\+?|!=?=?|<=?|>=?|==?=?|&&?|\\|\\|?|\\?|\\*|\\/|~|\\^|%",
-      "exclusive": true,
-      "comment": "Operator",
-      "captures": {"0": { "scope": "code.operator"}}
-    },{
-      "match": "([{}\\[\\];(),.:])",
-      "exclusive": true,
-      "comment": "Punctuation",
-      "captures": {
-        "0": {
-          "scope": "code.punctuation"}}
-    },{
-      "match": "\\b(And|Or|Xor|Do|While|For|Each|As|Return|Dim|Exit|If|Then|Else|ElseIf|New|Delete|try|Throw|Catch|Finally|Class|Function|Const|Let|Static|Public|Private|Set|Extends)(?!\\w|=\")",
-      "exclusive": true,
-      "comment": "VB keyword",
-      "captures": {"0": {"scope": "code.keyword"}}}],
-  "navigationPatterns": [{
-    "match": "^function (.*) \\{",
-    "comment": "Function",
-    "rangeCapture": "0",
-    "labelCapture": "1",
-    "prefix": "function",
-    "level": 1
+    "match": "(\")(?:(?!(?:\\\\|\\1)).|\\\\.)*\\1",
+    "exclusive": true,
+    "comment": "String literal",
+    "captures": {
+      "0": {"scope": "code.literal"}}
+  },{
+    "match": "\\b(Empty|Null|True|False|Nothing)\\b",
+    "exclusive": true,
+    "comment": "Value type literal",
+    "captures":{
+      "0":{"scope": "code.literal"}}
+  },{
+    "match": "\\b-?(?:0x[\\da-f]+|\\d*\\.?\\d+(?:e[+-]?\\d+)?)\\b",
+    "exclusive": true,
+    "comment": "Number",
+    "captures": {
+      "0": {"scope": "code.literal"}}
+  },{
+    "match": "--|\\+\\+|([!=]?=|[<>])=?|&&?|\\|\\|?|[-+/*]",
+    "exclusive": true,
+    "comment": "Operator",
+    "captures": {
+      "0": { "scope": "code.operator"}}
+  },{
+    "match": "([{}\\[\\];(),.:])",
+    "exclusive": true,
+    "comment": "Punctuation",
+    "captures": {
+      "0": { "scope": "code.punctuation"}}
+  },{
+    "match": "\\b(A(?:nd|s)|C(?:a(?:se|tch)|lass|onst)|Or|Xor|While|Mod|Return|If|E(?:ach|x(?:it|tends)|lse(?:If)?)|New|D(?:e(?:lete|fault)|im|o)|T(?:ry|h(?:row|en))|F(?:or|inally|unction)|[LS]et|Static|P(?:ublic|rivate|ow))(?!\\w|=\")",
+    "exclusive": true,
+    "comment": "VB keyword",
+    "captures": {
+      "0": {"scope": "code.keyword"}}
   }]
 }

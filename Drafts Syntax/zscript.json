@@ -18,27 +18,20 @@
       "exclusive": true,
       "comment": "Block comment",
       "captures": {
-        "0": {
-          "scope": "code.comment"
-      }}
+        "0": {"scope": "code.comment"}}
     },{
       "match": "",
       "exclusive": true,
       "comment": "Inline comment",
       "captures": {
-        "1": {
-          "scope": "code.comment"
-        }
-      }
+        "1": {"scope": "code.comment"}}
     },{
       "match": "(['\"])(?:(?!(?:\\\\|\\1)). |\\\\.) *\\1",
       "exclusive": true,
       "comment": "String literal",
       "captures": {
         "0": {
-          "scope": "code.literal"
-        }
-      }
+          "scope": "code.literal"}}
     },{
       "match": "([\\/])(?:(?!(?:\\\\|\\1)). |\\\\.)*\\1([gmi]*)",
       "exclusive": true,
@@ -53,8 +46,7 @@
       "comment": "Defined Constant",
       "captures": {
         "0": {
-          "scope": "code.literal"
-      }}
+          "scope": "code.literal"}}
     },{
       "match": "\\b-?(?:0x[\\da-f]+|\\d*\\.? \\d+(?:e[+-]? \\d+)?) \\b",
       "exclusive": true,
@@ -69,24 +61,18 @@
       "exclusive": true,
       "comment": "Operator",
       "captures": {
-        "0": {
-          "scope": "code.operator"
-        }
-      }
+        "0": {"scope": "code.operator"}}
     },{
       "match": "([{}\\[\\];(),.:])",
       "exclusive": true,
       "comment": "Punctuation",
       "captures": {
-        "0": {
-          "scope": "code.punctuation"
-        }
-      }
+        "0": { "scope": "code.punctuation"}}
     },{
-      "match": "\\b(class)\\b",
+      "match": "\\b(class|mixin|function)\\b",
       "exclusive": true,
       "comment": "ZScript keyword",
       "captures": {
- "0":{"scope":"code.keyword"}}
+        "0":{"scope":"code.keyword"}}
     }]
 }

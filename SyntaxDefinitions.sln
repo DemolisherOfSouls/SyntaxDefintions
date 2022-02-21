@@ -48,6 +48,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Schemas", "Schemas", "{BC56
 		Drafts Syntax\DraftsSchema.json = Drafts Syntax\DraftsSchema.json
 		Notepad++ Syntax\notepadpp.xsd = Notepad++ Syntax\notepadpp.xsd
 	EndProjectSection
+	ProjectSection(FolderGlobals) = preProject
+		G_5_4My Drive_4Projects_4Visual Studio_4SyntaxDefintions_4Drafts Syntax_4DraftsSchema_1json__JsonSchema = 
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Drafts", "Drafts", "{A0B84EFB-7469-49DF-AADB-4797515E5F42}"
 	ProjectSection(SolutionItems) = preProject
@@ -63,6 +66,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Drafts", "Drafts", "{A0B84E
 		Drafts Syntax\zscript.json = Drafts Syntax\zscript.json
 	EndProjectSection
 	ProjectSection(FolderGlobals) = preProject
+		G_5_4My Drive_4Projects_4Visual Studio_4SyntaxDefintions_4Drafts Syntax_4draftssyntax_1json__JsonSchema = draftssc
+		G_5_4My Drive_4Projects_4Visual Studio_4SyntaxDefintions_4Drafts Syntax_4acs_1json__JsonSchema = DraftsSchema.json
 		C_5_4Dev_4Projects_4SyntaxDefintions_4Drafts Syntax_4draftsaction_1json__JsonSchema = DraftsSchema.json
 	EndProjectSection
 EndProject
