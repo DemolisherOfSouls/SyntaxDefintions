@@ -12,9 +12,8 @@
     "zs",
     "decorate"
   ],
-  "patterns": [
-    {
-      "match": "(\\/\\*[\\S\\s]*?\\*\\/)|(\\/\\/.*)",
+  "patterns": [{
+      "match": "\\/\\*[\\S\\s]*?\\*\\/|\\/\\/.*+",
       "exclusive": true,
       "comment": "Block comment",
       "captures": {
@@ -26,20 +25,18 @@
       "captures": {
         "1": {"scope": "code.comment"}}
     },{
-      "match": "(['\"])(?:(?!(?:\\\\|\\1)). |\\\\.) *\\1",
+      "match": "(['\"])(?:(?!(?:\\\\|\\1)).|\\\\.)*\\1",
       "exclusive": true,
       "comment": "String literal",
       "captures": {
-        "0": {
-          "scope": "code.literal"}}
+        "0": {"scope": "code.literal"}}
     },{
       "match": "([\\/])(?:(?!(?:\\\\|\\1)). |\\\\.)*\\1([gmi]*)",
       "exclusive": true,
       "comment": "Regex literal",
       "captures": {
         "0": {
-          "scope": "code.literal"
-      }}
+          "scope": "code.literal"}}
     },{
       "match": "\\b(true|false)\\b",
       "exclusive": true,
@@ -52,10 +49,7 @@
       "exclusive": true,
       "comment": "Number",
       "captures": {
-        "0": {
-          "scope": "code.literal"
-        }
-      }
+        "0": {"scope": "code.literal"}}
     },{
       "match": "([-+!=<>&|~^%?*\\\/\\\\])",
       "exclusive": true,

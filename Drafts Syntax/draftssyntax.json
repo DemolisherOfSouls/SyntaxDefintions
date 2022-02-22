@@ -8,8 +8,7 @@
   "listCompletionDefinitions":[],
   "navigationPatterns": [],
   "fileExtensions": ["draftssyntax"],
-  "patterns": [
-    {
+  "patterns": [{
       "match": "(\"(match)\"\\s*[:])",
       "exclusive": true,
       "comment": "match property",
@@ -17,7 +16,7 @@
         "1":{"scope":"code.punctuation"},
         "2":{"scope":"code.method"}}
     },{
-      "match": "\\b(null|true|false)\\b",
+      "match": "\\b(null|true|false|undefined)\\b",
       "exclusive": true,
       "comment": "Defined Constant",
       "captures": {
@@ -29,18 +28,12 @@
       "captures": {
         "0":{"scope":"code.literal"}}
     },{
-      "match": "\\s*(\\{)\\s*(\")(name|author|sampleText|description|scopeName)(\")\\s*(\\:)\\s*(\")([^])(\")",
+      "match": "\"(name|author|sampleText|description|scopeName)\"\\s*\\:\\s*\"([\\s\\S])\"",
       "exclusive": true,
       "comment": "Global Property",
       "captures": {
-        "0":{"scope":"code.punctuation"},
-        "2":{"scope":"code.literal"},
-        "4":{"scope":"code.literal"},
-        "3":{"scope":"code.property"},
-        "6":{"scope":"color.red"},
-        "8":{"scope":"color.blue"},
-        "9":{"scope":"text.bold"},
-        "10":{"scope":"color.blue"}}
+        "1":{"scope":"code.property"},
+        "2":{"scope":"code.string"}
     },{
       "match": "([{}\\[\\];(),.:])",
       "exclusive": true,
