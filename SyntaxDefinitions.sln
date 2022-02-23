@@ -10,7 +10,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notepad++", "Notepad++", "{
 		Notepad++ Syntax\batch.xml = Notepad++ Syntax\batch.xml
 		Notepad++ Syntax\excel-formula.xml = Notepad++ Syntax\excel-formula.xml
 		Notepad++ Syntax\excel-powerquerym.xml = Notepad++ Syntax\excel-powerquerym.xml
+		Notepad++ Syntax\git-attributes.xml = Notepad++ Syntax\git-attributes.xml
 		Notepad++ Syntax\git-ignore.xml = Notepad++ Syntax\git-ignore.xml
+		Notepad++ Syntax\git-workflow.xml = Notepad++ Syntax\git-workflow.xml
 		Notepad++ Syntax\gmail.xml = Notepad++ Syntax\gmail.xml
 		Notepad++ Syntax\javascript-draftsaction.xml = Notepad++ Syntax\javascript-draftsaction.xml
 		Notepad++ Syntax\json-draftssyntax.xml = Notepad++ Syntax\json-draftssyntax.xml
@@ -46,6 +48,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Schemas", "Schemas", "{BC56F825-E652-4781-9119-CD7FAA5942D5}"
 	ProjectSection(SolutionItems) = preProject
 		Drafts Syntax\DraftsSchema.json = Drafts Syntax\DraftsSchema.json
+		Drafts Syntax\MetaSchema.json = Drafts Syntax\MetaSchema.json
 		Notepad++ Syntax\notepadpp.xsd = Notepad++ Syntax\notepadpp.xsd
 	EndProjectSection
 	ProjectSection(FolderGlobals) = preProject
@@ -74,11 +77,15 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BF9BC2B1-3B02-4693-ADCE-4A90CE6EFD29}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Complete Language Definitions", "Complete Language Definitions", "{E9D175DB-6160-4821-BD30-69F8E19E45DC}"
 	ProjectSection(SolutionItems) = preProject
+		CompleteDefinition\properties-desktop.regex = CompleteDefinition\properties-desktop.regex
 		CompleteDefinition\zdoom-textures.regex = CompleteDefinition\zdoom-textures.regex
+		CompleteDefinition\zdoom-udmf.regex = CompleteDefinition\zdoom-udmf.regex
+		CompleteDefinition\zdoom-udmf.txt = CompleteDefinition\zdoom-udmf.txt
 	EndProjectSection
 EndProject
 Global
