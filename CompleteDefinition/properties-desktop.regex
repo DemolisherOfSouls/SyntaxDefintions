@@ -1,0 +1,4 @@
+(\[.ShellClassInfo\])\n+(
+(LocalizedResourceName=(.*))\n+|
+(IconResource=(.*))\n+
+)*
