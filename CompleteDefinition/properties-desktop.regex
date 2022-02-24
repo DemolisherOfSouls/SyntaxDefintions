@@ -1,4 +1,22 @@
-(\[.ShellClassInfo\])\n+(
-(LocalizedResourceName=(.*))\n+|
-(IconResource=(.*))\n+
-)*
+(?mx)
+(?(DEFINE)
+  (?'a'.+)
+  (?'key'\.ShellClassInfo|ViewState)
+  (?'prop'LocalizedResourceName|InfoTip|IconResource|Mode|Vid|FolderType)
+  (?'num'[-\d]+)
+)
+\[
+(?:
+  (?'keyname'(?&key)) |
+  (?<err_key>(?&a))
+)
+\]|
+(?:
+  (?'propname'(?&prop)) |
+  (?<err_prop>(?&a))
+)
+=
+(?'value'[^,\n]*)
+(?:,
+  (?'index'(?&num))
+)?

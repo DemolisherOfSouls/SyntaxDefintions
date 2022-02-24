@@ -50,10 +50,16 @@
     "captures": {
       "0": { "scope": "code.punctuation"}}
   },{
-    "match": "\\b(A(?:nd|s)|C(?:a(?:se|tch)|lass|onst)|Or|Xor|While|Mod|Return|If|E(?:ach|x(?:it|tends)|lse(?:If)?)|New|D(?:e(?:lete|fault)|im|o)|T(?:ry|h(?:row|en))|F(?:or|inally|unction)|[LS]et|Static|P(?:ublic|rivate|ow))(?!\\w|=\")",
+    "match": "\\b(A(?:nd|s)|C(?:a(?:se|tch)|lass|onst)|Or|Xor|While|Mod|Return|If|E(?:ach|x(?:it|tends)|lse(?:If)?)|New|D(?:e(?:lete|fault)|im|o)|T(?:ry|h(?:row|en)|ype)|F(?:or|inally|unction)|Sub|[LS]et|Static|P(?:ublic|rivate|ow))(?!\\w|=\")",
     "exclusive": true,
-    "comment": "VB keyword",
+    "comment": "VBA keyword",
     "captures": {
       "0": {"scope": "code.keyword"}}
+  },{
+    "match": "\\b(RegExp|Variant|Integer|Boolean|String|Double|Decimal|Long(?:Long)?|Byte|Date|DateTime|Range|Style|Application|)\\b",
+    "exclusive": true,
+    "comment": "VBA Class",
+    "captures": {
+      "0": {"scope": "code.class"}}
   }]
 }
