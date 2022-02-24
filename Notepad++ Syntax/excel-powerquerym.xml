@@ -24,12 +24,12 @@
             <Keywords name="Folders in comment, open"></Keywords>
             <Keywords name="Folders in comment, middle"></Keywords>
             <Keywords name="Folders in comment, close"></Keywords>
-            <Keywords name="Keywords1">if then else as is type each not and or</Keywords>
+            <Keywords name="Keywords1">if then else as is type each not and or optional</Keywords>
             <Keywords name="Keywords2">true false null _</Keywords>
-            <Keywords name="Keywords3">Table List Int8 Int16 Int32 Int64 Byte Replacer Order Int Text Excel Record Lines</Keywords>
+            <Keywords name="Keywords3">Table List Int8 Int16 Int32 Int64 Byte Replacer Order Int Text Excel Record Lines Sql</Keywords>
             <Keywords name="Keywords4">table list any number text nullable</Keywords>
-            <Keywords name="Keywords5">ReplaceText ReplaceValue TransformColumnTypes UnpivotOtherColumns SelectRows Sort RenameColumns Group ReorderColumns Distinct From Sum Type Pivot RowCount Ascending&#x000D;&#x000A;&#x000D;&#x000A;LINES_METHODS&#x000D;&#x000A;ToText&#x000D;&#x000A;&#x000D;&#x000A;COMPARER_METHODS&#x000D;&#x000A;Comparer&#x000D;&#x000A;&#x000D;&#x000A;TEXT_METHODS&#x000D;&#x000A;Contains Replace Trim Length&#x000D;&#x000A;&#x000D;&#x000A;EXCEL_METHODS&#x000D;&#x000A;CurrentWorkbook&#x000D;&#x000A;&#x000D;&#x000A;RECORD_METHODS&#x000D;&#x000A;FieldNames&#x000D;&#x000A;&#x000D;&#x000A;LIST_METHODS&#x000D;&#x000A;IsEmpty RemoveLastN Last Count Transform&#x000D;&#x000A;&#x000D;&#x000A;TABLE_METHODS&#x000D;&#x000A;Column ColumnNames</Keywords>
-            <Keywords name="Keywords6">OrdinalIgnoreCase</Keywords>
+            <Keywords name="Keywords5">GENERAL_METHODS&#x000D;&#x000A;From&#x000D;&#x000A;&#x000D;&#x000A;SQL_METHODS&#x000D;&#x000A;Database&#x000D;&#x000A;&#x000D;&#x000A;REPLACER_METHODS&#x000D;&#x000A;ReplaceText ReplaceValue&#x000D;&#x000A;&#x000D;&#x000A;Distinct RowCount&#x000D;&#x000A;&#x000D;&#x000A;LINES_METHODS&#x000D;&#x000A;ToText&#x000D;&#x000A;&#x000D;&#x000A;COMPARER_METHODS&#x000D;&#x000A;Comparer&#x000D;&#x000A;&#x000D;&#x000A;TEXT_METHODS&#x000D;&#x000A;Contains Replace Trim Length&#x000D;&#x000A;&#x000D;&#x000A;EXCEL_METHODS&#x000D;&#x000A;CurrentWorkbook&#x000D;&#x000A;&#x000D;&#x000A;RECORD_METHODS&#x000D;&#x000A;FieldNames&#x000D;&#x000A;&#x000D;&#x000A;LIST_METHODS&#x000D;&#x000A;IsEmpty RemoveLastN Last Count Transform Sum Repeat&#x000D;&#x000A;&#x000D;&#x000A;TABLE_METHODS&#x000D;&#x000A;Column ColumnNames TransformColumnTypes UnpivotOtherColumns RenameColumns Pivot ReorderColumns Group Sort SelectRows</Keywords>
+            <Keywords name="Keywords6">OrdinalIgnoreCase&#x000D;&#x000A;&#x000D;&#x000A;Ascending&#x000D;&#x000A;&#x000D;&#x000A;Type</Keywords>
             <Keywords name="Keywords7"></Keywords>
             <Keywords name="Keywords8">en-US</Keywords>
             <Keywords name="Delimiters">00( 01 02) 03( 04 05) 06[ 07 08] 09[ 10 11] 12{ 13 14} 15{ 16 17} 18#&quot; 19 20&quot; 21&quot; 22\ 23&quot;</Keywords>
