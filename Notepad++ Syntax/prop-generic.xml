@@ -24,7 +24,7 @@
             <Keywords name="Folders in comment, open"></Keywords>
             <Keywords name="Folders in comment, middle"></Keywords>
             <Keywords name="Folders in comment, close"></Keywords>
-            <Keywords name="Keywords1">InfoTip IconFile IconIndex LocalizedResourceName IconResource</Keywords>
+            <Keywords name="Keywords1">InfoTip IconFile IconIndex LocalizedResourceName IconResource ConfirmFileOp</Keywords>
             <Keywords name="Keywords2">sys inf ini ico dll exe bat</Keywords>
             <Keywords name="Keywords3">Verb</Keywords>
             <Keywords name="Keywords4">ShellExecute Open Shell Action Label Icon</Keywords>
