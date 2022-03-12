@@ -1,7 +1,6 @@
 ZSCRIPT_KEYWORDS
 abstract
 action
-actor
 Bright
 class
 clearscope
@@ -25,6 +24,7 @@ play
 private
 property
 protected
+readonly
 replaces
 return
 states
