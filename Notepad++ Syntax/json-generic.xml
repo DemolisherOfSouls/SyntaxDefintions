@@ -13,7 +13,7 @@
             <Keywords name="Numbers, suffix1"></Keywords>
             <Keywords name="Numbers, suffix2"></Keywords>
             <Keywords name="Numbers, range"></Keywords>
-            <Keywords name="Operators1">, INCLUDE_IF_NEEDED</Keywords>
+            <Keywords name="Operators1">: , INCLUDE_IF_NEEDED</Keywords>
             <Keywords name="Operators2"></Keywords>
             <Keywords name="Folders in code1, open"></Keywords>
             <Keywords name="Folders in code1, middle"></Keywords>
@@ -55,10 +55,10 @@
             <WordsStyle name="DELIMITERS2" fgColor="00FF80" bgColor="000000" colorStyle="1" fontStyle="1" nesting="2304" />
             <WordsStyle name="DELIMITERS3" fgColor="FF8040" bgColor="000000" colorStyle="1" fontStyle="1" nesting="67109906" />
             <WordsStyle name="DELIMITERS4" fgColor="00FF40" bgColor="000000" colorStyle="1" fontStyle="0" nesting="14592" />
-            <WordsStyle name="DELIMITERS5" fgColor="FF80FF" bgColor="000000" colorStyle="1" fontStyle="0" nesting="67109954" />
+            <WordsStyle name="DELIMITERS5" fgColor="FF80FF" bgColor="000000" colorStyle="1" fontStyle="0" nesting="83887170" />
             <WordsStyle name="DELIMITERS6" fgColor="0080FF" bgColor="000000" colorStyle="1" fontStyle="1" nesting="14336" />
-            <WordsStyle name="DELIMITERS7" fgColor="FF80FF" bgColor="000000" colorStyle="1" fontStyle="1" nesting="224" />
-            <WordsStyle name="DELIMITERS8" fgColor="0000FF" bgColor="000000" colorStyle="1" fontStyle="0" nesting="67112008" />
+            <WordsStyle name="DELIMITERS7" fgColor="FF80FF" bgColor="000000" colorStyle="1" fontStyle="1" nesting="16777440" />
+            <WordsStyle name="DELIMITERS8" fgColor="0000FF" bgColor="000000" colorStyle="1" fontStyle="0" nesting="83889224" />
         </Styles>
     </UserLang>
 </NotepadPlus>
