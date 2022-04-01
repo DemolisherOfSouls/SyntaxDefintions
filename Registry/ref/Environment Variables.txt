@@ -1,0 +1,7 @@
+%Doom% = Path to editor tool directory (Issue?)	[Q:]
+%Tool% = Path to application directory (Issue?) [C:\Program Files] (%ProgDir%)
+%IconPath% = Path to universal icon repository	[G:\Icons]
+%IconFull% = Path to full-size icon repository	[G:\Icons\Full]
+%GDrive% = Path to Google Drive in Windows	  	[G:]
+%iCloud% = Path to iCloud Drive in Windows	  	[I:]
+%OneDrive% = Path to OneDrive in Windows		    [O:]

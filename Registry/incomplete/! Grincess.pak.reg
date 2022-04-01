@@ -1,0 +1,56 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\.pak]
+@="Grincess.pak"
+"DontCompressInPackage"=""
+"PerceivedType"="compressed"
+"Content Type"="application/x-zip-compressed"
+
+[HKEY_CLASSES_ROOT\.pak\OpenWithProgids]
+"CompressedFolder"=""
+"Grincess.Slade"=""
+
+[HKEY_CLASSES_ROOT\.pak\PersistentHandler]
+@="{3B224B11-9363-407e-850F-C9E1FFACD8FB}"
+
+[HKEY_CLASSES_ROOT\Grincess.pak]
+@="PAK Archive"
+"AppUserModelID"="Microsoft.Windows.Explorer"
+"EditFlags"=dword:00200000
+
+[HKEY_CLASSES_ROOT\Grincess.pak\CLSID]
+@="{E88DCCE0-B7B3-11d1-A9F0-00AA0060FA31}"
+
+[HKEY_CLASSES_ROOT\Grincess.pak\DefaultIcon]
+@="%IconFull%\\VS\\ProjectTemplate.ico"
+
+[HKEY_CLASSES_ROOT\Grincess.pak\Shell]
+@="Edit"
+
+[HKEY_CLASSES_ROOT\Grincess.pak\Shell\Edit]
+[HKEY_CLASSES_ROOT\Grincess.pak\Shell\Edit\Command]
+@="SLADE \"%1\""
+
+[HKEY_CLASSES_ROOT\Grincess.pak\Shell\Find]
+"LegacyDisable"=""
+"SuppressionPolicy"=dword:00000080
+[HKEY_CLASSES_ROOT\Grincess.pak\Shell\Find\Command]
+@="Explorer"
+"DelegateExecute"="{a015411a-f97d-4ef3-8425-8a38d022aebc}"
+
+[HKEY_CLASSES_ROOT\Grincess.pak\Shell\Open]
+"MultiSelectModel"="Document"
+[HKEY_CLASSES_ROOT\Grincess.pak\Shell\Open\Command]
+@="Explorer /idlist,\"%I\",\"%L\""
+"DelegateExecute"="{11dbb47c-a525-400b-9e80-a54615a090c0}"
+
+[HKEY_CLASSES_ROOT\Grincess.pak\Shell\Run]
+[HKEY_CLASSES_ROOT\Grincess.pak\Shell\Run\Command]
+@="gzdoom \"%1\""
+
+[HKEY_CLASSES_ROOT\Grincess.pak\ShellEx]
+[HKEY_CLASSES_ROOT\Grincess.pak\ShellEx\DropHandler]
+@="{ed9d80b9-d157-457b-9192-0e7280313bf0}"
+[HKEY_CLASSES_ROOT\Grincess.pak\ShellEx\StorageHandler]
+@="{E88DCCE0-B7B3-11d1-A9F0-00AA0060FA31}"
+

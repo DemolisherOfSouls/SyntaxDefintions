@@ -1,0 +1,27 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\.xml]
+@="Grincess.xml"
+"Content Type"="text/xml"
+"PerceivedType"="text"
+
+[HKEY_CLASSES_ROOT\.xml\OpenWithProgIds]
+"Grincess.xml"=""
+
+[HKEY_CLASSES_ROOT\.xml\PersistentHandler]
+@="{5e941d80-bf96-11cd-b579-08002b30bfeb}"
+
+[HKEY_CLASSES_ROOT\Grincess.xml]
+@="XML Properties"
+"EditFlags"=dword:00210000
+"FriendlyTypeName"="XML Properties"
+
+[HKEY_CLASSES_ROOT\Grincess.xml\DefaultIcon]
+@="%IconFull%\\VS\\FileXML.ico"
+
+[HKEY_CLASSES_ROOT\Grincess.xml\Shell]
+@="Edit"
+
+[HKEY_CLASSES_ROOT\Grincess.xml\Shell\Edit]
+[HKEY_CLASSES_ROOT\Grincess.xml\Shell\Edit\Command]
+@="notepad++ \"%1\""

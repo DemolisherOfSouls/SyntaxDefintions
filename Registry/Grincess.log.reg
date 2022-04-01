@@ -1,0 +1,27 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\.log]
+@="Grincess.log"
+"Content Type"="text/plain"
+"PerceivedType"="text"
+
+[HKEY_CLASSES_ROOT\.log\OpenWithProgIds]
+"Grincess.log"=""
+
+[HKEY_CLASSES_ROOT\.log\PersistentHandler]
+@="{5e941d80-bf96-11cd-b579-08002b30bfeb}"
+
+[HKEY_CLASSES_ROOT\Grincess.log]
+@="LOG Text File"
+"EditFlags"=dword:00210000
+"FriendlyTypeName"="LOG Text File"
+
+[HKEY_CLASSES_ROOT\Grincess.log\DefaultIcon]
+@="%IconFull%\\VS\\FileText.ico"
+
+[HKEY_CLASSES_ROOT\Grincess.log\Shell]
+@="Edit"
+
+[HKEY_CLASSES_ROOT\Grincess.log\Shell\Edit]
+[HKEY_CLASSES_ROOT\Grincess.log\Shell\Edit\Command]
+@="notepad++ \"%1\""
