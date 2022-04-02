@@ -116,5 +116,4 @@ public static class Extensions
 
     return current;
   }
-
 }

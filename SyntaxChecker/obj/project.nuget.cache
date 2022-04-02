@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "aGoUIdsSqSvvyPqd/Xme3aajHOKFLfk1qRHJ4jJo1YFBHvEWOrpt+h4Y4t0icw70rqHV8T4dWyNfJ78+xL9RDg==",
+  "dgSpecHash": "ve7FvorjQS1RgFuoyA6oa/802TA8AAmY1+P0i3i9k1pXtuC0KD3ZF8R7yHgjkbSrmQLQSHSz21HKpz2hO9Ff2w==",
   "success": true,
-  "projectFilePath": "G:\\My Drive\\Projects\\Visual Studio\\SyntaxDefintions\\SyntaxChecker\\SyntaxChecker.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "G:\\My Drive\\Projects\\SyntaxDefintions\\SyntaxChecker\\SyntaxChecker.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\taylo\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.22000.22\\microsoft.windows.sdk.net.ref.10.0.22000.22.nupkg.sha512"
+  ],
   "logs": []
 }

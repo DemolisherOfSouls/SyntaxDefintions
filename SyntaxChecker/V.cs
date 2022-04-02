@@ -10,7 +10,7 @@ internal class V
 {
   protected internal class ACS
   {
-    static Entry c = new Entry("type","(?'type'int|void|str|bool|char)");
+    static Entry c = new ("type","(?'type'int|void|str|bool|char)");
 
     private static Entry[] type =
     {

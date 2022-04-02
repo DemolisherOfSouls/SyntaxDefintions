@@ -3,13 +3,55 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
+using System.Xml;
 
 namespace SyntaxChecker;
 
+internal class Command
+{
+  public string Name { get; private set; }
+  public Delegate Action { get; private set; }
+
+  Command () : this("Undefined") { }
+  Command (string s) : this(s, null) { }
+  Command (string s, Delegate d)
+  {
+    Name = s;
+    Action = d;
+  }
+
+  public void Execute (object caller, string[] args)
+  {
+    Action.Method.Invoke(caller, args);
+  }
+}
+
 internal class Program
 {
-  [STAThread]
-  private static int Main (string[] args)
+  private static void LoadSettings ()
+  {
+    XmlReader reader = XmlReader.Create("Syntax.config");
+
+    while ( reader.Read() )
+    {
+
+    }
+  }
+
+  public static string LastInput { get; private set; }
+
+  /// <summary>
+  /// Displays a message and requests user text input
+  /// </summary>
+  /// <param name="message">Message to display</param>
+  public static void GetLine (string message = "Enter Command:")
+  {
+    Console.WriteLine(message);
+    Console.Write(">");
+    LastInput = Console.ReadLine();
+  }
+
+  private static void CheckSyntaxes ()
   {
     foreach ( string s in Directory.GetFiles(V.Root) )
     {
@@ -50,6 +92,12 @@ internal class Program
         //string output = "";
       }
     }
+  }
+
+  [STAThread]
+  private static int Main (string[] args)
+  {
+
 
     return 0;
   }

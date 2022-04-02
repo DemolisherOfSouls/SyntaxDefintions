@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net6.0-windows</TargetFramework>
+    <TargetFramework>net6.0-windows10.0.22000.0</TargetFramework>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>warnings</Nullable>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
@@ -15,6 +15,15 @@
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/DemolisherOfSouls/SyntaxDefintions</RepositoryUrl>
     <NeutralLanguage>en-US</NeutralLanguage>
+    <StartupObject>SyntaxChecker.Program</StartupObject>
+    <ApplicationIcon>AppDocument.ico</ApplicationIcon>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <SignAssembly>False</SignAssembly>
+    <Authors>Grincess</Authors>
+    <PackageIcon>AppClass.ico</PackageIcon>
+    <PackageTags>syntax, notepad++,drafts</PackageTags>
+    <AssemblyVersion>$(Version)</AssemblyVersion>
+    <FileVersion>$(Version)</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -22,31 +31,60 @@
     <Optimize>True</Optimize>
     <WarningLevel>5</WarningLevel>
     <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <NoWarn>1701;1702</NoWarn>
+    <WarningsAsErrors>$(WarningsAsErrors);NU1605</WarningsAsErrors>
+    <Deterministic>True</Deterministic>
+    <FileAlignment>512</FileAlignment>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <PlatformTarget>x86</PlatformTarget>
     <WarningLevel>5</WarningLevel>
     <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <NoWarn>1701;1702</NoWarn>
+    <WarningsAsErrors>$(WarningsAsErrors);NU1605</WarningsAsErrors>
+    <Deterministic>True</Deterministic>
+    <FileAlignment>512</FileAlignment>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="desktop.ini" />
     <None Remove="Properties\desktop.ini" />
+    <None Remove="Resources\desktop.ini" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Properties\Resources.Designer.cs">
+    <Content Include="AppDocument.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\Icons\256x256\VS\AppClass.ico">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\FullRegex.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
+      <DependentUpon>FullRegex.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Specification.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Specification.resx</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    <EmbeddedResource Update="Properties\FullRegex.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FullRegex.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Properties\Specification.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Specification.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 

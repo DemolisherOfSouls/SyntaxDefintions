@@ -1,10 +1,41 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="SyntaxChecker.V" Collapsed="true">
-    <Position X="1.25" Y="0.5" Width="2.5" />
+  <Class Name="SyntaxChecker.V">
+    <Position X="2.75" Y="1.75" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="SyntaxChecker.V.ACS">
+        <TypeIdentifier>
+          <NewMemberFileName>V.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAIACAAAEAAAACAAAEAAAAEAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <HashCode>AAIACAAAAAAAACAAAEAAAAEAAAAAAAAAAAQAAAAAAAA=</HashCode>
       <FileName>V.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SyntaxChecker.Program">
+    <Position X="0.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SyntaxChecker.Extensions">
+    <Position X="6.5" Y="2" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="SyntaxChecker.Extensions.EscapeOptions" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Extensions.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAACAAAAQAAAAAAACIgABAAAAAA=</HashCode>
+      <FileName>Extensions.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="10" />
