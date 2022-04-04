@@ -2,12 +2,12 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net6.0-windows10.0.22000.0</TargetFramework>
+    <TargetFramework>preview</TargetFramework>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>warnings</Nullable>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
     <ErrorReport>send</ErrorReport>
-    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
@@ -17,13 +17,17 @@
     <NeutralLanguage>en-US</NeutralLanguage>
     <StartupObject>SyntaxChecker.Program</StartupObject>
     <ApplicationIcon>AppDocument.ico</ApplicationIcon>
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <SignAssembly>False</SignAssembly>
     <Authors>Grincess</Authors>
     <PackageIcon>AppClass.ico</PackageIcon>
     <PackageTags>syntax, notepad++,drafts</PackageTags>
     <AssemblyVersion>$(Version)</AssemblyVersion>
+    <LangVersion>preview</LangVersion>
     <FileVersion>$(Version)</FileVersion>
+    <AssemblyName>SyntaxChecker.exe</AssemblyName>
+    <ProduceReferenceAssembly>True</ProduceReferenceAssembly>
+    <GenerateDocumentationFile>False</GenerateDocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -35,6 +39,7 @@
     <WarningsAsErrors>$(WarningsAsErrors);NU1605</WarningsAsErrors>
     <Deterministic>True</Deterministic>
     <FileAlignment>512</FileAlignment>
+    <DefineConstants>$(DefineConstants)TRACE</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -45,6 +50,7 @@
     <WarningsAsErrors>$(WarningsAsErrors);NU1605</WarningsAsErrors>
     <Deterministic>True</Deterministic>
     <FileAlignment>512</FileAlignment>
+    <DefineConstants>$(DefineConstants)TRACE</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>
@@ -70,6 +76,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>FullRegex.resx</DependentUpon>
     </Compile>
+    <Compile Update="Resources\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Update="Properties\Specification.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -82,10 +93,18 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>FullRegex.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Update="Properties\Specification.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Specification.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
   </ItemGroup>
 
 </Project>
