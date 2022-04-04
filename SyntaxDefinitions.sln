@@ -22,13 +22,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "definition", "definition", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "registry", "registry", "{1BDBE474-6875-4201-87A1-30BCCBD8AC9D}"
 	ProjectSection(SolutionItems) = preProject
-		Registry\app-notepad++.reg = Registry\app-notepad++.reg
-		Registry\AppClass Notepad++.reg = Registry\AppClass Notepad++.reg
+		Registry\app-npp.reg = Registry\app-npp.reg
 		Registry\class-folder.reg = Registry\class-folder.reg
+		Registry\class-sw-prop.reg = Registry\class-sw-prop.reg
 		Registry\class-vb.reg = Registry\class-vb.reg
-		Registry\Grincess.acs.reg = Registry\Grincess.acs.reg
+		Registry\class-zd-acs.reg = Registry\class-zd-acs.reg
 		Registry\Grincess.acs_o.reg = Registry\Grincess.acs_o.reg
-		Registry\Grincess.asmprp.reg = Registry\Grincess.asmprp.reg
 		Registry\Grincess.bas.reg = Registry\Grincess.bas.reg
 		Registry\Grincess.bat.reg = Registry\Grincess.bat.reg
 		Registry\Grincess.c.reg = Registry\Grincess.c.reg
