@@ -1,10 +1,18 @@
-﻿using System.IO;
-using System.Text.RegularExpressions;
-
+﻿
 using Entry = System.Collections.Generic.KeyValuePair<string, string>;
 using RO = System.Text.RegularExpressions.RegexOptions;
 
 namespace SyntaxChecker;
+
+public class RegExPart
+{
+  private static ushort next = 1;
+
+  RegExPart (rx)
+  {
+
+  }
+}
 
 internal class V
 {

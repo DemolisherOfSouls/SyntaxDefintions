@@ -1,24 +1,18 @@
 {
   "version": 3,
-  "targets": {
-    "net6.0-windows10.0.22000": {}
-  },
+  "targets": {},
   "libraries": {},
-  "projectFileDependencyGroups": {
-    "net6.0-windows10.0.22000": []
-  },
+  "projectFileDependencyGroups": {},
   "packageFolders": {
     "C:\\Users\\taylo\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
-    "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\My Drive\\Projects\\SyntaxDefintions\\SyntaxChecker\\SyntaxChecker.csproj",
-      "projectName": "SyntaxChecker",
-      "projectPath": "G:\\My Drive\\Projects\\SyntaxDefintions\\SyntaxChecker\\SyntaxChecker.csproj",
+      "projectUniqueName": "G:\\My Drive\\Projects\\SyntaxDefinitions\\SyntaxChecker\\SyntaxChecker.csproj",
+      "projectPath": "G:\\My Drive\\Projects\\SyntaxDefinitions\\SyntaxChecker\\SyntaxChecker.csproj",
       "packagesPath": "C:\\Users\\taylo\\.nuget\\packages\\",
-      "outputPath": "G:\\My Drive\\Projects\\SyntaxDefintions\\SyntaxChecker\\obj\\",
+      "outputPath": "G:\\My Drive\\Projects\\SyntaxDefinitions\\SyntaxChecker\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -28,54 +22,17 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
-      "originalTargetFrameworks": [
-        "net6.0-windows10.0.22000"
-      ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
-      },
-      "frameworks": {
-        "net6.0-windows10.0.22000": {
-          "targetAlias": "net6.0-windows10.0.22000.0",
-          "projectReferences": {}
-        }
-      },
-      "warningProperties": {
-        "warnAsError": [
-          "NU1605"
-        ]
-      }
-    },
-    "frameworks": {
-      "net6.0-windows10.0.22000": {
-        "targetAlias": "net6.0-windows10.0.22000.0",
-        "imports": [
-          "net461",
-          "net462",
-          "net47",
-          "net471",
-          "net472",
-          "net48"
-        ],
-        "assetTargetFallback": true,
-        "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.Windows.SDK.NET.Ref",
-            "version": "[10.0.22000.22, 10.0.22000.22]"
-          }
-        ],
-        "frameworkReferences": {
-          "Microsoft.NETCore.App": {
-            "privateAssets": "all"
-          },
-          "Microsoft.Windows.SDK.NET.Ref": {
-            "privateAssets": "all"
-          }
-        },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1105",
+      "level": "Error",
+      "message": "Unable to read project information for 'SyntaxChecker': Invalid framework identifier ''."
+    }
+  ]
 }

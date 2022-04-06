@@ -1,10 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "ve7FvorjQS1RgFuoyA6oa/802TA8AAmY1+P0i3i9k1pXtuC0KD3ZF8R7yHgjkbSrmQLQSHSz21HKpz2hO9Ff2w==",
-  "success": true,
-  "projectFilePath": "G:\\My Drive\\Projects\\SyntaxDefintions\\SyntaxChecker\\SyntaxChecker.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\taylo\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.22000.22\\microsoft.windows.sdk.net.ref.10.0.22000.22.nupkg.sha512"
-  ],
-  "logs": []
+  "dgSpecHash": "wYodgw7Q0HqO4hJwsdPFotCbGG9xkdL6u+3EOF8Vie+/UGt2YBIIehju5UiDLwq8HGgP7Pzc/hZPTrhHose21w==",
+  "success": false,
+  "projectFilePath": "G:\\My Drive\\Projects\\SyntaxDefinitions\\SyntaxChecker\\SyntaxChecker.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1105",
+      "level": "Error",
+      "message": "Unable to read project information for 'SyntaxChecker': Invalid framework identifier ''."
+    }
+  ]
 }

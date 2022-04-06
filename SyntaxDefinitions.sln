@@ -12,17 +12,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Syntax.filenesting.json = Syntax.filenesting.json
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "definition", "definition", "{E9D175DB-6160-4821-BD30-69F8E19E45DC}"
-	ProjectSection(SolutionItems) = preProject
-		CompleteDefinition\properties-desktop.regex = CompleteDefinition\properties-desktop.regex
-		CompleteDefinition\zdoom-textures.regex = CompleteDefinition\zdoom-textures.regex
-		CompleteDefinition\zdoom-udmf.regex = CompleteDefinition\zdoom-udmf.regex
-		CompleteDefinition\zdoom-udmf.txt = CompleteDefinition\zdoom-udmf.txt
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "registry", "registry", "{1BDBE474-6875-4201-87A1-30BCCBD8AC9D}"
 	ProjectSection(SolutionItems) = preProject
 		Registry\app-npp.reg = Registry\app-npp.reg
+		Registry\assoc-edit-sw-npp.reg = Registry\assoc-edit-sw-npp.reg
 		Registry\class-folder.reg = Registry\class-folder.reg
 		Registry\class-sw-prop.reg = Registry\class-sw-prop.reg
 		Registry\class-vb.reg = Registry\class-vb.reg
@@ -63,7 +56,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "registry", "registry", "{1B
 		Registry\Software GZDoom.reg = Registry\Software GZDoom.reg
 		Registry\Software Slade.reg = Registry\Software Slade.reg
 		Registry\Software UltimateDoomBuilder.reg = Registry\Software UltimateDoomBuilder.reg
-		Registry\assoc-edit-sw-npp.reg = Registry\assoc-edit-sw-npp.reg
 	EndProjectSection
 EndProject
 Global

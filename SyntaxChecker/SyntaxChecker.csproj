@@ -2,7 +2,6 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>preview</TargetFramework>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>warnings</Nullable>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>

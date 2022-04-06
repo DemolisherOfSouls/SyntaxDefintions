@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text.RegularExpressions;
-
-namespace SyntaxChecker;
+﻿namespace SyntaxChecker;
 
 public static class Extensions
 {
