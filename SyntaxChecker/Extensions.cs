@@ -1,4 +1,8 @@
-﻿namespace SyntaxChecker;
+﻿using System;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
+
+namespace SyntaxChecker;
 
 public static class Extensions
 {
@@ -30,6 +34,16 @@ public static class Extensions
     return assembled;
   }
 
+  public static Dictionary<string, CaptureCollection> ToDictionary (this GroupCollection groupCollection)
+  {
+    Dictionary<string, CaptureCollection> dic = new();
+    foreach ( Group group in groupCollection )
+    {
+      dic.Add(group.Name, group.Captures);
+    }
+    return dic;
+  }
+
   public static List<string> ToList (this CaptureCollection captureCollection)
   {
     List<string> list = new();
@@ -51,8 +65,11 @@ public static class Extensions
     return String.IsNullOrEmpty(s);
   }
 
-  public static string ReplaceList (this string s, List<string> old, List<string> replacement, bool ignoreCase = false)
+  public static string ReplaceList (this string s, IList<string> old, IList<string> replacement, bool ignoreCase = false)
   {
+    var defRep = StringComparison.Ordinal;
+    if ( ignoreCase )
+      defRep = StringComparison.OrdinalIgnoreCase;
 
     if ( s.IsNullOrEmpty() )
     {
@@ -77,7 +94,7 @@ public static class Extensions
     for ( int i = 0; i < old.Count; i++ )
     {
 
-      s = s.Replace(old[i], replacement[i]);
+      s = s.Replace(old[i], replacement[i], defRep);
 
     }
     return s;

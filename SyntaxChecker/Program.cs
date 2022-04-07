@@ -11,6 +11,7 @@ internal class Program
 {
   private static void LoadSettings ()
   {
+    CodeArea = "Program.LoadSettings()";
     XmlReader reader = XmlReader.Create("Syntax.config");
 
     while ( reader.Read() )
@@ -20,6 +21,9 @@ internal class Program
   }
 
   public static string LastInput { get; private set; }
+  public static string CodeArea { get; internal set; }
+
+
 
   /// <summary>
   /// Displays a message and requests user text input
@@ -34,6 +38,7 @@ internal class Program
 
   private static void CheckSyntaxes ()
   {
+    CodeArea = "Program.CheckSyntaxes()";
     foreach ( string s in Directory.GetFiles(V.Root) )
     {
 
@@ -78,7 +83,7 @@ internal class Program
   [STAThread]
   private static int Main (string[] args)
   {
-
+    CodeArea = $"Program.Main({args})";
 
     return 0;
   }

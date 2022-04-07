@@ -12,15 +12,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Syntax.filenesting.json = Syntax.filenesting.json
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "registry", "registry", "{1BDBE474-6875-4201-87A1-30BCCBD8AC9D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Registry", "Registry", "{1BDBE474-6875-4201-87A1-30BCCBD8AC9D}"
 	ProjectSection(SolutionItems) = preProject
 		Registry\app-npp.reg = Registry\app-npp.reg
 		Registry\assoc-edit-sw-npp.reg = Registry\assoc-edit-sw-npp.reg
+		Registry\class-acs_o.reg = Registry\class-acs_o.reg
 		Registry\class-folder.reg = Registry\class-folder.reg
+		Registry\class-pk3.reg = Registry\class-pk3.reg
 		Registry\class-sw-prop.reg = Registry\class-sw-prop.reg
 		Registry\class-vb.reg = Registry\class-vb.reg
 		Registry\class-zd-acs.reg = Registry\class-zd-acs.reg
-		Registry\Grincess.acs_o.reg = Registry\Grincess.acs_o.reg
 		Registry\Grincess.bas.reg = Registry\Grincess.bas.reg
 		Registry\Grincess.bat.reg = Registry\Grincess.bat.reg
 		Registry\Grincess.c.reg = Registry\Grincess.c.reg
@@ -42,7 +43,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "registry", "registry", "{1B
 		Registry\Grincess.log.reg = Registry\Grincess.log.reg
 		Registry\Grincess.mapinfo.reg = Registry\Grincess.mapinfo.reg
 		Registry\Grincess.menudef.reg = Registry\Grincess.menudef.reg
-		Registry\Grincess.pk3.reg = Registry\Grincess.pk3.reg
 		Registry\Grincess.pk4.reg = Registry\Grincess.pk4.reg
 		Registry\Grincess.pk7.reg = Registry\Grincess.pk7.reg
 		Registry\Grincess.png.reg = Registry\Grincess.png.reg

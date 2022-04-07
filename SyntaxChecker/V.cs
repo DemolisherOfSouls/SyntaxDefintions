@@ -1,5 +1,10 @@
-﻿
+﻿using System.Collections.Generic;
+using System.IO;
+using System.Text.RegularExpressions;
+
+using Duration = System.TimeSpan;
 using Entry = System.Collections.Generic.KeyValuePair<string, string>;
+using RegEx = System.Text.RegularExpressions.Regex;
 using RO = System.Text.RegularExpressions.RegexOptions;
 
 namespace SyntaxChecker;
@@ -7,10 +12,35 @@ namespace SyntaxChecker;
 public class RegExPart
 {
   private static ushort next = 1;
+  private RegEx exp;
+  private ushort id;
 
-  RegExPart (rx)
+  public RegExPart (string rx, RO opt = RO.CultureInvariant & RO.Multiline, int ticks = 200)
   {
+    id = next++;
+    exp = new RegEx(rx, opt, new Duration(ticks));
+  }
 
+  public bool Test (string s)
+  {
+    return exp.IsMatch(s);
+  }
+
+  public List<List<string>> Execute (string s)
+  {
+    List<List<string>> list = new ();
+    MatchCollection mc = exp.Matches(s);
+    for ( int im = 0; im < mc.Count; im++ )
+    {
+      Match m = mc[im];
+      list.Add(new List<string>());
+      for ( int ic = 0; im < m.Captures.Count; ic++ )
+      {
+        Capture c = m.Captures[ic];
+        list[im].Add(c.Value);
+      }
+    }
+    return list;
   }
 }
 
