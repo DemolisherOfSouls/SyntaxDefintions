@@ -5,8 +5,14 @@
   "author": "Grincess",
   "scopeName": "zdoom.zscript",
   "navigationPatterns": [],
-  "rangeExtensionType": { "default": "lookAround1000" },
-  "fileExtensions": [ "zs","decorate" ],
+  "rangeExtensionType": {
+    "default": "lookAround1000"
+  },
+  "fileExtensions": [
+    "zs",
+    "decorate",
+    "dec"
+  ],
   "patterns": [
     {
       "match": "(\\/\\*[\\S\\s]*?\\*\\/)|(\\/\\/.*)",
