@@ -5,25 +5,18 @@
   "author": "Grincess",
   "scopeName": "text.typescript",
   "rangeExtensionType": {
-    "default": "lookAround1000"
-  },
+    "default": "lookAround1000"},
   "listCompletionDefinitions": [],
   "fileExtensions": ["ts"],
   "navigationPatterns": [],
   "patterns": [{
-    "match": "(\\/\\*[\\S\\s]*?\\*\\/)",
+    "match": "\\/\\*[\\S\\s]*?\\*\\/|\\/\\/[^\\n]*",
     "exclusive": true,
     "comment": "Block comment",
     "captures": {
       "0": {"scope": "code.comment"}}
   },{
-    "match": "(?:^|\\s)(\\/\\/. +?) $",
-    "exclusive": true,
-    "comment": "Inline comment",
-    "captures": {
-      "0": {"scope": "code.comment"}}
-  },{
-    "match": "(['\"])(?:(?!(?:\\\\|\\1)). |\\\\.) *\\1",
+    "match": "([\'\"])(?:(?!(?:\\\\|\\1)).|\\\\.)*\\1",
     "exclusive": true,
     "comment": "String literal",
     "captures": {
@@ -34,27 +27,26 @@
     "comment": "Defined Constant",
     "captures": {
       "0": {"scope": "code.literal"}}
-  }, {
-    "match": "\\b-?(?:0x[\\da-f]+|\\d*\\.? \\d+(?:e[+-]? \\d+)?) \\b",
+  },{
+    "match": "\\b-?(?:0x[\\da-f]+|\\d*\\.?\\d+(?:e[+-]?\\d+)?)\\b",
     "exclusive": true,
     "comment": "Number",
     "captures": {
-      "0": {
-        "scope": "code.literal"}}
+      "0": {"scope": "code.literal"}}
   },{
-    "match": "--? |\\+\\+? |! =? =? |<=? |>=? |==? =? |&&? |\\|\\|? |\\? |\\*|\\/|~|\\^|%",
+    "match": "--?|\\+\\+?|!=?=?|<=?|>=?|==?=?|&&?|\\|\\|?|\\?|\\*|\\/|~|\\^|%",
     "exclusive": true,
     "comment": "Operator",
     "captures": {
       "0": {"scope": "code.operator"}}
-  }, {
+  },{
     "match": "([{}\\[\\];(),.:])",
     "exclusive": true,
     "comment": "Punctuation",
     "captures": {
       "1": {"scope": "code.punctuation"}}
-  }, {
-    "match": "(? <! \\w|\\$|\\%|\\@|>)(int|bool|float|double|string|char)(?! \\w|=\")",
+  },{
+    "match": "(?<!\\w|\\$|\\%|\\@|>)(int|bool|float|double|string|char)(?! \\w|=\")",
     "exclusive": true,
     "comment": "Javascript class",
     "captures": {

@@ -1,2 +1,1 @@
-cd "%icloud%\iCloud~com~agiletortoise~Drafts5\Library\Syntaxes"
-xcopy *.json "%Projects%\SyntaxDefinitions\Drafts\" /y
+xcopy %Drafts%\Syntaxes\*.json "%Projects%\SyntaxDefinitions\Drafts\" /y
