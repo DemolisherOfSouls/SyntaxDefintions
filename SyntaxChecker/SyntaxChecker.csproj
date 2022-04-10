@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>.net6.0</TargetFramework>
+  <PropertyGroup Label="Main">
+    <TargetFramework>net6.0</TargetFramework>
     <OutputType>Exe</OutputType>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>warnings</Nullable>
@@ -30,7 +30,7 @@
     <GenerateDocumentationFile>False</GenerateDocumentationFile>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'" Label="Debug">
     <PlatformTarget>x86</PlatformTarget>
     <Optimize>True</Optimize>
     <WarningLevel>5</WarningLevel>
@@ -42,7 +42,7 @@
     <DefineConstants>$(DefineConstants)TRACE</DefineConstants>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'" Label="Release">
     <PlatformTarget>x86</PlatformTarget>
     <WarningLevel>5</WarningLevel>
     <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
@@ -55,8 +55,7 @@
 
   <ItemGroup>
     <None Remove="desktop.ini" />
-    <None Remove="Properties\desktop.ini" />
-    <None Remove="Resources\desktop.ini" />
+    <None Remove="*\desktop.ini" />
   </ItemGroup>
 
   <ItemGroup>

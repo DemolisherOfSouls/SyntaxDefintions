@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 namespace SyntaxChecker;
-
+public enum EscapeOptions
+{
+  BS  = 1, //Backslash
+  DQ  = 2, //Double Quote
+  SQ  = 4  //Single Quote
+}
 public static class Extensions
 {
-
   public static string Assemble (this List<string> list, string delim, string pre, string post)
   {
     string assembled = pre;
@@ -100,31 +104,34 @@ public static class Extensions
     return s;
   }
 
-  public enum EscapeOptions
+  public static string Escape (this string current, EscapeOptions opt = EscapeOptions.BS)
   {
-    EscapeBackSlashOnly = 0,
-    EscapeForJSON = 1,
-    EscapeForXML = 2,
-  }
+    var BSPrepender = new MatchEvaluator((Match m) => @"\" + m.Value)
 
-  public static string PrependBS (Match match)
-  {
-    return @"\" + match.Value;
-  }
+    if ( current is null )
+      return null;
 
-  public static string Escape (this string current, EscapeOptions opt)
-  {
-    if ( current.IsNullOrEmpty() )
+    if ( opt.HasFlag(EscapeOptions.BS) )
     {
-      return current;
+      Regex BSReplacer = new (@"(?<!\\)(\\[ntvrb0f])");
+      current = BSReplacer.Replace(current, BSPrepender);
     }
 
-    Regex BSReplacer = new (@"(?<!\\)(\\[ntvrb0f])");
-    MatchEvaluator BSPrepender = new (PrependBS);
-
-    if ( opt == EscapeOptions.EscapeForJSON )
+    if ( opt.HasFlag(EscapeOptions.SQ) )
     {
-      current = BSReplacer.Replace(current, BSPrepender);
+      Regex SQReplacer = new (@"(?<!\\)'");
+      current = SQReplacer.Replace(current, BSPrepender);
+    }
+
+    if ( opt.HasFlag(EscapeOptions.DQ) )
+    {
+      Regex SQReplacer = new (@"(?<!\\)""");
+      current = SQReplacer.Replace(current, BSPrepender);
+    }
+
+    if ( opt == EscapeOptions.SQ )
+    {
+
     }
 
     return current;

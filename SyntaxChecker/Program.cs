@@ -85,6 +85,9 @@ internal class Program
   {
     CodeArea = $"Program.Main({args})";
 
+    LoadSettings();
+    CheckSyntaxes();
+
     return 0;
   }
 }

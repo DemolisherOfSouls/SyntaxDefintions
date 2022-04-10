@@ -3,7 +3,7 @@ using System.IO;
 using System.Text.RegularExpressions;
 
 using Duration = System.TimeSpan;
-using Entry = System.Collections.Generic.KeyValuePair<string, string>;
+using Entry = System.Collections.Generic.KeyValuePair<string, int>;
 using RegEx = System.Text.RegularExpressions.Regex;
 using RO = System.Text.RegularExpressions.RegexOptions;
 
@@ -12,10 +12,23 @@ namespace SyntaxChecker;
 public class RegExPart
 {
   private static ushort next = 1;
+  private static IList<string> rxNames = new List<string>();
+  private static IList<RegExPart> rxValues = new List<RegExPart>();
+
+  public static ushort Add (string name, string rx, RO opt = RO.CultureInvariant & RO.Multiline)
+  {
+    var x = new RegExPart(rx, opt);
+    rxNames.Add(name);
+    rxValues.Add(x);
+    return x.id;
+  }
+
   private RegEx exp;
   private ushort id;
+  private bool executed = false;
+  private MatchCollection lastmc;
 
-  public RegExPart (string rx, RO opt = RO.CultureInvariant & RO.Multiline, int ticks = 200)
+  public RegExPart (string rx, RO opt, int ticks = 200)
   {
     id = next++;
     exp = new RegEx(rx, opt, new Duration(ticks));
@@ -26,31 +39,21 @@ public class RegExPart
     return exp.IsMatch(s);
   }
 
-  public List<List<string>> Execute (string s)
+  public void Execute (string s)
   {
-    List<List<string>> list = new ();
-    MatchCollection mc = exp.Matches(s);
-    for ( int im = 0; im < mc.Count; im++ )
-    {
-      Match m = mc[im];
-      list.Add(new List<string>());
-      for ( int ic = 0; im < m.Captures.Count; ic++ )
-      {
-        Capture c = m.Captures[ic];
-        list[im].Add(c.Value);
-      }
-    }
-    return list;
+    lastmc = exp.Matches(s);
+    executed = true;
   }
 }
 
-internal class V
+internal static class V
 {
-  protected internal class ACS
+  eeee
+  internal class ACS
   {
     static Entry c = new ("type","(?'type'int|void|str|bool|char)");
 
-    private static Entry[] type =
+    private static List<Entry> type = new()
     {
       c,
       new Entry("type","(?'type'int|void|str|bool|char)")
