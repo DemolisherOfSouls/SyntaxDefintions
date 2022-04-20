@@ -5,87 +5,57 @@ VisualStudioVersion = 17.0.31717.71
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SyntaxChecker", "SyntaxChecker\SyntaxChecker.csproj", "{FDAC5FEC-D7A6-47A6-BA5D-553FC01359B2}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notepad++", "Notepad++", "{9A186093-7782-45CF-98F9-26C35E72FD55}"
-	ProjectSection(SolutionItems) = preProject
-		Notepad++ Syntax\batch.xml = Notepad++ Syntax\batch.xml
-		Notepad++ Syntax\excel-formula.xml = Notepad++ Syntax\excel-formula.xml
-		Notepad++ Syntax\excel-powerquerym.xml = Notepad++ Syntax\excel-powerquerym.xml
-		Notepad++ Syntax\git-attributes.xml = Notepad++ Syntax\git-attributes.xml
-		Notepad++ Syntax\git-ignore.xml = Notepad++ Syntax\git-ignore.xml
-		Notepad++ Syntax\git-workflow.xml = Notepad++ Syntax\git-workflow.xml
-		Notepad++ Syntax\gmail.xml = Notepad++ Syntax\gmail.xml
-		Notepad++ Syntax\javascript-draftsaction.xml = Notepad++ Syntax\javascript-draftsaction.xml
-		Notepad++ Syntax\json-draftssyntax.xml = Notepad++ Syntax\json-draftssyntax.xml
-		Notepad++ Syntax\json-draftstheme.xml = Notepad++ Syntax\json-draftstheme.xml
-		Notepad++ Syntax\json-generic.xml = Notepad++ Syntax\json-generic.xml
-		Notepad++ Syntax\json-gform.xml = Notepad++ Syntax\json-gform.xml
-		Notepad++ Syntax\prop-generic.xml = Notepad++ Syntax\prop-generic.xml
-		Notepad++ Syntax\prop-reg.xml = Notepad++ Syntax\prop-reg.xml
-		Notepad++ Syntax\regex.xml = Notepad++ Syntax\regex.xml
-		Notepad++ Syntax\vba-dotnet4.8.xml = Notepad++ Syntax\vba-dotnet4.8.xml
-		Notepad++ Syntax\vba-office.xml = Notepad++ Syntax\vba-office.xml
-		Notepad++ Syntax\vssln.xml = Notepad++ Syntax\vssln.xml
-		Notepad++ Syntax\xml-generic.xml = Notepad++ Syntax\xml-generic.xml
-		Notepad++ Syntax\xml-google.xml = Notepad++ Syntax\xml-google.xml
-		Notepad++ Syntax\xml-npp.xml = Notepad++ Syntax\xml-npp.xml
-		Notepad++ Syntax\xml-vsproj.xml = Notepad++ Syntax\xml-vsproj.xml
-		Notepad++ Syntax\zdoom-acs.func.xml = Notepad++ Syntax\zdoom-acs.func.xml
-		Notepad++ Syntax\zdoom-acs.xml = Notepad++ Syntax\zdoom-acs.xml
-		Notepad++ Syntax\zdoom-cvarinfo.xml = Notepad++ Syntax\zdoom-cvarinfo.xml
-		Notepad++ Syntax\zdoom-keyconf.xml = Notepad++ Syntax\zdoom-keyconf.xml
-		Notepad++ Syntax\zdoom-mapinfo.xml = Notepad++ Syntax\zdoom-mapinfo.xml
-		Notepad++ Syntax\zdoom-menudef.xml = Notepad++ Syntax\zdoom-menudef.xml
-		Notepad++ Syntax\zdoom-modeldef.xml = Notepad++ Syntax\zdoom-modeldef.xml
-		Notepad++ Syntax\zdoom-sbarinfo.xml = Notepad++ Syntax\zdoom-sbarinfo.xml
-		Notepad++ Syntax\zdoom-terrain.xml = Notepad++ Syntax\zdoom-terrain.xml
-		Notepad++ Syntax\zdoom-textures.xml = Notepad++ Syntax\zdoom-textures.xml
-		Notepad++ Syntax\zdoom-udmf.xml = Notepad++ Syntax\zdoom-udmf.xml
-		Notepad++ Syntax\zdoom-xlat.xml = Notepad++ Syntax\zdoom-xlat.xml
-		Notepad++ Syntax\zdoom-zscript.xml = Notepad++ Syntax\zdoom-zscript.xml
-		Notepad++ Syntax\zdoom-zsdf.xml = Notepad++ Syntax\zdoom-zsdf.xml
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Schemas", "Schemas", "{BC56F825-E652-4781-9119-CD7FAA5942D5}"
-	ProjectSection(SolutionItems) = preProject
-		Drafts Syntax\DraftsSchema.json = Drafts Syntax\DraftsSchema.json
-		Drafts Syntax\MetaSchema.json = Drafts Syntax\MetaSchema.json
-		Notepad++ Syntax\notepadpp.xsd = Notepad++ Syntax\notepadpp.xsd
-	EndProjectSection
-	ProjectSection(FolderGlobals) = preProject
-		G_5_4My Drive_4Projects_4Visual Studio_4SyntaxDefintions_4Drafts Syntax_4DraftsSchema_1json__JsonSchema = 
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Drafts", "Drafts", "{A0B84EFB-7469-49DF-AADB-4797515E5F42}"
-	ProjectSection(SolutionItems) = preProject
-		Drafts Syntax\acs.json = Drafts Syntax\acs.json
-		Drafts Syntax\draftsaction.json = Drafts Syntax\draftsaction.json
-		Drafts Syntax\draftssyntax.json = Drafts Syntax\draftssyntax.json
-		Drafts Syntax\javascript+.json = Drafts Syntax\javascript+.json
-		Drafts Syntax\javascript.json = Drafts Syntax\javascript.json
-		Drafts Syntax\json.json = Drafts Syntax\json.json
-		Drafts Syntax\regex.json = Drafts Syntax\regex.json
-		Drafts Syntax\typescript.json = Drafts Syntax\typescript.json
-		Drafts Syntax\vba.json = Drafts Syntax\vba.json
-		Drafts Syntax\zscript.json = Drafts Syntax\zscript.json
-	EndProjectSection
-	ProjectSection(FolderGlobals) = preProject
-		G_5_4My Drive_4Projects_4Visual Studio_4SyntaxDefintions_4Drafts Syntax_4draftssyntax_1json__JsonSchema = draftssc
-		G_5_4My Drive_4Projects_4Visual Studio_4SyntaxDefintions_4Drafts Syntax_4acs_1json__JsonSchema = DraftsSchema.json
-		C_5_4Dev_4Projects_4SyntaxDefintions_4Drafts Syntax_4draftsaction_1json__JsonSchema = DraftsSchema.json
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BF9BC2B1-3B02-4693-ADCE-4A90CE6EFD29}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 		README.md = README.md
+		Syntax.filenesting.json = Syntax.filenesting.json
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Complete Language Definitions", "Complete Language Definitions", "{E9D175DB-6160-4821-BD30-69F8E19E45DC}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Registry", "Registry", "{1BDBE474-6875-4201-87A1-30BCCBD8AC9D}"
 	ProjectSection(SolutionItems) = preProject
-		CompleteDefinition\properties-desktop.regex = CompleteDefinition\properties-desktop.regex
-		CompleteDefinition\zdoom-textures.regex = CompleteDefinition\zdoom-textures.regex
-		CompleteDefinition\zdoom-udmf.regex = CompleteDefinition\zdoom-udmf.regex
-		CompleteDefinition\zdoom-udmf.txt = CompleteDefinition\zdoom-udmf.txt
+		Registry\app-npp.reg = Registry\app-npp.reg
+		Registry\assoc-edit-sw-npp.reg = Registry\assoc-edit-sw-npp.reg
+		Registry\class-acs_o.reg = Registry\class-acs_o.reg
+		Registry\class-folder.reg = Registry\class-folder.reg
+		Registry\class-pk3.reg = Registry\class-pk3.reg
+		Registry\class-sw-prop.reg = Registry\class-sw-prop.reg
+		Registry\class-vb.reg = Registry\class-vb.reg
+		Registry\class-zd-acs.reg = Registry\class-zd-acs.reg
+		Registry\Grincess.bas.reg = Registry\Grincess.bas.reg
+		Registry\Grincess.bat.reg = Registry\Grincess.bat.reg
+		Registry\Grincess.c.reg = Registry\Grincess.c.reg
+		Registry\Grincess.cfg.reg = Registry\Grincess.cfg.reg
+		Registry\Grincess.cs.reg = Registry\Grincess.cs.reg
+		Registry\Grincess.dll.reg = Registry\Grincess.dll.reg
+		Registry\Grincess.gdoc.reg = Registry\Grincess.gdoc.reg
+		Registry\Grincess.gform.reg = Registry\Grincess.gform.reg
+		Registry\Grincess.gitattributes.reg = Registry\Grincess.gitattributes.reg
+		Registry\Grincess.gitignore.reg = Registry\Grincess.gitignore.reg
+		Registry\Grincess.gmail.reg = Registry\Grincess.gmail.reg
+		Registry\Grincess.gsheet.reg = Registry\Grincess.gsheet.reg
+		Registry\Grincess.gshortcut.reg = Registry\Grincess.gshortcut.reg
+		Registry\Grincess.h.reg = Registry\Grincess.h.reg
+		Registry\Grincess.hpp.reg = Registry\Grincess.hpp.reg
+		Registry\Grincess.inf.reg = Registry\Grincess.inf.reg
+		Registry\Grincess.ini.reg = Registry\Grincess.ini.reg
+		Registry\Grincess.json.reg = Registry\Grincess.json.reg
+		Registry\Grincess.log.reg = Registry\Grincess.log.reg
+		Registry\Grincess.mapinfo.reg = Registry\Grincess.mapinfo.reg
+		Registry\Grincess.menudef.reg = Registry\Grincess.menudef.reg
+		Registry\Grincess.pk4.reg = Registry\Grincess.pk4.reg
+		Registry\Grincess.pk7.reg = Registry\Grincess.pk7.reg
+		Registry\Grincess.png.reg = Registry\Grincess.png.reg
+		Registry\Grincess.prtprp.reg = Registry\Grincess.prtprp.reg
+		Registry\Grincess.reg.reg = Registry\Grincess.reg.reg
+		Registry\Grincess.rtf.reg = Registry\Grincess.rtf.reg
+		Registry\Grincess.txt.reg = Registry\Grincess.txt.reg
+		Registry\Grincess.wad.reg = Registry\Grincess.wad.reg
+		Registry\Grincess.xml.reg = Registry\Grincess.xml.reg
+		Registry\Grincess.zs.reg = Registry\Grincess.zs.reg
+		Registry\Software GZDoom.reg = Registry\Software GZDoom.reg
+		Registry\Software Slade.reg = Registry\Software Slade.reg
+		Registry\Software UltimateDoomBuilder.reg = Registry\Software UltimateDoomBuilder.reg
 	EndProjectSection
 EndProject
 Global

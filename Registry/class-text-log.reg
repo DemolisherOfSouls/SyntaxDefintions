@@ -18,10 +18,3 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CLASSES_ROOT\Grincess.log\DefaultIcon]
 @="%IconFull%\\VS\\FileText.ico"
-
-[HKEY_CLASSES_ROOT\Grincess.log\Shell]
-@="Edit"
-
-[HKEY_CLASSES_ROOT\Grincess.log\Shell\Edit]
-[HKEY_CLASSES_ROOT\Grincess.log\Shell\Edit\Command]
-@="notepad++ \"%1\""

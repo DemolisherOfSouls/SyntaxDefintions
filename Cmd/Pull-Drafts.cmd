@@ -1,0 +1,1 @@
+xcopy %Drafts%\Syntaxes\*.json "%Projects%\SyntaxDefinitions\Drafts\" /y

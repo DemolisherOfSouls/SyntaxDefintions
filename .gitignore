@@ -5,3 +5,5 @@
 *.suo
 /.vs
 desktop.ini
+thumbs.db
+/.vscode

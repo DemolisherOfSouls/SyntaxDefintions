@@ -3,14 +3,42 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
+using System.Xml;
 
 namespace SyntaxChecker;
 
 internal class Program
 {
-  [STAThread]
-  private static int Main (string[] args)
+  private static void LoadSettings ()
   {
+    CodeArea = "Program.LoadSettings()";
+    XmlReader reader = XmlReader.Create("Syntax.config");
+
+    while ( reader.Read() )
+    {
+
+    }
+  }
+
+  public static string LastInput { get; private set; }
+  public static string CodeArea { get; internal set; }
+
+
+
+  /// <summary>
+  /// Displays a message and requests user text input
+  /// </summary>
+  /// <param name="message">Message to display</param>
+  public static void GetLine (string message = "Enter Command:")
+  {
+    Console.WriteLine(message);
+    Console.Write(">");
+    LastInput = Console.ReadLine();
+  }
+
+  private static void CheckSyntaxes ()
+  {
+    CodeArea = "Program.CheckSyntaxes()";
     foreach ( string s in Directory.GetFiles(V.Root) )
     {
 
@@ -50,6 +78,15 @@ internal class Program
         //string output = "";
       }
     }
+  }
+
+  [STAThread]
+  private static int Main (string[] args)
+  {
+    CodeArea = $"Program.Main({args})";
+
+    LoadSettings();
+    CheckSyntaxes();
 
     return 0;
   }

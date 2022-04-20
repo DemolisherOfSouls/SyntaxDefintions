@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 namespace SyntaxChecker;
-
+public enum EscapeOptions
+{
+  BS  = 1, //Backslash
+  DQ  = 2, //Double Quote
+  SQ  = 4  //Single Quote
+}
 public static class Extensions
 {
-
   public static string Assemble (this List<string> list, string delim, string pre, string post)
   {
     string assembled = pre;
@@ -34,6 +38,16 @@ public static class Extensions
     return assembled;
   }
 
+  public static Dictionary<string, CaptureCollection> ToDictionary (this GroupCollection groupCollection)
+  {
+    Dictionary<string, CaptureCollection> dic = new();
+    foreach ( Group group in groupCollection )
+    {
+      dic.Add(group.Name, group.Captures);
+    }
+    return dic;
+  }
+
   public static List<string> ToList (this CaptureCollection captureCollection)
   {
     List<string> list = new();
@@ -55,8 +69,11 @@ public static class Extensions
     return String.IsNullOrEmpty(s);
   }
 
-  public static string ReplaceList (this string s, List<string> old, List<string> replacement, bool ignoreCase = false)
+  public static string ReplaceList (this string s, IList<string> old, IList<string> replacement, bool ignoreCase = false)
   {
+    var defRep = StringComparison.Ordinal;
+    if ( ignoreCase )
+      defRep = StringComparison.OrdinalIgnoreCase;
 
     if ( s.IsNullOrEmpty() )
     {
@@ -81,40 +98,42 @@ public static class Extensions
     for ( int i = 0; i < old.Count; i++ )
     {
 
-      s = s.Replace(old[i], replacement[i]);
+      s = s.Replace(old[i], replacement[i], defRep);
 
     }
     return s;
   }
 
-  public enum EscapeOptions
+  public static string Escape (this string current, EscapeOptions opt = EscapeOptions.BS)
   {
-    EscapeBackSlashOnly = 0,
-    EscapeForJSON = 1,
-    EscapeForXML = 2,
-  }
+    var BSPrepender = new MatchEvaluator((Match m) => @"\" + m.Value)
 
-  public static string PrependBS (Match match)
-  {
-    return @"\" + match.Value;
-  }
+    if ( current is null )
+      return null;
 
-  public static string Escape (this string current, EscapeOptions opt)
-  {
-    if ( current.IsNullOrEmpty() )
+    if ( opt.HasFlag(EscapeOptions.BS) )
     {
-      return current;
+      Regex BSReplacer = new (@"(?<!\\)(\\[ntvrb0f])");
+      current = BSReplacer.Replace(current, BSPrepender);
     }
 
-    Regex BSReplacer = new (@"(?<!\\)(\\[ntvrb0f])");
-    MatchEvaluator BSPrepender = new (PrependBS);
-
-    if ( opt == EscapeOptions.EscapeForJSON )
+    if ( opt.HasFlag(EscapeOptions.SQ) )
     {
-      current = BSReplacer.Replace(current, BSPrepender);
+      Regex SQReplacer = new (@"(?<!\\)'");
+      current = SQReplacer.Replace(current, BSPrepender);
+    }
+
+    if ( opt.HasFlag(EscapeOptions.DQ) )
+    {
+      Regex SQReplacer = new (@"(?<!\\)""");
+      current = SQReplacer.Replace(current, BSPrepender);
+    }
+
+    if ( opt == EscapeOptions.SQ )
+    {
+
     }
 
     return current;
   }
-
 }

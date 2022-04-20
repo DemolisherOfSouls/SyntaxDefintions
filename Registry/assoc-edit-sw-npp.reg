@@ -1,0 +1,25 @@
+Windows Registry Editor Version 5.00
+
+; SW Notepad Assoc
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Grincess.Software\Notepad++\Capabilities\FileAssociations]
+".asmprp"="Grincess.asmprp"
+".drwprp"="Grincess.drwprp"
+".prtprp"="Grincess.prtprp"
+
+[HKEY_CLASSES_ROOT\Grincess.asmprp\Shell]
+@="Edit"
+[HKEY_CLASSES_ROOT\Grincess.drwprp\Shell]
+@="Edit"
+[HKEY_CLASSES_ROOT\Grincess.prtprp\Shell]
+@="Edit"
+
+[HKEY_CLASSES_ROOT\Grincess.asmprp\Shell\Edit]
+[HKEY_CLASSES_ROOT\Grincess.asmprp\Shell\Edit\Command]
+@="notepad++ \"%1\""
+[HKEY_CLASSES_ROOT\Grincess.drwprp\Shell\Edit]
+[HKEY_CLASSES_ROOT\Grincess.drwprp\Shell\Edit\Command]
+@="notepad++ \"%1\""
+[HKEY_CLASSES_ROOT\Grincess.prtprp\Shell\Edit]
+[HKEY_CLASSES_ROOT\Grincess.prtprp\Shell\Edit\Command]
+@="notepad++ \"%1\""

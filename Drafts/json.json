@@ -42,7 +42,7 @@
       "3": {"scope": "code.method"},
       "4": {"scope": "code.property"}}
   },{
-    "match": "\"(match)\"\\s*:\\s*\"(?:\\(\\?([gim]+)\\-?([gim]*)\\)|(\\\\.)|\\(\\?\\:(.+?)\\)|(\\(.+?\\))|(\\[.+?\\])|\\{\\s*\\d+\\s*(?:,\\s*\\d*)\\})*\"(?<!\\\\)",
+    "match": "\"(match)\"\\s*:\\s*\"(?:\\/(\\?([gim]+)\\-?([gim]*)\\)|\\(\\?\\:(.+?)\\)|(\\(.+?\\))|(\\[.+?\\])|\\{\\s*\\d+\\s*(?:,\\s*\\d*)\\}|(.*?))*\"(?<!\\\\)",
     "exclusive": false,
     "comment": "Match RegExp",
     "captures": {
@@ -57,10 +57,10 @@
       "2": {"scope": "code.string"},
       "3": {"scope": "code.property"},
       "4": {"scope": "code.global"},
-      "5": {"scope": "code.error"},
       "6": {"scope": "code.method"},
-      "7": {"scope": "code.error"},
       "8": {"scope": "code.property"},
+      "5": {"scope": "code.error"},
+      "7": {"scope": "code.error"},
       "9": {"scope": "code.error"}}
   },{
     "match": "(\\\\[\\\\\"]|\\\\[fbntr0abve])",
@@ -68,12 +68,6 @@
     "comment": "Escaped Char",
     "captures": {
       "0": {"scope": "code.method"}}
-  },{
-    "match": "(?m-i)(?:\\\\\\\\)([aAbBdDEfFhHnQrsStvVwWXzZ0]|[\\[\\]{}()\\/?!$&.#^*+=><:,|',-]|[1-9][0-9]?|[NpP]\\{.*?\\}|c.|(?:\\\\\\\\))",
-    "'exclusive": true,
-    "comment": "Pseudo Escape",
-    "captures": {
-      "0": {"scope": "code.class"}}
   },{
     "match": "^.*,\\s*[\\]\\}](?!.*\").*$|^.*[\\{\\[]\\s*,.*$|^.*\".*?\"\\s*\".*?\".*?$",
     "exclusive": false,
@@ -86,5 +80,11 @@
     "comment": "JSON Error (Bad Escape)",
     "captures": {
       "0": {"scope": "code.error"}}
+  },{
+    "match": "(?m-i)(?:\\\\\\\\)([aAbBdDEfFhHnQrsStvVwWXzZ0]|[\\[\\]{}()\\/?!$&.#^*+=><:,|',-]|[1-9][0-9]?|[NpP]\\{.*?\\}|c.|(?:\\\\\\\\))",
+    "'exclusive": true,
+    "comment": "Pseudo Escape",
+    "captures": {
+      "0": {"scope": "code.class"}}
   }]
 }

@@ -1,13 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
+  <PropertyGroup Label="Main">
+    <TargetFramework>net6.0</TargetFramework>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net6.0-windows</TargetFramework>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>warnings</Nullable>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
     <ErrorReport>send</ErrorReport>
-    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
@@ -15,39 +15,95 @@
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/DemolisherOfSouls/SyntaxDefintions</RepositoryUrl>
     <NeutralLanguage>en-US</NeutralLanguage>
+    <StartupObject>SyntaxChecker.Program</StartupObject>
+    <ApplicationIcon>AppDocument.ico</ApplicationIcon>
+    <PlatformTarget>x64</PlatformTarget>
+    <SignAssembly>False</SignAssembly>
+    <Authors>Grincess</Authors>
+    <PackageIcon>AppClass.ico</PackageIcon>
+    <PackageTags>syntax, notepad++,drafts</PackageTags>
+    <AssemblyVersion>$(Version)</AssemblyVersion>
+    <LangVersion>preview</LangVersion>
+    <FileVersion>$(Version)</FileVersion>
+    <AssemblyName>SyntaxChecker.exe</AssemblyName>
+    <ProduceReferenceAssembly>True</ProduceReferenceAssembly>
+    <GenerateDocumentationFile>False</GenerateDocumentationFile>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'" Label="Debug">
     <PlatformTarget>x86</PlatformTarget>
     <Optimize>True</Optimize>
     <WarningLevel>5</WarningLevel>
     <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <NoWarn>1701;1702</NoWarn>
+    <WarningsAsErrors>$(WarningsAsErrors);NU1605</WarningsAsErrors>
+    <Deterministic>True</Deterministic>
+    <FileAlignment>512</FileAlignment>
+    <DefineConstants>$(DefineConstants)TRACE</DefineConstants>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'" Label="Release">
     <PlatformTarget>x86</PlatformTarget>
     <WarningLevel>5</WarningLevel>
     <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <NoWarn>1701;1702</NoWarn>
+    <WarningsAsErrors>$(WarningsAsErrors);NU1605</WarningsAsErrors>
+    <Deterministic>True</Deterministic>
+    <FileAlignment>512</FileAlignment>
+    <DefineConstants>$(DefineConstants)TRACE</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="desktop.ini" />
-    <None Remove="Properties\desktop.ini" />
+    <None Remove="*\desktop.ini" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Properties\Resources.Designer.cs">
+    <Content Include="AppDocument.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\Icons\256x256\VS\AppClass.ico">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\FullRegex.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FullRegex.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Update="Properties\Specification.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Specification.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Properties\Resources.resx">
+    <EmbeddedResource Update="Properties\FullRegex.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FullRegex.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Update="Properties\Specification.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Specification.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
   </ItemGroup>
 
 </Project>

@@ -9,19 +9,19 @@
   "fileExtensions":["draftsaction"],
   "navigationPatterns": [],
   "patterns": [{
-    "match": "\\/\\*[\\S\\s]*?\\*\\/|\\/\\/.*+",
+    "match": "\\/\\*[\\S\\s]*?\\*\\/|\\/\\/.*",
     "exclusive": true,
     "comment": "Comment",
     "captures":{
       "0":{"scope":"code.comment"}}
   },{
     "match": "(['\"])(?:(?!(?:\\\\|\\1)).|\\\\.)*\\1",
-    "exclusive": false,
+    "exclusive": true,
     "comment": "String Literal",
     "captures":{
       "0":{"scope":"code.string"}}
   },{
-    "match": "([\\/])(?:(?!(?:\\\\|\\1)).|\\\\.)*\\1([gim]*)",
+    "match": "([\\/])(?:(?!(?:\\\\|\\1)).|\\\\.)*\\1([gims]*)",
     "exclusive": true,
     "comment": "RegEx Literal",
     "captures":{
@@ -33,18 +33,18 @@
     "captures":{
       "0":{"scope":"code.class"}}
   },{
-    "match": "\\b(alert|log|require)\\b",
+    "match": "\\b(alert|log|require|strftime|eval|is(?:finite|NaN)|parse(?:Float|Int))\\b",
     "exclusive": true,
     "comment": "Global Functions",
     "captures":{
       "0":{"scope": "code.method"}}
   },{
-    "match": "\\b(-?(?:(0x[\\da-fA-F]+)|(\\d*\\.?\\d+(?:e[+-]?\\d+)?)))\\b",
+    "match": "\\b(-?(?:(?:0x[\\da-fA-F]+)|(\\d*\\.?\\d+(?:e[+-]?\\d+)?)))\\b",
     "exclusive": true,
     "comment": "Number",
     "captures":{
-      "1": {"scope":"code.literal"},
-      "2": {"scope":"code.literal"}}
+      "1":{"scope":"code.literal"},
+      "2":{"scope":"code.literal"}}
   },{
     "match": "([-+!=<>&|~^%?*\\\/\\\\])",
     "exclusive": false,
@@ -58,65 +58,108 @@
     "captures":{
       "0":{"scope":"code.punctuation"}}
   },{
-    "match": "\\b(and|x?or|for|do|while|each|as|return|exit|if|(?:type|instance)Of|of|then|else|new|delete|try|throw|catch|finally|class|function|var|const|static|extends|switch|this|self|super|in|import|constructor|export|[gls]et)\\b",
+    "match": "\\b(?:and|[xf]?or|do|while|each|i[snf]|return|exit|(?:instance|type)?of|then|else|new|delete|try|throw|catch|finally|class|function|var|static|extends|switch|this|self|super|(?:im|ex)port|const(?:ructor)?|[gls]et|prototype|enum)\\b",
     "exclusive": true,
     "comment": "JavaScript Keyword",
     "captures":{
       "0":{"scope":"code.keyword"}}
   },{
-    "match": "\\b(Array|String|Object|Integer|Boolean|Symbol|Function|Map|Set|WeakMap|WeakSet|Math|Date|Promise|Number|NodeList|JSON|Generator|Error|RegExp|ReferenceError)\\b",
-    "exclusive": true,
+    "match": "\\b(Array|String|Object|Integer|Boolean|Symbol|Function|(?:Weak)?(?:Map|Set)|Math|Date|Promise|Number|NodeList|JSON|Generator|RegExp|(?:Reference)?Error)\\b",
+    "exclusive": false,
     "comment": "JavaScript Class",
     "captures":{
       "0":{"scope":"code.class"}}
   },{
-    "match": "([\\w\"'$_]+)\\.(toString|eval|exec|replace|slice|join|split|concat|replace|match|(?:starts|ends)With|indexOf|substr|to(?:Lower|Upper)Case|parse(?:Int|Float)|charAt|create|forEach|from|destroy|push|shift|splice|some|sort|reduce|reverse|map|pop|includes|keys|flat(?:Map)?|copyWithin|at|every|fill)\\b",
+    "match": "[\\w\"$'_]*\\.(toString|eval|exec|re(?:place|duce|verse)|slice|concat|match|(?:starts|ends)With|join|indexOf|substr(?:ing)|to(?:Lowe|Uppe)rCase|parse(?:Int|Float)|charAt|create|forEach|from|destroy|push|shift|spli(?:ce|t)|so(?:me|rt)|map|pop|includes|keys|flat(?:Map)?|copyWithin|at|every|fill)\\b",
     "exclusive": false,
     "comment": "JavaScript Method",
     "captures":{
-      "1":{"scope":"code.global"},
-      "2":{"scope":"code.punctuation"},
-      "3":{"scope":"code.method"}}
+      "1":{"scope":"code.method"}}
   },{
-    "match": "\\b(length)\\b",
-    "exclusive": true,
+    "match": "[\\w\"$'_]*\\.(length)\\b",
+    "exclusive": false,
     "comment": "JavaScript Property",
-    "captures":{"0":{"scope":"code.class"}}
-  },{
-    "match": "\\b(draft\\.(content|body|title|lines|tags))|lastError|name|type|buttonPressed|selectionStart)\\b",
-    "exclusive": true,
-    "comment": "Drafts Class Property",
     "captures":{
       "0":{"scope":"code.property"}}
   },{
-    "match": "\\b(editor|context|device|app|action|script|draft)\\b",
-    "exclusive": true,
+    "match": "\\b(?:draft\\.(content|body|title|lines|permalink|selection(?:Start|Length)|tags|versions|uuid|is(?:Archived|Flagged|Trashed)|syntax|(?:creat|modifi)edL(?:at|ong)itude)|(lastError|tags|name|type|buttonPressed))\\b",
+    "exclusive": false,
+    "comment": "Drafts Class Property",
+    "captures":{
+      "1":{"scope":"code.property"},
+      "2":{"scope":"code.property"},
+      "3":{"scope":"code.property"}}
+  },{
+    "match": "\\b(script|draft|editor|context|device|app|action)\\b",
+    "exclusive": false,
     "comment": "Drafts Global Property",
     "captures":{
       "0":{"scope":"code.global"}}
   },{
-    "match": "\\b(Draft|Editor|Prompt|Script|Action(?:Group)?|Box|Dropbox|App|Syntax|Context|Share|Theme|Base64|Workspace|Version|Twitter|Alarm|Event|FileManager|Google(?:Drive|Task)|Mail|selectionRange|syntaxTypeDraft)\\b",
-    "exclusive": true,
+    "match": "\\b(Draft|Credential|Calendar|Bookmark|Editor|Prompt|(?:Shell)Script|Action(?:Group)?|Box|HTML(?:Preview)|HTTP(?:Response)?|App|Device|Syntax|Context|Share|Theme|Base64|Workspace|Reminder(?:List)?|Version|Twitter|Alarm|Event|OneDrive|Dropbox|FileManager|Google(?:Drive|Task)|Theme|Mail|Message|(?:syntax|theme)Type|sortBy|selectionRange|mailStatus|dropboxMode|draftFolderTab|queryDate(?:Field|Type)|googleTask(?:List)?|capitalizationTypes|)\\b",
+    "exclusive": false,
     "comment": "Drafts Class",
     "captures":{
       "0":{"scope":"code.class"}}
-  },{
-    "match": "\\b(update|save|getText|load|activate|query|fail|cancel|read|write|(?:add|has|remove)Tag|shareAs(?:File|URL|String)|(ap|pre)pend|setClipboard)\\b",
-    "exclusive": true,
+  },{ 
+    "match": "\\b(?:[dDqt](?:raft)?\\d?\\.(update|(?:has|remove|add)Tag|saveVersion|[gs]etTemplateTag|recentTags|queryByTitle|find|processTemplate|bodyPreview)|[sS]cript\\.(complete)|Share\\.(shareAs(?:File|Text|URL))|context\\.(addSuccessParameter|cancel|fail)|[aA]pp\\.(setClipboard|display(?:Error|Success|Warning|Info)Message)|editor\\.(load|(?:de)?activate|dictate|arrange|get(?:Selected(?:Range|Text|LineRange)|(?:Text(?:InRange)?))|(?:re|un)do|scanDocument)|FileManager\\.(create(?:Local|Cloud|ForBookmark))|fm\\.((?:write|read)(?:String|JSON)|(?:copy|move)Item|createDirectory|listContents|[gs]et(?:(?:Creation|Modification)Date)Tags)|(?:GoogleDrive|gd)\\.(read|write)|[wW](?:orkspace|s)\\.(setAllSort|)|(?:Prompt|p)\\.(add(?:Button|TextField|Label|(?:Date)?Picker|Switch)|show)|[_\\w$'\"]+\\.(save|getText|query|create|(?:ap|pre)pend))\\b",
+    "exclusive": false,
     "comment": "Drafts Class Method",
     "captures":{
-      "0":{"scope":"code.method"}}
+      "1":{"scope":"code.method"},
+      "2":{"scope":"code.method"},      
+      "3":{"scope":"code.method"},
+      "4":{"scope":"code.method"},
+      "5":{"scope":"code.method"},      
+      "6":{"scope":"code.method"},
+      "7":{"scope":"code.method"},
+      "8":{"scope":"code.method"},      
+      "9":{"scope":"code.method"},
+      "10":{"scope":"code.method"},
+      "11":{"scope":"code.method"},      
+      "12":{"scope":"code.method"},
+      "13":{"scope":"code.method"}}
   },{
-    "match": "\\b(caller|gdrive)\\b",
-    "exclusive": true,
-    "comment": "G-Lib Globals",
+    "match": "\\b(gdrive|caller)\\b",
+    "exclusive": false,
+    "comment": "G-Lib Global Property",
     "captures":{
       "0":{"scope":"code.global"}}
   },{
-    "match": "\\b(File|Draft2|GDrive)\\b",
-    "exclusive": true,
+    "match": "\\b(File|Draft2|GDrive|Dialog)\\b",
+    "exclusive": false,
     "comment": "G-Lib Class",
     "captures":{
       "0":{"scope":"code.class"}}
+  },{
+    "match": "\\b(LN\\.(?:titl|file|save|body)|SV\\.(?:srv|cat|opt|typ)|LF|NL|NC|DL|CR|TB|VT|[BF]S|[DS]Q)\\b",
+    "exclusive": false,
+    "comment": "G-Lib Constant",
+    "captures":{
+      "0":{"scope":"code.constant"}}
+  },{
+    "match": "\\b(?:[dq](?:raft)?\\d?\\.((?:ln|sv)Num|head|body|file|category|type|opt|service|master)|editor\\.isActive|(?:link|focus)ModeEnabled|preferredTabString|recentDrafts|typewriterScrollingEnabled|f(?:ile)?\\.(path|file|ext)|gdrive\\.(read|write|error)|p(?:rompt)?\\.(title|message|isCancellable|buttonPressed|fieldValues)|fm\\.(base(?:Path|URL)|lastError))\\b",
+    "exclusive": false,
+    "comment": "G-Lib Property",
+    "captures":{
+      "1":{"scope":"code.property"},
+      "2":{"scope":"code.property"},
+      "3":{"scope":"code.property"},
+      "4":{"scope":"code.property"},
+      "5":{"scope":"code.property"}}
+  },{
+    "match": "(?im)\\A(.+)\\s*^(.+)\\s*^(icloud|nosave|iphone|gdrive|googledrive)\\s*(drafts|projects|imported|(\\w+))?\\s*((?:drafts)?(?:syntax|theme|action)|script|registryShell|json|acs|batch|javascript|template|todolist|(\\w+))\\s*(src|(\\w+))?\\n?",
+    "exclusive": false,
+    "comment": "Header",
+    "captures": {
+      "1": {"scope": "code.method"},
+      "2": {"scope": "code.string"},
+      "3": {"scope": "code.property"},
+      "4": {"scope": "code.global"},
+      "6": {"scope": "code.method"},
+      "8": {"scope": "code.property"},
+      "5": {"scope": "code.error"},
+      "7": {"scope": "code.error"},
+      "9": {"scope": "code.error"}}
   }]
 }

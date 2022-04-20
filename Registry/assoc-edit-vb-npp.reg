@@ -1,0 +1,37 @@
+Windows Registry Editor Version 5.00
+
+; VB Notepad Assoc
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Grincess.Software\Notepad++\Capabilities\FileAssociations]
+".bas"="Grincess.bas"
+".cls"="Grincess.cls"
+".frm"="Grincess.frm"
+".vb"="Grincess.vb"
+".pqm"="Grincess.pqm"
+
+[HKEY_CLASSES_ROOT\Grincess.bas\Shell]
+@="Edit"
+[HKEY_CLASSES_ROOT\Grincess.cls\Shell]
+@="Edit"
+[HKEY_CLASSES_ROOT\Grincess.frm\Shell]
+@="Edit"
+[HKEY_CLASSES_ROOT\Grincess.vb\Shell]
+@="Edit"
+[HKEY_CLASSES_ROOT\Grincess.pqm\Shell]
+@="Edit"
+
+[HKEY_CLASSES_ROOT\Grincess.bas\Shell\Edit]
+[HKEY_CLASSES_ROOT\Grincess.bas\Shell\Edit\Command]
+@="notepad++ \"%1\""
+[HKEY_CLASSES_ROOT\Grincess.cls\Shell\Edit]
+[HKEY_CLASSES_ROOT\Grincess.cls\Shell\Edit\Command]
+@="notepad++ \"%1\""
+[HKEY_CLASSES_ROOT\Grincess.frm\Shell\Edit]
+[HKEY_CLASSES_ROOT\Grincess.frm\Shell\Edit\Command]
+@="notepad++ \"%1\""
+[HKEY_CLASSES_ROOT\Grincess.vb\Shell\Edit]
+[HKEY_CLASSES_ROOT\Grincess.vb\Shell\Edit\Command]
+@="notepad++ \"%1\""
+[HKEY_CLASSES_ROOT\Grincess.pqm\Shell\Edit]
+[HKEY_CLASSES_ROOT\Grincess.pqm\Shell\Edit\Command]
+@="notepad++ \"%1\""

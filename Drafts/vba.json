@@ -1,65 +1,69 @@
 {
   "name": "VBA",
-  "description": "VBA for Office Applications",
-  "sampleText": "'VBA Syntax\nConst n = 100\nLet s = Dim value\n\nif (n < 1000) {\n\tconsolełii.log(\"hello\");\n}",
-  "author"   : "Grincess",
+  "author": "Grincess",
   "scopeName": "text.vba",
-  "rangeExtensionType":{
-    "default":"lookAround1000"},
-  "listCompletionDefinitions": [],
-  "navigationPatterns": [],
+  "sampleText": "'VBA Syntax\nConst n = 100\nLet s = Dim value\n\nif (n < 1000) {\n\tconsolełii.log(\"hello\");\n}",
+  "rangeExtensionType": {
+    "default": "lookAround1000"
+  },
   "fileExtensions": [
-    "cls",
-    "frm",
-    "bas",
-    "vb"],
-  "patterns": [{
-    "match": "\\b\\'.*$",
-    "exclusive": true,
-    "comment": "Line comment",
-    "captures":{
-      "0": {"scope": "code.comment"}}
-  },{
-    "match": "(\")(?:(?!(?:\\\\|\\1)).|\\\\.)*\\1",
-    "exclusive": true,
-    "comment": "String literal",
-    "captures": {
-      "0": {"scope": "code.literal"}}
-  },{
-    "match": "\\b(Empty|Null|True|False|Nothing)\\b",
-    "exclusive": true,
-    "comment": "Value type literal",
-    "captures":{
-      "0":{"scope": "code.literal"}}
-  },{
-    "match": "\\b-?(?:0x[\\da-f]+|\\d*\\.?\\d+(?:e[+-]?\\d+)?)\\b",
-    "exclusive": true,
-    "comment": "Number",
-    "captures": {
-      "0": {"scope": "code.literal"}}
-  },{
-    "match": "--|\\+\\+|([!=]?=|[<>])=?|&&?|\\|\\|?|[-+/*]",
-    "exclusive": true,
-    "comment": "Operator",
-    "captures": {
-      "0": { "scope": "code.operator"}}
-  },{
-    "match": "([{}\\[\\];(),.:])",
-    "exclusive": true,
-    "comment": "Punctuation",
-    "captures": {
-      "0": { "scope": "code.punctuation"}}
-  },{
-    "match": "\\b(A(?:nd|s)|C(?:a(?:se|tch)|lass|onst)|Or|Xor|While|Mod|Return|If|E(?:ach|x(?:it|tends)|lse(?:If)?)|New|D(?:e(?:lete|fault)|im|o)|T(?:ry|h(?:row|en)|ype)|F(?:or|inally|unction)|Sub|[LS]et|Static|P(?:ublic|rivate|ow))(?!\\w|=\")",
-    "exclusive": true,
-    "comment": "VBA keyword",
-    "captures": {
-      "0": {"scope": "code.keyword"}}
-  },{
-    "match": "\\b(RegExp|Variant|Integer|Boolean|String|Double|Decimal|Long(?:Long)?|Byte|Date|DateTime|Range|Style|Application|)\\b",
-    "exclusive": true,
-    "comment": "VBA Class",
-    "captures": {
-      "0": {"scope": "code.class"}}
-  }]
+    "cls","frm","bas","vb"],
+  "navigationPatterns": [],
+  "description": "VBA for Office Applications",
+  "patterns": [
+    {
+      "match": "'.*",
+      "exclusive": true,
+      "comment": "Line comment",
+      "captures": {
+        "0": {"scope": "code.comment"}}
+    },{
+      "match": "\"(?:(?!\\\\|\\1).|\\\\.)*\"",
+      "exclusive": true,
+      "comment": "String literal",
+      "captures": {
+        "0": {"scope": "code.string"}}    
+    },{
+      "match": "\\b(Empty|Null|True|False|Nothing)\\b",
+      "exclusive": true,
+      "comment": "Value type literal",
+      "captures": {
+        "0": {"scope": "code.keyword"}}
+    },{
+      "match": "\\b-?(?:0x[\\da-f]+|\\d*\\.?\\d+(?:e[+-]?\\d+)?)\\b",
+      "exclusive": true,
+      "comment": "Number",
+      "captures": {
+        "0": {"scope": "code.literal"}}
+    },{
+      "match": "([-+])\\1?|([=])\\2?\\2?|[<>]=?|=|&&?|\\|\\|?|\\?|\\*|\\/|~|\\^|%",
+      "exclusive": true,
+      "comment": "Operator",
+      "captures": {
+        "0": {"scope": "code.operator"}}
+    },{
+      "match": "[{}\\[\\];(),.:]",
+      "exclusive": true,
+      "comment": "Punctuation",
+      "captures": {
+        "0": {"scope": "code.punctuation"}}
+    },{
+      "match": "\\b(And|Or|[FX]or|Do|While|Each|As|Return|(?:Re)?Dim|Exit|If|Then|Else|ElseIf|New|Delete|Try|Throw|Catch|Finally|Class|Function|Const|[LGS]et|Static|Public|Private|Extends)(?!\\w|=\")",
+      "exclusive": true,
+      "comment": "VB Keyword",
+      "captures": {
+        "0": {"scope": "code.keyword"}}
+    },{
+      "match": "\\b(Variant|Integer|Boolean|Byte|Currency|Date(?:Time)?|Decimal|Double|Long(?:Long|Ptr)?|Object|Single|String|Collection|)\\b",
+      "exclusive": true,
+      "comment": "VB Data Type",
+      "captures": {
+        "0": {"scope": "code.class"}}
+    },{
+      "match": "\\b(Len|Is(?:Array|Empty|Error|Missing|Object|Null|Date|Numeric)|Array|Join|Loc|[EL]OF|IIf|Input(?:Box)?|InStr(?:Rev)?|Error|Choose|Day|Dir|DoEvents|DDB|FileAttr|CreateObject|Command|CallByName|[LU](?:Case|Bound)|Year|Timer|VarType|Switch|Split|Spc|Space|Time|Tab|Shell|Replace|Now|Month|P?Pmt|PV|MsgBox|Mid|Left|Right$?|Loc|[LR]?Trim|Hour)\\b",
+      "exclusive": true,
+      "comment": "VBA Function",
+      "captures": {
+        "0": {"scope": "code.method"}}
+    }]
 }

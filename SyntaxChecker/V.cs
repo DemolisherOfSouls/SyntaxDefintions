@@ -1,18 +1,59 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
 using System.Text.RegularExpressions;
 
-using Entry = System.Collections.Generic.KeyValuePair<string, string>;
+using Duration = System.TimeSpan;
+using Entry = System.Collections.Generic.KeyValuePair<string, int>;
+using RegEx = System.Text.RegularExpressions.Regex;
 using RO = System.Text.RegularExpressions.RegexOptions;
 
 namespace SyntaxChecker;
 
-internal class V
+public class RegExPart
 {
-  protected internal class ACS
-  {
-    static Entry c = new Entry("type","(?'type'int|void|str|bool|char)");
+  private static ushort next = 1;
+  private static IList<string> rxNames = new List<string>();
+  private static IList<RegExPart> rxValues = new List<RegExPart>();
 
-    private static Entry[] type =
+  public static ushort Add (string name, string rx, RO opt = RO.CultureInvariant & RO.Multiline)
+  {
+    var x = new RegExPart(rx, opt);
+    rxNames.Add(name);
+    rxValues.Add(x);
+    return x.id;
+  }
+
+  private RegEx exp;
+  private ushort id;
+  private bool executed = false;
+  private MatchCollection lastmc;
+
+  public RegExPart (string rx, RO opt, int ticks = 200)
+  {
+    id = next++;
+    exp = new RegEx(rx, opt, new Duration(ticks));
+  }
+
+  public bool Test (string s)
+  {
+    return exp.IsMatch(s);
+  }
+
+  public void Execute (string s)
+  {
+    lastmc = exp.Matches(s);
+    executed = true;
+  }
+}
+
+internal static class V
+{
+  eeee
+  internal class ACS
+  {
+    static Entry c = new ("type","(?'type'int|void|str|bool|char)");
+
+    private static List<Entry> type = new()
     {
       c,
       new Entry("type","(?'type'int|void|str|bool|char)")
