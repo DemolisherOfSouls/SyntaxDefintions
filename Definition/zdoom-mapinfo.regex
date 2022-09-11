@@ -1,0 +1,24 @@
+s(
+(
+  (
+	((add)defaultmapmaps+(lumpnamew+)s+
+    ((lookups+)(mapname[^nr])))s
+{s
+  (
+	nexts=s(nextw+)s
+	levelnums=s(levelnumd+)s
+	titlepatchs=s(titlepatchw+)s
+	clusters=s(clusterd+)s
+	(nointermissionnointermission)s
+	(nosoundclippingnosoundclipping)s
+	(baronspecialbaronspecial)s
+	(specialaction_lowerfloorspecialaction_lowerfloor)s
+	secretnexts=s(secretnextw+)s
+  )
+})s
+
+(clusters+(clusterdefd+)s)
+{s
+	(forgetstateforgetstate)s
+})s
+)+
