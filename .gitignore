@@ -7,3 +7,5 @@
 desktop.ini
 thumbs.db
 /.vscode
+*.cache
+/obj
